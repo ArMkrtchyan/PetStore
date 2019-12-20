@@ -22,13 +22,12 @@ import javax.servlet.http.HttpServletRequest
 
 
 @Component
-class JwtTokenProvider @Autowired constructor(userDetailsService: UserService, userDao: UserDao?, bCryptPasswordEncoder: BCryptPasswordEncoder, deviceDao: DeviceDao) {
+class JwtTokenProvider @Autowired constructor(userDetailsService: UserService, userDao: UserDao?, deviceDao: DeviceDao) {
     @Value("aslkjedomjlwsdk")
     private var secretKey = "secret"
     private val validityInMilliseconds: Long = 360000000 // 1h
     private var userDetailsService: UserService? = null
     private var userDao: UserDao? = null
-    private var bCryptPasswordEncoder: BCryptPasswordEncoder? = null
     private var deviceDao: DeviceDao? = null
 
 
@@ -36,7 +35,6 @@ class JwtTokenProvider @Autowired constructor(userDetailsService: UserService, u
         secretKey = Base64.getEncoder().encodeToString(secretKey.toByteArray())
         this.userDetailsService = userDetailsService
         this.userDao = userDao
-        this.bCryptPasswordEncoder = bCryptPasswordEncoder
         this.deviceDao = deviceDao
     }
 

@@ -34,16 +34,17 @@ import kotlin.collections.HashSet
 
 @Service
 @Transactional
-class UserService @Autowired constructor(userDao: UserDao, mapper: ObjectMapper, bCryptPasswordEncoder: BCryptPasswordEncoder, validator: Validator, deviceDao: DeviceDao, fileStorageService: FileStorageService, manager: EntityManager) : UserDetailsService {
+class UserService @Autowired constructor(userDao: UserDao, mapper: ObjectMapper,  validator: Validator, deviceDao: DeviceDao, fileStorageService: FileStorageService, manager: EntityManager) : UserDetailsService {
     private val responseData: HashMap<Any, Any> = HashMap()
     private val model: HashMap<Any, Any> = HashMap()
 
     private var userDao: UserDao? = userDao
     private var mapper: ObjectMapper? = mapper
-    private var bCryptPasswordEncoder: BCryptPasswordEncoder? = bCryptPasswordEncoder
     private var validator: Validator? = validator
     private var deviceDao: DeviceDao? = deviceDao
     private var fileStorageService: FileStorageService? = fileStorageService
+    @Autowired
+    private var bCryptPasswordEncoder: BCryptPasswordEncoder? = null
     @PersistenceContext
     private var manager: EntityManager? = manager
 

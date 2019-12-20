@@ -1,17 +1,19 @@
+import am.store.PeetStore.user.AuthProvider
+import am.store.PeetStore.user.jwt.JwtConfigurer
+import am.store.PeetStore.user.jwt.JwtTokenProvider
 import com.fasterxml.jackson.databind.ObjectMapper
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.context.annotation.Bean
 import org.springframework.context.annotation.Configuration
+import org.springframework.core.annotation.Order
 import org.springframework.security.access.AccessDeniedException
 import org.springframework.security.authentication.AuthenticationManager
-import org.springframework.security.config.annotation.SecurityConfigurerAdapter
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder
 import org.springframework.security.config.annotation.web.builders.HttpSecurity
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter
 import org.springframework.security.config.http.SessionCreationPolicy
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder
-import org.springframework.security.web.DefaultSecurityFilterChain
 import java.io.OutputStream
 import javax.servlet.http.HttpServletRequest
 import javax.servlet.http.HttpServletResponse
@@ -41,20 +43,23 @@ class SpringSecurityConfig : WebSecurityConfigurerAdapter() {
                 .anyRequest().authenticated()
                 .and()
                 .exceptionHandling().accessDeniedHandler { httpServletRequest: HttpServletRequest?, httpServletResponse: HttpServletResponse, e: AccessDeniedException? ->
-                    val response = ApiResponse(403, "Access Denied")
-                    response.setMessage("Access Denied")
                     val out: OutputStream = httpServletResponse.outputStream
                     val mapper = ObjectMapper()
-                    mapper.writeValue(out, response)
+                    mapper.writeValue(out, HashMap<String, Any>().apply {
+                        put("code", 400)
+                        put("message", "Access denied")
+                    })
                     out.flush()
                 }
                 .and()
-                .apply<SecurityConfigurerAdapter<DefaultSecurityFilterChain, HttpSecurity>>(JwtConfigurer(jwtTokenProvider))
+                .apply(JwtConfigurer(jwtTokenProvider!!))
     }
 
     @Bean
+    @Throws(Exception::class)
     fun passwordEncoder(): BCryptPasswordEncoder {
-        return BCryptPasswordEncoder()
+        val bCryptPasswordEncoder = BCryptPasswordEncoder()
+        return bCryptPasswordEncoder
     }
 
     @Bean
