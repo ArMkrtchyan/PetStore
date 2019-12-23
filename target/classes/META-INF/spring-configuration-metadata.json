@@ -1,0 +1,17 @@
+{
+  "groups": [
+    {
+      "name": "file",
+      "type": "com.mkrtchyan.Social.FileStorageProperties",
+      "sourceType": "com.mkrtchyan.Social.FileStorageProperties"
+    }
+  ],
+  "properties": [
+    {
+      "name": "file.upload-dir",
+      "type": "java.lang.String",
+      "sourceType": "com.mkrtchyan.Social.FileStorageProperties"
+    }
+  ],
+  "hints": []
+}
