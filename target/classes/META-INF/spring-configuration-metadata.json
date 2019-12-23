@@ -2,15 +2,15 @@
   "groups": [
     {
       "name": "file",
-      "type": "com.mkrtchyan.Social.FileStorageProperties",
-      "sourceType": "com.mkrtchyan.Social.FileStorageProperties"
+      "type": "am.petstore.PetStore.FileStorageProperties",
+      "sourceType": "am.petstore.PetStore.FileStorageProperties"
     }
   ],
   "properties": [
     {
       "name": "file.upload-dir",
       "type": "java.lang.String",
-      "sourceType": "com.mkrtchyan.Social.FileStorageProperties"
+      "sourceType": "am.petstore.PetStore.FileStorageProperties"
     }
   ],
   "hints": []

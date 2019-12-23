@@ -126,7 +126,7 @@
                 <configuration>
                     <user>postgres</user>
                     <password>root</password>
-                    <url>jdbc:postgresql://localhost:5432/SocialNetwork</url>
+                    <url>jdbc:postgresql://localhost:5432/PetStore</url>
                     <baseDir>/db/migration/</baseDir>
                 </configuration>
             </plugin>

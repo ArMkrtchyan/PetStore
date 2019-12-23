@@ -32,3 +32,53 @@ CREATE TABLE device
 
     PRIMARY KEY (id)
 );
+
+CREATE TABLE pets
+(
+    id         BIGINT NOT NULL,
+    name       VARCHAR(2024),
+    created_at timestamp,
+    updated_at timestamp,
+
+    PRIMARY KEY (id)
+);
+
+CREATE TABLE categories
+(
+    id         BIGINT NOT NULL,
+    name       VARCHAR(2024),
+    created_at timestamp,
+    updated_at timestamp,
+
+    PRIMARY KEY (id)
+);
+
+CREATE TABLE products
+(
+    id         BIGINT NOT NULL,
+    name       VARCHAR(2024),
+    created_at timestamp,
+    updated_at timestamp,
+
+    PRIMARY KEY (id)
+);
+
+CREATE TABLE store
+(
+    id         BIGINT NOT NULL,
+    name       VARCHAR(2024),
+    created_at timestamp,
+    updated_at timestamp,
+
+    PRIMARY KEY (id)
+);
+
+CREATE TABLE orders
+(
+    id         BIGINT NOT NULL,
+    name       VARCHAR(2024),
+    created_at timestamp,
+    updated_at timestamp,
+
+    PRIMARY KEY (id)
+);

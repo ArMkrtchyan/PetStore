@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="DataSourceManagerImpl" format="xml" multifile-model="true">
-    <data-source source="LOCAL" name="SocialNetwork@localhost" uuid="83e55677-c1f3-450d-a4ee-1af9886720ef">
+    <data-source source="LOCAL" name="PetStore@localhost" uuid="cfcceef0-bc41-4da9-b58d-74070e865e72">
       <driver-ref>postgresql</driver-ref>
       <synchronize>true</synchronize>
       <jdbc-driver>org.postgresql.Driver</jdbc-driver>
-      <jdbc-url>jdbc:postgresql://localhost:5432/SocialNetwork</jdbc-url>
+      <jdbc-url>jdbc:postgresql://localhost:5432/PetStore</jdbc-url>
     </data-source>
   </component>
 </project>
