@@ -1,9 +1,11 @@
 package am.petstore.PetStore.pets.entity;
 
+import org.jetbrains.annotations.Nullable;
 import org.springframework.data.annotation.CreatedDate;
 import org.springframework.data.annotation.LastModifiedDate;
 
 import javax.persistence.*;
+import javax.validation.constraints.Null;
 import java.util.Date;
 
 
@@ -25,15 +27,23 @@ public class PetEntity {
     private Date updatedAt;
 
     @Column
-    private String name;
+    private String title;
+
+    @Column(name = "photo")
+    private String photo;
+
+    @Temporal(TemporalType.TIMESTAMP)
+    @Column(name = "deleted_at")
+    private Date deletedAt;
 
     public PetEntity() {
     }
 
-    public PetEntity(Date createdAt, Date updatedAt, String name) {
+    public PetEntity(Date createdAt, Date updatedAt, String title, String photo) {
         this.createdAt = createdAt;
         this.updatedAt = updatedAt;
-        this.name = name;
+        this.title = title;
+        this.photo = photo;
     }
 
     public Long getId() {
@@ -61,12 +71,12 @@ public class PetEntity {
         this.updatedAt = updatedAt;
     }
 
-    public String getName() {
-        return name;
+    public String getTitle() {
+        return title;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setTitle(String name) {
+        this.title = name;
     }
 
     @Override
@@ -75,7 +85,25 @@ public class PetEntity {
                 "id=" + id +
                 ", createdAt=" + createdAt +
                 ", updatedAt=" + updatedAt +
-                ", name='" + name + '\'' +
+                ", deletedAt=" + deletedAt +
+                ", title='" + title + '\'' +
+                ", photo='" + photo + '\'' +
                 '}';
+    }
+
+    public String getPhoto() {
+        return photo;
+    }
+
+    public void setPhoto(String photo) {
+        this.photo = photo;
+    }
+
+    public Date getDeletedAt() {
+        return deletedAt;
+    }
+
+    public void setDeletedAt(Date deletedAt) {
+        this.deletedAt = deletedAt;
     }
 }

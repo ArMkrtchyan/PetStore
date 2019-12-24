@@ -1,5 +1,7 @@
 package am.petstore.PetStore.order.entity;
 
+import am.petstore.PetStore.user.entity.UserModel;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import org.springframework.data.annotation.CreatedDate;
 import org.springframework.data.annotation.LastModifiedDate;
 
@@ -25,6 +27,11 @@ public class OrderEntity {
 
     @Column
     private String name;
+
+    @ManyToOne
+    @JoinColumn(name = "user_id")
+    @JsonIgnore
+    private UserModel user;
 
     public OrderEntity() {
     }
@@ -67,6 +74,13 @@ public class OrderEntity {
         this.name = name;
     }
 
+    public UserModel getUser() {
+        return user;
+    }
+
+    public void setUser(UserModel user) {
+        this.user = user;
+    }
     @Override
     public String toString() {
         return "OrderEntity{" +

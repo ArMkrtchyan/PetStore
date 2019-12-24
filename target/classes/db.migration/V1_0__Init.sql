@@ -39,6 +39,7 @@ CREATE TABLE pets
     name       VARCHAR(2024),
     created_at timestamp,
     updated_at timestamp,
+    deleted_at timestamp,
 
     PRIMARY KEY (id)
 );
@@ -49,6 +50,7 @@ CREATE TABLE categories
     name       VARCHAR(2024),
     created_at timestamp,
     updated_at timestamp,
+    deleted_at timestamp,
 
     PRIMARY KEY (id)
 );
@@ -59,6 +61,7 @@ CREATE TABLE products
     name       VARCHAR(2024),
     created_at timestamp,
     updated_at timestamp,
+    deleted_at timestamp,
 
     PRIMARY KEY (id)
 );
@@ -69,6 +72,7 @@ CREATE TABLE store
     name       VARCHAR(2024),
     created_at timestamp,
     updated_at timestamp,
+    deleted_at timestamp,
 
     PRIMARY KEY (id)
 );

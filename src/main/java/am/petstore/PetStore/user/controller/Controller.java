@@ -1,10 +1,10 @@
 package am.petstore.PetStore.user.controller;
 
-import am.petstore.PetStore.user.service.DeviceService;
-import com.fasterxml.jackson.databind.JsonNode;
 import am.petstore.PetStore.user.jwt.JwtTokenProvider;
 import am.petstore.PetStore.user.service.AuthProvider;
+import am.petstore.PetStore.user.service.DeviceService;
 import am.petstore.PetStore.user.service.UserService;
+import com.fasterxml.jackson.databind.JsonNode;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -12,6 +12,8 @@ import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
+
+import javax.servlet.http.HttpServletRequest;
 
 @RestController
 @RequestMapping("/user")
@@ -33,7 +35,7 @@ public class Controller {
     }
 
     @PostMapping("/device")
-    public ResponseEntity registerDevice(@RequestBody JsonNode jsonNode) {
+    public ResponseEntity registerDevice(@RequestBody JsonNode jsonNode, HttpServletRequest request) {
         return deviceService.addOrUpdateDevice(jsonNode);
     }
 
@@ -58,7 +60,6 @@ public class Controller {
                                      @RequestParam(value = "birthday", required = false) String birthday,
                                      @RequestParam(value = "device_id", required = false) String device_id,
                                      @RequestParam(value = "password", required = false) String password) {
-        LoggerFactory.getLogger("updateUserId1  ").info(photo.toString());
         return userService.signUpUser(photo, id, phone, firebase_id, fullname, email, gender, birthday, device_id, password);
     }
 

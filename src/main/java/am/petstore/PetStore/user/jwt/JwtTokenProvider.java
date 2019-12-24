@@ -15,7 +15,9 @@ import org.springframework.stereotype.Component;
 
 import javax.annotation.PostConstruct;
 import javax.servlet.http.HttpServletRequest;
-import java.util.*;
+import java.util.Base64;
+import java.util.Collection;
+import java.util.Date;
 
 @Component
 public class JwtTokenProvider {
@@ -41,7 +43,7 @@ public class JwtTokenProvider {
         Claims claims = Jwts.claims().setSubject(phone);
         claims.put("roles", roles);
         claims.put("id", user.getId());
-        claims.put("email", user.getId());
+        claims.put("email", user.getEmail());
         claims.put("phone", user.getId());
         Date now = new Date();
         Date validity = new Date(now.getTime() + validityInMilliseconds);
@@ -53,13 +55,14 @@ public class JwtTokenProvider {
     }
 
     public Authentication getAuthentication(String token) {
-        UserModel userDetails = (UserModel) this.userDetailsService.loadUserByUsername(getUsername(token));
+        UserModel userDetails = (UserModel) this.userDetailsService.loadUserByUsername(getPhone(token));
         return new UsernamePasswordAuthenticationToken(userDetails, "", userDetails.getAuthorities());
     }
 
-    public String getUsername(String token) {
+    public String getPhone(String token) {
         return Jwts.parser().setSigningKey(secretKey).parseClaimsJws(token).getBody().getSubject();
     }
+
 
     public String resolveToken(HttpServletRequest req) {
         String bearerToken = req.getHeader("Authorization");

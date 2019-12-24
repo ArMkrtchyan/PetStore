@@ -1,13 +1,14 @@
 package am.petstore.PetStore.user.config;
 
-import am.petstore.PetStore.user.service.AuthProvider;
-import com.fasterxml.jackson.databind.ObjectMapper;
 import am.petstore.PetStore.user.jwt.JwtConfigurer;
 import am.petstore.PetStore.user.jwt.JwtTokenProvider;
 import am.petstore.PetStore.user.model.ApiResponse;
+import am.petstore.PetStore.user.service.AuthProvider;
+import com.fasterxml.jackson.databind.ObjectMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.http.HttpMethod;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
@@ -39,6 +40,10 @@ public class SpringSecurityConfig extends WebSecurityConfigurerAdapter {
                 .antMatchers("/user/signup").permitAll()
                 .antMatchers("/user/downloadFile/*").permitAll()
                 .antMatchers("/user/device").permitAll()
+                .antMatchers(HttpMethod.GET, "/pets/findAll",
+                        "/store/findAll",
+                        "/product/findAll",
+                        "/category/findAll").permitAll()
                 .antMatchers("/user/findAll").hasAuthority("ADMIN")
                 .anyRequest().authenticated()
                 .and()

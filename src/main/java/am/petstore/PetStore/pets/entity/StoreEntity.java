@@ -1,5 +1,6 @@
 package am.petstore.PetStore.pets.entity;
 
+import org.jetbrains.annotations.Nullable;
 import org.springframework.data.annotation.CreatedDate;
 import org.springframework.data.annotation.LastModifiedDate;
 import org.springframework.data.jpa.domain.support.AuditingEntityListener;
@@ -29,13 +30,21 @@ public class StoreEntity implements Serializable {
     @Column
     private String name;
 
+    @Column(name = "photo")
+    private String photo;
+
+    @Temporal(TemporalType.TIMESTAMP)
+    @Column(name = "deleted_at")
+    private Date deletedAt;
+
     public StoreEntity() {
     }
 
-    public StoreEntity(Date createdAt, Date updatedAt, String name) {
+    public StoreEntity(Date createdAt, Date updatedAt, String name, String photo) {
         this.createdAt = createdAt;
         this.updatedAt = updatedAt;
         this.name = name;
+        this.photo = photo;
     }
 
     public Long getId() {
@@ -77,7 +86,25 @@ public class StoreEntity implements Serializable {
                 "id=" + id +
                 ", createdAt=" + createdAt +
                 ", updatedAt=" + updatedAt +
+                ", deletedAt=" + deletedAt +
                 ", name='" + name + '\'' +
+                ", photo='" + photo + '\'' +
                 '}';
+    }
+
+    public String getPhoto() {
+        return photo;
+    }
+
+    public void setPhoto(String photo) {
+        this.photo = photo;
+    }
+
+    public Date getDeletedAt() {
+        return deletedAt;
+    }
+
+    public void setDeletedAt(Date deletedAt) {
+        this.deletedAt = deletedAt;
     }
 }

@@ -1,5 +1,6 @@
 package am.petstore.PetStore.user.entity;
 
+import am.petstore.PetStore.order.entity.OrderEntity;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import am.petstore.PetStore.user.annotations.CheckEmail;
@@ -83,10 +84,14 @@ public class UserModel implements Serializable, UserDetails {
     @JoinColumn(name = "user_id")
     private Set<Device> devices;
 
+    @OneToMany
+    @JoinColumn(name = "user_id")
+    private Set<OrderEntity> orders;
+
     public UserModel() {
     }
 
-    public UserModel(@Size(min = 6) String password, String email, String fullname, String birthday, String gender, Boolean active, String firebase_id, @Pattern(regexp = "[+0-9]*") @NotNull String phone, Date createdAt, Date updatedAt, Set<Role> roles, Set<Device> devices) {
+    public UserModel(@Size(min = 6) String password, String email, String fullname, String birthday, String gender, Boolean active, String firebase_id, @Pattern(regexp = "[+0-9]*") @NotNull String phone, Date createdAt, Date updatedAt, Set<Role> roles, Set<Device> devices, Set<OrderEntity> orders) {
         this.password = password;
         this.email = email;
         this.fullname = fullname;
@@ -99,6 +104,7 @@ public class UserModel implements Serializable, UserDetails {
         this.updatedAt = updatedAt;
         this.roles = roles;
         this.devices = devices;
+        this.orders = orders;
     }
 
     public Long getId() {
@@ -248,6 +254,15 @@ public class UserModel implements Serializable, UserDetails {
                 ", updatedAt=" + updatedAt +
                 ", roles=" + roles +
                 ", devices=" + devices +
+                ", orders=" + orders +
                 '}';
+    }
+
+    public Set<OrderEntity> getOrders() {
+        return orders;
+    }
+
+    public void setOrders(Set<OrderEntity> orders) {
+        this.orders = orders;
     }
 }
