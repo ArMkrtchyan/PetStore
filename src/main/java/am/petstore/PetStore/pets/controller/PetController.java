@@ -1,7 +1,6 @@
 package am.petstore.PetStore.pets.controller;
 
 import am.petstore.PetStore.pets.service.PetService;
-import com.fasterxml.jackson.databind.JsonNode;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
@@ -30,12 +29,13 @@ public class PetController {
     @PostMapping(value = "/create", consumes = {MediaType.MULTIPART_FORM_DATA_VALUE})
     public ResponseEntity<Map<Object, Object>> create(@RequestParam(value = "image", required = false) MultipartFile photo,
                                                       @RequestParam(value = "title", required = false) String title) {
-        return service.create(photo,title);
+        return service.create(photo, title);
     }
 
-    @PutMapping("/update/{id}")
-    public ResponseEntity update(@PathVariable("id") Long id,@RequestBody JsonNode jsonNode) {
-        return service.update(id,jsonNode);
+    @PostMapping(value = "/update/{id}", consumes = {MediaType.MULTIPART_FORM_DATA_VALUE})
+    public ResponseEntity<Map<Object, Object>> update(@PathVariable("id") Long id, @RequestParam(value = "image", required = false) MultipartFile photo,
+                                                      @RequestParam(value = "title", required = false) String title) {
+        return service.update(id, photo, title);
     }
 
     @PutMapping("/delete/{id}")

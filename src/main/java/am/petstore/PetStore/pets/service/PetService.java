@@ -4,7 +4,6 @@ import am.petstore.PetStore.pets.dao.PetDao;
 import am.petstore.PetStore.pets.entity.PetEntity;
 import am.petstore.PetStore.pets.model.Pet;
 import am.petstore.PetStore.user.service.FileStorageService;
-import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -39,6 +38,24 @@ public class PetService {
     }
 
     public ResponseEntity<Map<Object, Object>> create(MultipartFile photo, String title) {
+        if (photo == null) {
+            data.clear();
+            model.clear();
+            model.put("code", 400);
+            model.put("message", "Field photo can't be null or empty.");
+            data.put("data", model);
+            return ResponseEntity.badRequest().body(data);
+        }
+        if (title == null) {
+            data.clear();
+            model.clear();
+
+            
+            model.put("code", 400);
+            model.put("message", "Field title can't be null or empty.");
+            data.put("data", model);
+            return ResponseEntity.badRequest().body(data);
+        }
         if (petDao.existsByTitle(title)) {
             if (petDao.findByTitle(title).getDeletedAt() == null) {
                 data.clear();
@@ -48,15 +65,7 @@ public class PetService {
                 data.put("data", model);
                 return ResponseEntity.badRequest().body(data);
             } else {
-                PetEntity petEntity = petDao.findByTitle(title);
-                petDao.update(petEntity.getId(), new Date(), petEntity.getPhoto(), petEntity.getTitle(), null);
-                data.clear();
-                model.clear();
-                model.put("code", 200);
-                model.put("message", "Pet with " + title + " updated.");
-                model.put("pet", new Pet(petDao.getOne(petEntity.getId())));
-                data.put("data", model);
-                return ResponseEntity.ok(data);
+                return update(petDao.findByTitle(title).getId(), photo, title);
             }
         } else {
             String fileDownloadUri = "";
@@ -111,16 +120,53 @@ public class PetService {
         return ResponseEntity.ok(data);
     }
 
-    public ResponseEntity<Map<Object, Object>> update(Long id, JsonNode jsonNode) {
-        String photo = jsonNode.get("data").get("photo").asText(petDao.getOne(id).getPhoto());
-        String title = jsonNode.get("data").get("title").asText(petDao.getOne(id).getTitle());
-        petDao.update(id, new Date(), photo, title, null);
+    public ResponseEntity<Map<Object, Object>> update(Long id, MultipartFile photo, String title) {
+        PetEntity petEntity = petDao.getOne(id);
+        if (petEntity == null) {
+            data.clear();
+            model.clear();
+            model.put("code", 400);
+            model.put("message", "Pet with " + id + " not found.");
+            data.put("data", model);
+            return ResponseEntity.badRequest().body(data);
+        }
+        if (photo == null && title == null) {
+            data.clear();
+            model.clear();
+            model.put("code", 400);
+            model.put("message", "Wrong sent data. Fields \"photo\" and \"title\" could not be null at same time");
+            data.put("data", model);
+            return ResponseEntity.badRequest().body(data);
+        }
+        String fileDownloadUri = "";
+        if (photo != null && title != null) {
+            LoggerFactory.getLogger("updateUserPhoto  ").info(null);
+            String fileName = fileStorageService.storeFile(photo);
+            LoggerFactory.getLogger("updateUser").info(fileName);
+            fileDownloadUri = ServletUriComponentsBuilder.fromCurrentContextPath()
+                    .path("user/downloadFile/")
+                    .path(fileName)
+                    .toUriString();
+            petDao.update(id, new Date(), fileDownloadUri, title, null);
+        } else if (title != null) {
+            petDao.update(id, new Date(), petEntity.getPhoto(), title, null);
+        } else {
+            LoggerFactory.getLogger("updateUserPhoto  ").info(null);
+            String fileName = fileStorageService.storeFile(photo);
+            LoggerFactory.getLogger("updateUser").info(fileName);
+            fileDownloadUri = ServletUriComponentsBuilder.fromCurrentContextPath()
+                    .path("user/downloadFile/")
+                    .path(fileName)
+                    .toUriString();
+            petDao.update(id, new Date(), fileDownloadUri, petEntity.getTitle(), null);
+        }
         data.clear();
         model.clear();
         model.put("code", 200);
-        model.put("message", "Pet with " + id + " updated");
-        model.put("pet", new Pet(petDao.getOne(id)));
+        model.put("message", "Pet with " + title + " updated.");
+        model.put("pet", new Pet(petDao.getOne(petEntity.getId())));
         data.put("data", model);
         return ResponseEntity.ok(data);
+
     }
 }
