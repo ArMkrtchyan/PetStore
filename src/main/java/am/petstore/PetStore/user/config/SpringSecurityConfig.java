@@ -40,6 +40,7 @@ public class SpringSecurityConfig extends WebSecurityConfigurerAdapter {
                 .antMatchers("/user/signup").permitAll()
                 .antMatchers("/user/downloadFile/*").permitAll()
                 .antMatchers("/user/device").permitAll()
+                .antMatchers("/user/device/free").permitAll()
                 .antMatchers(HttpMethod.GET, "/pets/findAll",
                         "/store/findAll",
                         "/product/findAll",
