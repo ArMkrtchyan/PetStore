@@ -20,30 +20,41 @@ class CategoryEntity {
     @LastModifiedDate
     var updatedAt: Date? = null
     @Column
-    var name: String? = null
+    var title: String? = null
     @Column(name = "photo")
     var photo: String? = null
     @Temporal(TemporalType.TIMESTAMP)
     @Column(name = "deleted_at")
     var deletedAt: Date? = null
+    @Column
+    var categoryId: Long? = null
+    @Column
+    var petId: Long? = null
 
     constructor() {}
-    constructor(createdAt: Date?, updatedAt: Date?, name: String?, photo: String?) {
+    constructor(id: Long?, createdAt: Date?, updatedAt: Date?, title: String?, photo: String?, deletedAt: Date?, categoryId: Long?, petId: Long?) {
+        this.id = id
         this.createdAt = createdAt
         this.updatedAt = updatedAt
-        this.name = name
+        this.title = title
         this.photo = photo
+        this.deletedAt = deletedAt
+        this.petId = petId
+        this.categoryId = categoryId
+    }
+
+    constructor(createdAt: Date?, updatedAt: Date?, title: String?, photo: String?, categoryId: Long?, petId: Long?) {
+        this.createdAt = createdAt
+        this.updatedAt = updatedAt
+        this.title = title
+        this.photo = photo
+        this.petId = petId
+        this.categoryId = categoryId
     }
 
     override fun toString(): String {
-        return "CategoryEntity{" +
-                "id=" + id +
-                ", createdAt=" + createdAt +
-                ", updatedAt=" + updatedAt +
-                ", deletedAt=" + deletedAt +
-                ", name='" + name + '\'' +
-                ", photo='" + photo + '\'' +
-                '}'
+        return "CategoryEntity(id=$id, createdAt=$createdAt, updatedAt=$updatedAt, title=$title, photo=$photo, deletedAt=$deletedAt, categoryId=$categoryId, petId=$petId)"
     }
+
 
 }
