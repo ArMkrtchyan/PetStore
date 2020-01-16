@@ -1,5 +1,6 @@
 package am.petstore.PetStore.pets.service
 
+import am.petstore.PetStore.Utils
 import am.petstore.PetStore.pets.dao.PetDao
 import am.petstore.PetStore.pets.entity.PetEntity
 import am.petstore.PetStore.pets.model.Pet
@@ -54,16 +55,8 @@ class PetService @Autowired constructor(private val petDao: PetDao, private val 
                 update(petDao.findByTitle(title)?.id!!, photo, title)
             }
         } else {
-            var fileDownloadUri = ""
-            LoggerFactory.getLogger("updateUserPhoto  ").info(null)
-            val fileName = fileStorageService!!.storeFile(photo)
-            LoggerFactory.getLogger("updateUser").info(fileName)
-            fileDownloadUri = ServletUriComponentsBuilder.fromCurrentContextPath()
-                    .path("user/downloadFile/")
-                    .path(fileName)
-                    .toUriString()
-            val petEntity = PetEntity(Date(), Date(), title, fileDownloadUri)
-            petDao!!.saveAndFlush(petEntity)
+            val petEntity = PetEntity(Date(), Date(), title, Utils.saveFile(fileStorageService,photo))
+            petDao.saveAndFlush(petEntity)
             data.clear()
             model.clear()
             model["code"] = 200
@@ -122,27 +115,12 @@ class PetService @Autowired constructor(private val petDao: PetDao, private val 
             data["data"] = model
             return ResponseEntity.badRequest().body(data)
         }
-        var fileDownloadUri = ""
         if (photo != null && title != null) {
-            LoggerFactory.getLogger("updateUserPhoto  ").info(null)
-            val fileName = fileStorageService!!.storeFile(photo)
-            LoggerFactory.getLogger("updateUser").info(fileName)
-            fileDownloadUri = ServletUriComponentsBuilder.fromCurrentContextPath()
-                    .path("user/downloadFile/")
-                    .path(fileName)
-                    .toUriString()
-            petDao.update(id, Date(), fileDownloadUri, title, null)
+            petDao.update(id, Date(), Utils.saveFile(fileStorageService,photo), title, null)
         } else if (title != null) {
             petDao.update(id, Date(), petEntity.photo, title, null)
         } else {
-            LoggerFactory.getLogger("updateUserPhoto  ").info(null)
-            val fileName = fileStorageService.storeFile(photo!!)
-            LoggerFactory.getLogger("updateUser").info(fileName)
-            fileDownloadUri = ServletUriComponentsBuilder.fromCurrentContextPath()
-                    .path("user/downloadFile/")
-                    .path(fileName)
-                    .toUriString()
-            petDao.update(id, Date(), fileDownloadUri, petEntity.title, null)
+            petDao.update(id, Date(), Utils.saveFile(fileStorageService,photo), petEntity.title, null)
         }
         data.clear()
         model.clear()

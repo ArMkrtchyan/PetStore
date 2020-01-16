@@ -1,7 +1,10 @@
 package am.petstore.PetStore
 
+import am.petstore.PetStore.user.service.FileStorageService
 import org.slf4j.LoggerFactory
 import org.springframework.http.ResponseEntity
+import org.springframework.web.multipart.MultipartFile
+import org.springframework.web.servlet.support.ServletUriComponentsBuilder
 import java.util.*
 
 object Utils {
@@ -18,5 +21,13 @@ object Utils {
         model["code"] = 400
         model["message"] = "User not found"
         return ResponseEntity.badRequest().body(model)
+    }
+
+    fun saveFile(fileStorageService: FileStorageService, photo: MultipartFile?): String {
+        val fileName = fileStorageService.storeFile(photo!!)
+        return ServletUriComponentsBuilder.fromCurrentContextPath()
+                .path("user/downloadFile/")
+                .path(fileName)
+                .toUriString()
     }
 }

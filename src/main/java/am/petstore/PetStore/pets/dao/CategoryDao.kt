@@ -15,7 +15,7 @@ import java.util.*
 @Transactional
 interface CategoryDao : JpaRepository<CategoryEntity?, Long?> {
     fun findByTitle(title: String?): CategoryEntity?
-    fun findByCategoryId(categoryId: Long?): MutableList<CategoryEntity?>
+    fun findByPetIdAndAndCategoryId(petId: Long, categoryId: Long, by: Sort): MutableList<CategoryEntity?>
     fun findByPetId(petId: Long, by: Sort): MutableList<CategoryEntity?>
     fun existsByTitle(title: String?): Boolean
     @Modifying(clearAutomatically = true)
@@ -23,9 +23,11 @@ interface CategoryDao : JpaRepository<CategoryEntity?, Long?> {
     fun delete(id: Long?, deletedAt: Date?)
 
     @Modifying(clearAutomatically = true)
-    @Query("update CategoryEntity category set category.updatedAt = ?2,category.photo = ?3,category.title = ?4,category.deletedAt = ?5 where category.id = ?1")
+    @Query("update CategoryEntity category set category.updatedAt = ?2,category.photo = ?3,category.title = ?4,category.deletedAt = ?5,category.petId = ?6, category.categoryId = ?7 where category.id = ?1")
     fun update(id: Long?, updatedAt: Date?,
                photo: String?,
                title: String?,
-               deletedAt: Date?)
+               deletedAt: Date?,
+               petId: Long,
+               categoryId: Long?)
 }

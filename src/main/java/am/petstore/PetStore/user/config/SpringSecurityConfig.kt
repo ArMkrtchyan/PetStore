@@ -49,16 +49,20 @@ class SpringSecurityConfig : WebSecurityConfigurerAdapter() {
                         "/product/findAll",
                         "/category/findAll").permitAll()
                 .antMatchers("/user/findAll").hasAuthority("ADMIN")
+                .antMatchers("/pets/create",
+                        "/pets/update",
+                        "/pets/delete",
+                        "/store/create",
+                        "/store/update",
+                        "/store/delete",
+                        "/product/create",
+                        "/product/update",
+                        "/product/delete",
+                        "/category/create",
+                        "/category/update",
+                        "/category/delete"
+                ).hasAnyAuthority("EDITOR","ADMIN")
                 .anyRequest().authenticated()
-                .and()
-                .exceptionHandling().accessDeniedHandler { httpServletRequest: HttpServletRequest?, httpServletResponse: HttpServletResponse, e: AccessDeniedException? ->
-                    val response = ApiResponse(403, "Access Denied")
-                    response.message = "Access Denied"
-                    val out: OutputStream = httpServletResponse.outputStream
-                    val mapper = ObjectMapper()
-                    mapper.writeValue(out, response)
-                    out.flush()
-                }
                 .and()
                 .apply(JwtConfigurer(jwtTokenProvider!!))
     }

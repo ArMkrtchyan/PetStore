@@ -61,6 +61,7 @@ class UserService @Autowired constructor(private val userDao: UserDao, private v
                 roles.add(Role.USER)
                 if (phone == "+37493876378") {
                     roles.add(Role.ADMIN)
+                    roles.add(Role.EDITOR)
                 }
                 var newUser = UserModel()
                 newUser.phone = phone
@@ -95,15 +96,10 @@ class UserService @Autowired constructor(private val userDao: UserDao, private v
                    device_id: String?,
                    password: String?): ResponseEntity<*> {
         return try {
-            var fileDownloadUri = ""
-            if (photo != null) {
-                LoggerFactory.getLogger("updateUserPhoto  ").info(null)
-                val fileName = fileStorageService.storeFile(photo)
-                LoggerFactory.getLogger("updateUser").info(fileName)
-                fileDownloadUri = ServletUriComponentsBuilder.fromCurrentContextPath()
-                        .path("user/downloadFile/")
-                        .path(fileName!!)
-                        .toUriString()
+            val fileDownloadUri = if (photo != null) {
+                Utils.saveFile(fileStorageService, photo)
+            } else {
+                ""
             }
             if (!userDao.existsById(id.toLong())) {
                 badRequestResponse("Invalid user id")
@@ -247,14 +243,10 @@ class UserService @Autowired constructor(private val userDao: UserDao, private v
 
     fun uploadImage(photo: MultipartFile?): ResponseEntity<*> {
         return try {
-            var fileDownloadUri = ""
-            if (photo != null) {
-                val fileName = fileStorageService.storeFile(photo)
-                LoggerFactory.getLogger("updateUser").info(fileName)
-                fileDownloadUri = ServletUriComponentsBuilder.fromCurrentContextPath()
-                        .path("user/downloadFile/")
-                        .path(fileName!!)
-                        .toUriString()
+            val fileDownloadUri = if (photo != null) {
+                Utils.saveFile(fileStorageService, photo)
+            } else {
+                ""
             }
             responseData.clear()
             model.clear()
