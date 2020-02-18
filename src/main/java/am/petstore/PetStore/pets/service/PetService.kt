@@ -6,13 +6,11 @@ import am.petstore.PetStore.pets.entity.PetEntity
 import am.petstore.PetStore.pets.model.Pet
 import am.petstore.PetStore.user.service.FileStorageService
 import com.fasterxml.jackson.databind.ObjectMapper
-import org.slf4j.LoggerFactory
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.http.ResponseEntity
 import org.springframework.stereotype.Service
 import org.springframework.transaction.annotation.Transactional
 import org.springframework.web.multipart.MultipartFile
-import org.springframework.web.servlet.support.ServletUriComponentsBuilder
 import java.util.*
 import javax.persistence.EntityManager
 import javax.persistence.PersistenceContext
