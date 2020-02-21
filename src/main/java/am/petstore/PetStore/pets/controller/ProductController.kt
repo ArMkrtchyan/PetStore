@@ -18,8 +18,8 @@ class ProductController {
     }
 
     @GetMapping("/findAll")
-    fun findAll(): ResponseEntity<*> {
-        return service!!.findAll()
+    fun findAll(@RequestParam(value = "categoryId", required = false) categoryId: String?): ResponseEntity<*>? {
+        return service?.findAll(categoryId?.toInt())
     }
 
     @PostMapping("/delete")

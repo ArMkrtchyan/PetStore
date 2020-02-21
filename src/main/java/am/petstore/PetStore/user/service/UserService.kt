@@ -50,8 +50,8 @@ class UserService @Autowired constructor(private val userDao: UserDao, private v
                 val userResponse: MutableMap<Any, Any?> = HashMap()
                 userResponse["id"] = newUser.id
                 userResponse["phone"] = newUser.phone
-                model["code"] = 200
-                model["message"] = "Phone number is registered"
+                responseData["code"] = 200
+                responseData["message"] = "Phone number is registered"
                 model["user"] = userResponse
                 responseData["data"] = model
                 ResponseEntity.ok<Map<Any, Any>>(responseData)
@@ -72,8 +72,8 @@ class UserService @Autowired constructor(private val userDao: UserDao, private v
                 val userResponse: MutableMap<Any, Any?> = HashMap()
                 userResponse["id"] = newUser.id
                 userResponse["phone"] = newUser.phone
-                model["code"] = 200
-                model["message"] = "Phone number is registered"
+                responseData["code"] = 200
+                responseData["message"] = "Phone number is registered"
                 model["user"] = userResponse
                 responseData["data"] = model
                 ResponseEntity.ok<Map<Any, Any>>(responseData)
@@ -120,8 +120,8 @@ class UserService @Autowired constructor(private val userDao: UserDao, private v
                 manager.merge(newUser)
                 responseData.clear()
                 model.clear()
-                model["code"] = 200
-                model["message"] = "You are successfully registered"
+                responseData["code"] = 200
+                responseData["message"] = "You are successfully registered"
                 model["user"] = newUser
                 responseData["data"] = model
                 ResponseEntity.ok<Map<Any, Any>>(responseData)
@@ -145,8 +145,8 @@ class UserService @Autowired constructor(private val userDao: UserDao, private v
         user = userDao.findByPhone(newPhone)
         responseData.clear()
         model.clear()
-        model["code"] = 200
-        model["message"] = "Success"
+        responseData["code"] = 200
+        responseData["message"] = "Success"
         model["user"] = user
         responseData["data"] = model
         return ResponseEntity.ok<Map<Any, Any>>(responseData)
@@ -181,8 +181,8 @@ class UserService @Autowired constructor(private val userDao: UserDao, private v
         manager.merge(user)
         responseData.clear()
         model.clear()
-        model["code"] = 200
-        model["message"] = "Success"
+        responseData["code"] = 200
+        responseData["message"] = "Success"
         model["user"] = user
         model["token"] = token
         responseData["data"] = model
@@ -207,10 +207,8 @@ class UserService @Autowired constructor(private val userDao: UserDao, private v
             }
             manager.merge(user)
             responseData.clear()
-            model.clear()
-            model["code"] = 200
-            model["message"] = "User with id $id is sign out."
-            responseData["data"] = model
+            responseData["code"] = 200
+            responseData["message"] = "User with id $id is sign out."
             ResponseEntity.ok<Map<Any, Any>>(responseData)
         } catch (e: Exception) {
             badRequestResponse("Invalid data")
@@ -219,10 +217,8 @@ class UserService @Autowired constructor(private val userDao: UserDao, private v
 
     private fun badRequestResponse(message: String?): ResponseEntity<Map<Any, Any>> {
         responseData.clear()
-        model.clear()
-        model["code"] = 400
-        model["message"] = message
-        responseData["data"] = model
+        responseData["code"] = 400
+        responseData["message"] = message!!
         return ResponseEntity.badRequest().body(responseData)
     }
 
@@ -249,8 +245,8 @@ class UserService @Autowired constructor(private val userDao: UserDao, private v
             }
             responseData.clear()
             model.clear()
-            model["code"] = 200
-            model["message"] = "Success"
+            responseData["code"] = 200
+            responseData["message"] = "Success"
             model["photo"] = fileDownloadUri
             responseData["data"] = model
             ResponseEntity.ok<Map<Any, Any>>(responseData)

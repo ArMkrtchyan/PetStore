@@ -23,8 +23,8 @@ class StoreService(private val storeDao: StoreDao, private val mapper: ObjectMap
     fun create(@RequestBody jsonNode: JsonNode?): ResponseEntity<Map<Any, Any>> {
         data.clear()
         model.clear()
-        model["code"] = 200
-        model["message"] = "Success"
+        data["code"] = 200
+        data["message"] = "Success"
         model["store"] = Store()
         data["data"] = model
         return ResponseEntity.ok(data)
@@ -33,8 +33,8 @@ class StoreService(private val storeDao: StoreDao, private val mapper: ObjectMap
     fun findAll(): ResponseEntity<Map<Any, Any>> {
         data.clear()
         model.clear()
-        model["code"] = 200
-        model["message"] = "Success"
+        data["code"] = 200
+        data["message"] = "Success"
         model["store"] = Store()
         data["data"] = model
         return ResponseEntity.ok(data)
@@ -43,8 +43,8 @@ class StoreService(private val storeDao: StoreDao, private val mapper: ObjectMap
     fun delete(@RequestBody jsonNode: JsonNode?): ResponseEntity<Map<Any, Any>> {
         data.clear()
         model.clear()
-        model["code"] = 200
-        model["message"] = "Success"
+        data["code"] = 200
+        data["message"] = "Success"
         model["store"] = Store()
         data["data"] = model
         return ResponseEntity.ok(data)
@@ -53,8 +53,8 @@ class StoreService(private val storeDao: StoreDao, private val mapper: ObjectMap
     fun update(@RequestBody jsonNode: JsonNode?): ResponseEntity<Map<Any, Any>> {
         data.clear()
         model.clear()
-        model["code"] = 200
-        model["message"] = "Success"
+        data["code"] = 200
+        data["message"] = "Success"
         model["store"] = Store()
         data["data"] = model
         return ResponseEntity.ok(data)

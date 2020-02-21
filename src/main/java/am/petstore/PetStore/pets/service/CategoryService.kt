@@ -28,26 +28,23 @@ class CategoryService(private val categoryDao: CategoryDao, private val mapper: 
         if (photo == null) {
             data.clear()
             model.clear()
-            model["code"] = 400
-            model["message"] = "Field photo can't be null or empty."
-            data["data"] = model
+            data["code"] = 400
+            data["message"] = "Field photo can't be null or empty."
             return ResponseEntity.badRequest().body(data)
         }
         if (title == null) {
             data.clear()
             model.clear()
-            model["code"] = 400
-            model["message"] = "Field title can't be null or empty."
-            data["data"] = model
+            data["code"] = 400
+            data["message"] = "Field title can't be null or empty."
             return ResponseEntity.badRequest().body(data)
         }
         return if (categoryDao.existsByTitle(title)) {
             if (categoryDao.findByTitle(title)?.deletedAt == null) {
                 data.clear()
                 model.clear()
-                model["code"] = 400
-                model["message"] = "Category with $title already exist."
-                data["data"] = model
+                data["code"] = 400
+                data["message"] = "Category with $title already exist."
                 ResponseEntity.badRequest().body<Map<Any, Any>>(data)
             } else {
                 update(categoryDao.findByTitle(title)?.id!!, photo, title, categoryId, petId)
@@ -57,8 +54,8 @@ class CategoryService(private val categoryDao: CategoryDao, private val mapper: 
             categoryDao.saveAndFlush(categoryEntity)
             data.clear()
             model.clear()
-            model["code"] = 200
-            model["message"] = "Created"
+            data["code"] = 200
+            data["message"] = "Created"
             model["category"] = Category(categoryDao.findAll()[categoryDao.findAll().size - 1]!!)
             data["data"] = model
             ResponseEntity.ok(data)
@@ -86,8 +83,8 @@ class CategoryService(private val categoryDao: CategoryDao, private val mapper: 
         }
         data.clear()
         model.clear()
-        model["code"] = 200
-        model["message"] = "Success"
+        data["code"] = 200
+        data["message"] = "Success"
         model["categories"] = categories
         data["data"] = model
         return ResponseEntity.ok(data)
@@ -98,8 +95,8 @@ class CategoryService(private val categoryDao: CategoryDao, private val mapper: 
         categoryDao.delete(id, Date())
         data.clear()
         model.clear()
-        model["code"] = 200
-        model["message"] = "Category with $id deleted"
+        data["code"] = 200
+        data["message"] = "Category with $id deleted"
         model["category"] = Category(categoryDao.getOne(id))
         data["data"] = model
         return ResponseEntity.ok(data)
@@ -109,26 +106,20 @@ class CategoryService(private val categoryDao: CategoryDao, private val mapper: 
         val categoryEntity = categoryDao.getOne(id)
         if (categoryEntity == null) {
             data.clear()
-            model.clear()
-            model["code"] = 400
+            data["code"] = 400
             model["message"] = "Category with $id not found."
-            data["data"] = model
             return ResponseEntity.badRequest().body(data)
         }
         if (photo == null && title == null) {
             data.clear()
-            model.clear()
-            model["code"] = 400
-            model["message"] = "Wrong sent data. Fields \"photo\" and \"title\" could not be null at same time"
-            data["data"] = model
+            data["code"] = 400
+            data["message"] = "Wrong sent data. Fields \"photo\" and \"title\" could not be null at same time"
             return ResponseEntity.badRequest().body(data)
         }
         if (petId == null) {
             data.clear()
-            model.clear()
-            model["code"] = 400
-            model["message"] = "Wrong sent data. Fields \"petId\" could not be null"
-            data["data"] = model
+            data["code"] = 400
+            data["message"] = "Wrong sent data. Fields \"petId\" could not be null"
             return ResponseEntity.badRequest().body(data)
         }
         if (photo != null && title != null) {
@@ -140,8 +131,8 @@ class CategoryService(private val categoryDao: CategoryDao, private val mapper: 
         }
         data.clear()
         model.clear()
-        model["code"] = 200
-        model["message"] = "Category with $title updated."
+        data["code"] = 200
+        data["message"] = "Category with $title updated."
         model["category"] = Category(categoryDao.getOne(categoryEntity.id!!))
         data["data"] = model
         return ResponseEntity.ok(data)
