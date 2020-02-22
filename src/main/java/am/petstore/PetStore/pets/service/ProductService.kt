@@ -28,7 +28,7 @@ class ProductService @Autowired constructor(private val productDao: ProductDao, 
             productDao.saveAndFlush(ProductEntity(
                     Date(), Date(), null, "Product ${i}", "http://192.168.0.120:8080/user/downloadFile/Dog.png",
                     "Producer name",
-                    "http://192.168.0.120:8080/user/downloadFile/Dog.png",
+                    "http://192.168.0.100:8080/user/downloadFile/Dog.png",
                     "Blue",
                     "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. ",
                     3.54, 1.5, 5, 1, 2000, 50, 4000

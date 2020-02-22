@@ -1,0 +1,4 @@
+-------------------------------------------------------------------------------
+Test set: am.petstore.PetStore.PetStoreApplicationTests
+-------------------------------------------------------------------------------
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 41.593 s - in am.petstore.PetStore.PetStoreApplicationTests

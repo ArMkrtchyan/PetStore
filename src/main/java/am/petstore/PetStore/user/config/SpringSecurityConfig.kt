@@ -42,6 +42,8 @@ class SpringSecurityConfig : WebSecurityConfigurerAdapter() {
                         "/store/findAll",
                         "/product/findAll",
                         "/category/findAll").permitAll()
+                .antMatchers(HttpMethod.POST,
+                        "/product/create").permitAll()
                 .antMatchers("/user/findAll").hasAuthority("ADMIN")
                 .antMatchers("/pets/create",
                         "/pets/update",
@@ -49,7 +51,6 @@ class SpringSecurityConfig : WebSecurityConfigurerAdapter() {
                         "/store/create",
                         "/store/update",
                         "/store/delete",
-                        "/product/create",
                         "/product/update",
                         "/product/delete",
                         "/category/create",
