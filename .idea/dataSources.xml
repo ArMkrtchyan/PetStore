@@ -7,5 +7,11 @@
       <jdbc-driver>org.postgresql.Driver</jdbc-driver>
       <jdbc-url>jdbc:postgresql://localhost:5432/PetStore</jdbc-url>
     </data-source>
+    <data-source source="LOCAL" name="Heroku" uuid="a914dbbf-6d6e-4f1a-9efd-1bde2da79735">
+      <driver-ref>postgresql</driver-ref>
+      <synchronize>true</synchronize>
+      <jdbc-driver>org.postgresql.Driver</jdbc-driver>
+      <jdbc-url>jdbc:postgresql://ec2-46-137-84-173.eu-west-1.compute.amazonaws.com:5432/de83nrmi2obshj</jdbc-url>
+    </data-source>
   </component>
 </project>
