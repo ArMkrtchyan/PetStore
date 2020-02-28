@@ -41,7 +41,7 @@ class ProductEntity {
     @Column(name = "color")
     var color: String? = null
 
-    @Column(name = "description")
+    @Column(name = "description",length = 5000)
     var description: String? = null
 
     @Column(name = "weight")
