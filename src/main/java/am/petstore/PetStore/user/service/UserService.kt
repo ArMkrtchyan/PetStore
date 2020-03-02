@@ -41,15 +41,15 @@ class UserService @Autowired constructor(private val userDao: UserDao, private v
             val phone = node["data"]["phone"].asText("-1")
             LoggerFactory.getLogger("registerPhoneNumber").info(phone)
             val user = userDao.findByPhone(phone)
-            if (user != null && user.email != null && user.email != "") {
+            if (user?.email != null && user.email != "") {
                 badRequestResponse("$phone is registered. Please sign in or register with other phone number.")
-            } else if (user != null && user.phone != null) {
+            } else if (user?.phone != null) {
                 val newUser = userDao.findByPhone(phone)
                 responseData.clear()
                 model.clear()
                 val userResponse: MutableMap<Any, Any?> = HashMap()
-                userResponse["id"] = newUser.id
-                userResponse["phone"] = newUser.phone
+                userResponse["id"] = newUser?.id
+                userResponse["phone"] = newUser?.phone
                 responseData["code"] = 200
                 responseData["message"] = "Phone number is registered"
                 model["user"] = userResponse
@@ -66,7 +66,7 @@ class UserService @Autowired constructor(private val userDao: UserDao, private v
                 newUser.phone = phone
                 newUser.roles = roles
                 userDao.saveAndFlush(newUser)
-                newUser = userDao.findByPhone(phone)
+                newUser = userDao.findByPhone(phone)!!
                 responseData.clear()
                 model.clear()
                 val userResponse: MutableMap<Any, Any?> = HashMap()
@@ -141,7 +141,7 @@ class UserService @Autowired constructor(private val userDao: UserDao, private v
         if (checkUser != null) {
             return badRequestResponse("$phone is registered. Please sign in or register with other phone number.")
         }
-        userDao.updateUserPhone(user.id, newPhone, Date())
+        userDao.updateUserPhone(user?.id, newPhone, Date())
         user = userDao.findByPhone(newPhone)
         responseData.clear()
         model.clear()
@@ -164,18 +164,19 @@ class UserService @Autowired constructor(private val userDao: UserDao, private v
             Utils.showErrorLog(this.javaClass.name, e.message)
             return badRequestResponse(e.message)
         }
-        val token = jwtTokenProvider.createToken(userDao.findByPhone(phone).phone
-                , userDao.findByPhone(phone).authorities)
+        val token = jwtTokenProvider.createToken(userDao.findByPhone(phone)?.phone
+                , userDao.findByPhone(phone)?.authorities)
         val user = userDao.findByPhone(phone)
         val device = deviceDao.findByUid(device_id)
         LoggerFactory.getLogger("devices").info(device.toString())
-        val devices = user.devices
-        for (device1 in user.devices!!) {
+        val devices = user?.devices
+        for (device1 in devices!!) {
             if (device1?.uid == device?.uid) {
-                devices!!.remove(device1)
+                devices.remove(device1)
+                break
             }
         }
-        devices!!.add(device)
+        devices.add(device)
         LoggerFactory.getLogger("devices").info(devices.toString())
         user.devices = devices
         manager.merge(user)

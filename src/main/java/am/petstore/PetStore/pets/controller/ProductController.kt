@@ -2,10 +2,6 @@ package am.petstore.PetStore.pets.controller
 
 import am.petstore.PetStore.pets.service.ProductService
 import com.fasterxml.jackson.databind.JsonNode
-import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.GlobalScope
-import kotlinx.coroutines.async
-import kotlinx.coroutines.launch
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.http.ResponseEntity
 import org.springframework.web.bind.annotation.*

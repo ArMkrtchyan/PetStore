@@ -1,6 +1,8 @@
 package am.petstore.PetStore.pets.dao
 
 import am.petstore.PetStore.pets.entity.PetEntity
+import kotlinx.coroutines.flow.Flow
+import org.springframework.data.domain.Sort
 import org.springframework.data.jpa.repository.JpaRepository
 import org.springframework.data.jpa.repository.Modifying
 import org.springframework.data.jpa.repository.Query
@@ -13,6 +15,8 @@ import java.util.*
 @Repository
 @Transactional
 interface PetDao : JpaRepository<PetEntity?, Long?> {
+//    suspend fun findAllPets(by: Sort): Flow<PetEntity>
+
     fun findByTitle(title: String?): PetEntity?
     fun existsByTitle(title: String?): Boolean
     @Modifying(clearAutomatically = true)

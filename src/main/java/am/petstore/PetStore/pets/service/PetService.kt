@@ -6,6 +6,14 @@ import am.petstore.PetStore.pets.entity.PetEntity
 import am.petstore.PetStore.pets.model.Pet
 import am.petstore.PetStore.user.service.FileStorageService
 import com.fasterxml.jackson.databind.ObjectMapper
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.FlowPreview
+import kotlinx.coroutines.coroutineScope
+import kotlinx.coroutines.flow.asFlow
+import kotlinx.coroutines.flow.collect
+import kotlinx.coroutines.flow.filter
+import kotlinx.coroutines.flow.map
+import kotlinx.coroutines.withContext
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.data.domain.Sort
 import org.springframework.http.ResponseEntity
@@ -13,6 +21,7 @@ import org.springframework.stereotype.Service
 import org.springframework.transaction.annotation.Transactional
 import org.springframework.web.multipart.MultipartFile
 import java.util.*
+import java.util.logging.Logger
 import javax.persistence.EntityManager
 import javax.persistence.PersistenceContext
 
@@ -30,7 +39,7 @@ class PetService @Autowired constructor(private val petDao: PetDao, private val 
             data.clear()
             model.clear()
             data["code"] = 400
-            data["message"] =  "Field photo can't be null or empty."
+            data["message"] = "Field photo can't be null or empty."
             data["data"] = model
             return ResponseEntity.badRequest().body(data)
         }
@@ -52,7 +61,7 @@ class PetService @Autowired constructor(private val petDao: PetDao, private val 
                 update(petDao.findByTitle(title)?.id!!, photo, title)
             }
         } else {
-            val petEntity = PetEntity(Date(), Date(), title, Utils.saveFile(fileStorageService,photo))
+            val petEntity = PetEntity(Date(), Date(), title, Utils.saveFile(fileStorageService, photo))
             petDao.saveAndFlush(petEntity)
             data.clear()
             model.clear()
@@ -65,21 +74,31 @@ class PetService @Autowired constructor(private val petDao: PetDao, private val 
     }
 
 
-    fun findAll(): ResponseEntity<Map<Any, Any>>? {
-        val pets: MutableList<Pet?> = ArrayList()
-        val petEntities = petDao.findAll(Sort.by("id"))
-        for (petEntity in petEntities) {
-            if (petEntity?.deletedAt == null) {
-                pets.add(Pet(petEntity!!))
+    @FlowPreview
+    suspend fun findAll(): ResponseEntity<MutableMap<Any, Any>> = coroutineScope {
+        withContext(Dispatchers.Default) {
+            val pets: MutableList<Pet?> = ArrayList()
+            val petEntities = petDao.findAll(Sort.by("id")).asFlow()
+            petEntities.filter {
+                Logger.getLogger("Pets").info("filter $it")
+                it?.deletedAt != null
+            }.map {
+                Logger.getLogger("Pets").info("map $it")
+                pets.add(Pet(it!!))
             }
+            petEntities.collect { petEntity ->
+                Logger.getLogger("Pets").info("collect $petEntity")
+                petEntity?.deletedAt ?: pets.add(Pet(petEntity!!))
+            }
+            Logger.getLogger("Pets").info("finish")
+            data.clear()
+            model.clear()
+            data["code"] = 200
+            data["message"] = "Success"
+            model["pets"] = pets
+            data["data"] = model
+            ResponseEntity.ok(data)
         }
-        data.clear()
-        model.clear()
-        data["code"] = 200
-        data["message"] = "Success"
-        model["pets"] = pets
-        data["data"] = model
-        return ResponseEntity.ok(data)
     }
 
 
@@ -111,11 +130,11 @@ class PetService @Autowired constructor(private val petDao: PetDao, private val 
             return ResponseEntity.badRequest().body(data)
         }
         if (photo != null && title != null) {
-            petDao.update(id, Date(), Utils.saveFile(fileStorageService,photo), title, null)
+            petDao.update(id, Date(), Utils.saveFile(fileStorageService, photo), title, null)
         } else if (title != null) {
             petDao.update(id, Date(), petEntity.photo, title, null)
         } else {
-            petDao.update(id, Date(), Utils.saveFile(fileStorageService,photo), petEntity.title, null)
+            petDao.update(id, Date(), Utils.saveFile(fileStorageService, photo), petEntity.title, null)
         }
         data.clear()
         model.clear()

@@ -16,9 +16,11 @@ import java.util.*
 @Repository
 @Transactional
 interface DeviceDao : JpaRepository<Device?, Long?> {
+
     fun findByUid(device_uid: String?): Device?
     fun existsByUid(device_uid: String?): Boolean
     fun findAllByUser(user: UserModel?): List<Device?>?
+
     @Modifying
     @Query("update Device device set device.app_version = ?2, device.first_install_date = ?3, device.language = ?4, device.model = ?5,device.platform = ?6, device.sdk_version = ?7, device.firebase_token = ?8,device.updatedAt = ?9 where device.uid = ?1")
     fun updateDeviceByUid(uid: String?,
@@ -29,7 +31,7 @@ interface DeviceDao : JpaRepository<Device?, Long?> {
                           platform: String?,
                           sdk_version: String?,
                           firebase_token: String?,
-                          updateed_at: Date?
+                          updatedAt: Date?
     )
 
     @Modifying

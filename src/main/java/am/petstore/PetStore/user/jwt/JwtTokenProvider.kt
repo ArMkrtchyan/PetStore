@@ -41,13 +41,13 @@ class JwtTokenProvider {
         val user = userDao!!.findByPhone(phone)
         val claims = Jwts.claims().setSubject(phone)
         claims["roles"] = roles
-        claims["id"] = user.id
-        claims["email"] = user.email
-        claims["phone"] = user.id
+        claims["id"] = user?.id
+        claims["email"] = user?.email
+        claims["phone"] = user?.id
         val now = Date()
         val validity = Date(now.time + validityInMilliseconds)
         return Jwts.builder() //
-                .setId(user.id.toString())
+                .setId(user?.id.toString())
                 .setClaims(claims) //
                 .signWith(SignatureAlgorithm.HS256, secretKey) //
                 .compact()

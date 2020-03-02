@@ -14,7 +14,7 @@ import java.util.*
 @Transactional
 interface UserDao : JpaRepository<UserModel?, Long?> {
     fun findByUsername(username: String?): UserModel?
-    fun findByPhone(phone: String?): UserModel
+    fun findByPhone(phone: String?): UserModel?
     fun findByEmail(email: String?): UserModel?
     @Modifying
     @Query("update UserModel user set user.fullname = ?2, user.password = ?3, user.email = ?4, user.birthday = ?5,user.gender = ?6, user.firebase_id = ?7,user.updatedAt = ?8,user.photo = ?9 where user.id = ?1")
