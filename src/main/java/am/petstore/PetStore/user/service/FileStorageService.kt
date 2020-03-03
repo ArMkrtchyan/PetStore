@@ -18,7 +18,9 @@ import java.nio.file.StandardCopyOption
 
 @Service
 class FileStorageService @Autowired constructor(fileStorageProperties: FileStorageProperties) {
-    private val fileStorageLocation: Path
+    private val fileStorageLocation: Path = Paths.get(fileStorageProperties.uploadDir!!)
+            .toAbsolutePath().normalize()
+
     fun storeFile(file: MultipartFile): String { // Normalize file name
         val fileName = StringUtils.cleanPath(file.originalFilename!!)
         return try { // Check if the file's name contains invalid characters
@@ -49,8 +51,6 @@ class FileStorageService @Autowired constructor(fileStorageProperties: FileStora
     }
 
     init {
-        fileStorageLocation = Paths.get(fileStorageProperties.uploadDir)
-                .toAbsolutePath().normalize()
         try {
             Files.createDirectories(fileStorageLocation)
         } catch (ex: Exception) {
