@@ -30,11 +30,11 @@ class ProductService @Autowired constructor(private val productDao: ProductDao, 
 
     suspend fun create(@RequestBody jsonNode: JsonNode?, request: HttpServletRequest): ResponseEntity<MutableMap<Any, Any>> = coroutineScope {
         withContext(Dispatchers.Default + Job()) {
-            for (i in 55 until 101) {
+            for (i in 20 until 100) {
                 productDao.saveAndFlush(ProductEntity(
-                        Date(), Date(), null, "Product $i", "http://192.168.0.120:8080/user/downloadFile/Dog.png",
+                        Date(), Date(), null, "Product $i", "http://192.168.0.102:8080/user/downloadFile/Dog.png",
                         "Producer name",
-                        "http://192.168.0.120:8080/user/downloadFile/Dog.png",
+                        "http://192.168.0.102:8080/user/downloadFile/Dog.png",
                         "Blue",
                         "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.\n" +
                                 "\n" +

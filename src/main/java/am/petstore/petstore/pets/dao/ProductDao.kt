@@ -14,7 +14,7 @@ import org.springframework.transaction.annotation.Transactional
 @Transactional
 interface ProductDao : JpaRepository<ProductEntity?, Long?> {
 
-    suspend fun findAllByCategoryId(categoryId: Int?, by: Sort): List<ProductEntity>
-    suspend fun findAllByCategoryId(categoryId: Int?): List<ProductEntity>
-    suspend fun findByCategoryId(categoryId: Int?, pageRequest: Pageable): Slice<ProductEntity>
+    fun findAllByCategoryId(categoryId: Int?, by: Sort): List<ProductEntity>
+    fun findAllByCategoryId(categoryId: Int?): List<ProductEntity>
+    fun findByCategoryId(categoryId: Int?, pageRequest: Pageable): Slice<ProductEntity>
 }

@@ -1,5 +1,6 @@
 package am.petstore.petstore.pets.dao
 
+
 import am.petstore.petstore.pets.entity.PetEntity
 import org.springframework.data.jpa.repository.JpaRepository
 import org.springframework.data.jpa.repository.Modifying
@@ -13,18 +14,17 @@ import java.util.*
 @Repository
 @Transactional
 interface PetDao : JpaRepository<PetEntity?, Long?> {
-//    suspend fun findAllPets(by: Sort): Flow<PetEntity>
+    fun findByTitle(title: String): PetEntity?
+    fun existsByTitle(title: String): Boolean
 
-    fun findByTitle(title: String?): PetEntity?
-    fun existsByTitle(title: String?): Boolean
     @Modifying(clearAutomatically = true)
     @Query("update PetEntity pet set pet.deletedAt = ?2 where pet.id = ?1")
-    fun delete(id: Long?, deletedAt: Date?)
+     fun delete(id: Long?, deletedAt: Date?)
 
     @Modifying(clearAutomatically = true)
     @Query("update PetEntity pet set pet.updatedAt = ?2,pet.photo = ?3,pet.title = ?4,pet.deletedAt = ?5 where pet.id = ?1")
-    fun update(id: Long?, updatedAt: Date?,
-               photo: String?,
-               title: String?,
-               deletedAt: Date?)
+     fun update(id: Long?, updatedAt: Date?,
+                       photo: String?,
+                       title: String?,
+                       deletedAt: Date?)
 }

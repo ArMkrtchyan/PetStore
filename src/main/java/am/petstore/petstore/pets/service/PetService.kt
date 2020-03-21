@@ -75,13 +75,6 @@ class PetService @Autowired constructor(private val petDao: PetDao, private val 
     suspend fun findAll(): ResponseEntity<MutableMap<Any, Any>> {
         val pets: MutableList<Pet?> = ArrayList()
         val petEntities = withContext(Dispatchers.Default + Job()) { petDao.findAll(Sort.by("id")) }.asFlow()
-        petEntities.filter {
-            Logger.getLogger("Pets").info("filter $it")
-            it?.deletedAt != null
-        }.map {
-            Logger.getLogger("Pets").info("map $it")
-            pets.add(Pet(it!!))
-        }
         petEntities.collect { petEntity ->
             Logger.getLogger("Pets").info("collect $petEntity")
             petEntity?.deletedAt ?: pets.add(Pet(petEntity!!))
@@ -109,14 +102,14 @@ class PetService @Autowired constructor(private val petDao: PetDao, private val 
     }
 
 
-    suspend fun update(id: Long, photo: MultipartFile?, title: String?, request: HttpServletRequest): ResponseEntity<MutableMap<Any, Any>> = withContext(Dispatchers.Default + Job()) {
-        val petEntity = petDao.getOne(id)
-        if (petEntity == null) {
+    suspend fun update(id: Long, photo: MultipartFile?, title: String?, request: HttpServletRequest): ResponseEntity<MutableMap<Any, Any>> {
+        val petEntity = withContext(Dispatchers.Default + Job()) { petDao.getOne(id) }
+        if (withContext(Dispatchers.Default + Job()) { !petDao.existsById(id) }) {
             data.clear()
             model.clear()
             data["code"] = 400
             data["message"] = "Pet with $id not found."
-            ResponseEntity.badRequest().body(data)
+            return ResponseEntity.badRequest().body(data)
         }
         if (photo == null && title == null) {
             data.clear()
@@ -126,18 +119,20 @@ class PetService @Autowired constructor(private val petDao: PetDao, private val 
             ResponseEntity.badRequest().body(data)
         }
         if (photo != null && title != null) {
-            petDao.update(id, Date(), Utils.saveFile(fileStorageService, photo, request), title, null)
+            withContext(Dispatchers.Default + Job()) { petDao.update(id, Date(), Utils.saveFile(fileStorageService, photo, request), title, null) }
         } else if (title != null) {
-            petDao.update(id, Date(), petEntity.photo, title, null)
+            withContext(Dispatchers.Default + Job()) { petDao.update(id, Date(), petEntity.photo, title, null) }
         } else {
-            petDao.update(id, Date(), Utils.saveFile(fileStorageService, photo, request), petEntity.title, null)
+            withContext(Dispatchers.Default + kotlinx.coroutines.Job()) {
+                petDao.update(id, Date(), Utils.saveFile(fileStorageService, photo, request), petEntity.title, null)
+            }
         }
         data.clear()
         model.clear()
         data["code"] = 200
         data["message"] = "Pet with $title updated."
-        model["pet"] = Pet(petDao.getOne(petEntity.id!!))
+        model["pet"] = Pet(withContext(Dispatchers.Default + Job()) { petDao.getOne(petEntity.id!!) })
         data["data"] = model
-        ResponseEntity.ok(data)
+        return ResponseEntity.ok(data)
     }
 }
