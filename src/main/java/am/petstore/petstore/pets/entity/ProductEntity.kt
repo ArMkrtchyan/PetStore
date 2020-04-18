@@ -1,5 +1,7 @@
 package am.petstore.petstore.pets.entity
 
+import am.petstore.petstore.user.entity.UserEntity
+import com.fasterxml.jackson.annotation.JsonIgnore
 import org.springframework.data.annotation.CreatedDate
 import org.springframework.data.annotation.LastModifiedDate
 import java.util.*
@@ -41,7 +43,7 @@ class ProductEntity {
     @Column(name = "color")
     var color: String? = null
 
-    @Column(name = "description",length = 5000)
+    @Column(name = "description", length = 5000)
     var description: String? = null
 
     @Column(name = "weight")
@@ -65,8 +67,12 @@ class ProductEntity {
     @Column(name = "old_price")
     var oldPrice: Int? = null
 
+    @ManyToMany(cascade = [CascadeType.ALL], fetch = FetchType.EAGER)
+    @JsonIgnore
+    var users: MutableSet<UserEntity>? = null
+
     constructor() {}
-    constructor(createdAt: Date?, updatedAt: Date?, deletedAt: Date?, title: String?, photo: String?, producerName: String?, producerPhoto: String?, color: String?, description: String?, weight: Double?, length: Double?, categoryId: Int?, petId: Int?, price: Int?, discount: Int?, oldPrice: Int?) {
+    constructor(createdAt: Date?, updatedAt: Date?, deletedAt: Date?, title: String?, photo: String?, producerName: String?, producerPhoto: String?, color: String?, description: String?, weight: Double?, length: Double?, categoryId: Int?, petId: Int?, price: Int?, discount: Int?, oldPrice: Int?, users: MutableSet<UserEntity>?) {
         this.createdAt = createdAt
         this.updatedAt = updatedAt
         this.deletedAt = deletedAt
@@ -83,10 +89,11 @@ class ProductEntity {
         this.price = price
         this.discount = discount
         this.oldPrice = oldPrice
+        this.users = users
     }
 
     override fun toString(): String {
-        return "ProductEntity(id=$id, createdAt=$createdAt, updatedAt=$updatedAt, deletedAt=$deletedAt, title=$title, photo=$photo, producerName=$producerName, producerPhoto=$producerPhoto, color=$color, description=$description, weight=$weight, length=$length, categoryId=$categoryId, petId=$petId, price=$price, discount=$discount, oldPrice=$oldPrice)"
+        return "ProductEntity(id=$id, createdAt=$createdAt, updatedAt=$updatedAt, deletedAt=$deletedAt, title=$title, photo=$photo, producerName=$producerName, producerPhoto=$producerPhoto, color=$color, description=$description, weight=$weight, length=$length, categoryId=$categoryId, petId=$petId, price=$price, discount=$discount, oldPrice=$oldPrice, users=$users)"
     }
 
 

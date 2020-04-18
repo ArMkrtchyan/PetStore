@@ -14,7 +14,6 @@ import org.springframework.transaction.annotation.Transactional
 import java.util.*
 import javax.persistence.EntityManager
 import javax.persistence.EntityManagerFactory
-import javax.persistence.PersistenceContext
 
 @Service
 @Transactional
@@ -29,16 +28,16 @@ class DeviceService @Autowired constructor(private val deviceDao: DeviceDao, pri
         return try {
             var device = mapper.readValue(jsonNode["data"].toString(), Device::class.java)
             val uid = device.uid
-            val installDate = device.first_install_date
+            val installDate = device.firstInstallDate
             log.info(device.toString())
             if (deviceDao.existsByUid(uid)) {
                 withContext(Dispatchers.Default) {
-                    deviceDao.updateDeviceByUid(uid, device.app_version, device.first_install_date, device.language,
-                            device.model, device.platform, device.sdk_version, device.firebase_token, Date())
+                    deviceDao.updateDeviceByUid(uid, device.appVersion, device.firstInstallDate, device.language,
+                            device.model, device.platform, device.sdkVersion, device.firebaseToken, Date())
                 }
                 device = withContext(Dispatchers.Default) { deviceDao.findByUid(uid) }
                 LoggerFactory.getLogger("UpdateDevice").info(device.toString())
-                val installDates = device.install_dates
+                val installDates = device.installDates
                 var a = false
                 for (install in installDates!!) {
                     if (install == installDate) {
@@ -49,16 +48,18 @@ class DeviceService @Autowired constructor(private val deviceDao: DeviceDao, pri
                 if (!a) {
                     installDates.add(installDate)
                 }
-                device.install_dates = installDates
+                device.installDates = installDates
                 withContext(Dispatchers.Default) {
                     entityManager = entityManagerFactory.createEntityManager()
                     entityManager.transaction.begin()
-                    entityManager.merge(device) }
+                    entityManager.merge(device)
+                    entityManager.transaction.commit()
+                }
                 addOrUpdateDeviceOkResponse(device, "Updated")
             } else {
                 val installDates: MutableSet<String?> = HashSet()
                 installDates.add(installDate)
-                device.install_dates = installDates
+                device.installDates = installDates
                 withContext(Dispatchers.Default) { deviceDao.saveAndFlush(device!!) }
                 addOrUpdateDeviceOkResponse(device, "Created")
             }
@@ -76,7 +77,8 @@ class DeviceService @Autowired constructor(private val deviceDao: DeviceDao, pri
             withContext(Dispatchers.Default) {
                 entityManager = entityManagerFactory.createEntityManager()
                 entityManager.transaction.begin()
-                entityManager!!.merge(device) }
+                entityManager.merge(device)
+            }
             addOrUpdateDeviceOkResponse(device, "Success")
         } catch (e: Exception) {
             e.printStackTrace()

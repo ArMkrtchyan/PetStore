@@ -2,26 +2,23 @@ package am.petstore.petstore.user.jwt
 
 import am.petstore.petstore.user.dao.DeviceDao
 import am.petstore.petstore.user.dao.UserDao
-import am.petstore.petstore.user.entity.UserModel
+import am.petstore.petstore.user.entity.UserEntity
 import am.petstore.petstore.user.service.UserService
 import io.jsonwebtoken.JwtException
 import io.jsonwebtoken.Jwts
 import io.jsonwebtoken.SignatureAlgorithm
 import org.springframework.beans.factory.annotation.Autowired
-import org.springframework.beans.factory.annotation.Value
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken
 import org.springframework.security.core.Authentication
 import org.springframework.security.core.GrantedAuthority
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder
 import org.springframework.stereotype.Component
 import java.util.*
-import javax.annotation.PostConstruct
 import javax.servlet.http.HttpServletRequest
 
 @Component
 class JwtTokenProvider {
-    @Value("aslkjedomjlwsdk")
-    private var secretKey = "secret"
+    private var secretKey = "aslkjedomjlwsdk"
     private val validityInMilliseconds: Long = 360000000 // 1h
     @Autowired
     private val userDetailsService: UserService? = null
@@ -32,18 +29,13 @@ class JwtTokenProvider {
     @Autowired
     private val deviceDao: DeviceDao? = null
 
-    @PostConstruct
-    protected fun init() {
-        secretKey = Base64.getEncoder().encodeToString(secretKey.toByteArray())
-    }
-
     fun createToken(phone: String?, roles: Collection<GrantedAuthority?>?): String {
         val user = userDao!!.findByPhone(phone)
         val claims = Jwts.claims().setSubject(phone)
         claims["roles"] = roles
         claims["id"] = user?.id
         claims["email"] = user?.email
-        claims["phone"] = user?.id
+        claims["phone"] = user?.phone
         val now = Date()
         val validity = Date(now.time + validityInMilliseconds)
         return Jwts.builder() //
@@ -54,7 +46,7 @@ class JwtTokenProvider {
     }
 
     fun getAuthentication(token: String?): Authentication {
-        val userDetails = userDetailsService!!.loadUserByUsername(getPhone(token)) as UserModel
+        val userDetails = userDetailsService!!.loadUserByUsername(getPhone(token)) as UserEntity
         return UsernamePasswordAuthenticationToken(userDetails, "", userDetails.authorities)
     }
 

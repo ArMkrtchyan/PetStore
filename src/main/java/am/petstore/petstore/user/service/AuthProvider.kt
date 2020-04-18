@@ -1,6 +1,6 @@
 package am.petstore.petstore.user.service
 
-import am.petstore.petstore.user.entity.UserModel
+import am.petstore.petstore.user.entity.UserEntity
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.security.authentication.AuthenticationProvider
 import org.springframework.security.authentication.BadCredentialsException
@@ -16,7 +16,7 @@ class AuthProvider @Autowired constructor(private val bCryptPasswordEncoder: BCr
     override fun authenticate(authentication: Authentication): Authentication {
         val phone = authentication.name
         val password = authentication.credentials as String
-        val userModel = userService.loadUserByUsername(phone) as UserModel
+        val userModel = userService.loadUserByUsername(phone) as UserEntity
         return if (userModel != null && userModel.phone == phone) {
             if (!bCryptPasswordEncoder.matches(password, userModel.password)) {
                 throw BadCredentialsException("Wrong password")

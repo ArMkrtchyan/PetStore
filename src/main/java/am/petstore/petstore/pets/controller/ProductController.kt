@@ -51,11 +51,27 @@ class ProductController {
 
     @PostMapping("/delete")
     fun delete(@RequestBody jsonNode: JsonNode?): ResponseEntity<*> = runBlocking {
-         service!!.delete(jsonNode)
+        service!!.delete(jsonNode)
     }
 
     @PutMapping("/update")
     fun update(@RequestBody jsonNode: JsonNode?, request: HttpServletRequest): ResponseEntity<*> = runBlocking {
-         service!!.update(jsonNode,request)
+        service!!.update(jsonNode, request)
     }
+
+    @PostMapping("/addToFavorites/{id}")
+    fun addToFavorites(@PathVariable(name = "id") id: Int, request: HttpServletRequest): ResponseEntity<*> = runBlocking {
+        service!!.addToFavorites(id, request)
+    }
+
+    @PostMapping("/removeFromFavorites/{id}")
+    fun removeFromFavorites(@PathVariable(name = "id") id: Int, request: HttpServletRequest): ResponseEntity<*> = runBlocking {
+        service!!.removeFromFavorites(id, request)
+    }
+
+    @GetMapping("/favorites")
+    fun getFavorites(request: HttpServletRequest): ResponseEntity<*>? = runBlocking {
+        service?.getFavorites(request)
+    }
+
 }

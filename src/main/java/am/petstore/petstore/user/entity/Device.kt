@@ -18,52 +18,64 @@ class Device : Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     var id: Long? = null
+
     @Temporal(TemporalType.TIMESTAMP)
     @Column(name = "created_at", nullable = false, updatable = false)
     @CreatedDate
     var createdAt: Date? = null
+
     @Temporal(TemporalType.TIMESTAMP)
     @Column(name = "updated_at", nullable = false)
     @LastModifiedDate
     var updatedAt: Date? = null
+
     @ManyToOne
     @JoinColumn(name = "user_id")
     @JsonIgnore
-    var user: UserModel? = null
+    var user: UserEntity? = null
+
     @ElementCollection(targetClass = String::class, fetch = FetchType.EAGER)
     @CollectionTable(name = "device_installs", joinColumns = [JoinColumn(name = "device_id")])
-    var install_dates: MutableSet<String?>? = null
+    var installDates: MutableSet<String?>? = null
+
     @Column
-    var first_install_date: String? = null
+    var firstInstallDate: String? = null
+
     @Column
-    var firebase_token: String? = null
+    var firebaseToken: String? = null
+
     @Column
     var uid: @NotNull String? = null
+
     @Column
     var language: String? = null
+
     @Column
     var model: String? = null
+
     @Column
     var platform: String? = null
+
     @Column
-    var sdk_version: String? = null
+    var sdkVersion: String? = null
+
     @Column
-    var app_version: String? = null
+    var appVersion: String? = null
 
     constructor() {}
-    constructor(createdAt: Date?, updatedAt: Date?, user: UserModel?, install_dates: MutableSet<String?>?, first_install_date: String?, firebase_token: String?, device_id: @NotNull String?, language: String?, model: String?, platform: String?, sdk_version: String?, app_version: String?) {
+    constructor(createdAt: Date?, updatedAt: Date?, user: UserEntity?, install_dates: MutableSet<String?>?, first_install_date: String?, firebase_token: String?, device_id: @NotNull String?, language: String?, model: String?, platform: String?, sdk_version: String?, app_version: String?) {
         this.createdAt = createdAt
         this.updatedAt = updatedAt
         this.user = user
-        this.install_dates = install_dates
-        this.first_install_date = first_install_date
-        this.firebase_token = firebase_token
+        this.installDates = install_dates
+        this.firstInstallDate = first_install_date
+        this.firebaseToken = firebase_token
         uid = device_id
         this.language = language
         this.model = model
         this.platform = platform
-        this.sdk_version = sdk_version
-        this.app_version = app_version
+        this.sdkVersion = sdk_version
+        this.appVersion = app_version
     }
 
     override fun toString(): String {
@@ -71,15 +83,15 @@ class Device : Serializable {
                 "id=" + id +
                 ", createdAt=" + createdAt +
                 ", updatedAt=" + updatedAt +
-                ", install_dates=" + install_dates +
-                ", first_install_date='" + first_install_date + '\'' +
-                ", firebase_token='" + firebase_token + '\'' +
+                ", install_dates=" + installDates +
+                ", first_install_date='" + firstInstallDate + '\'' +
+                ", firebase_token='" + firebaseToken + '\'' +
                 ", uid='" + uid + '\'' +
                 ", language='" + language + '\'' +
                 ", model='" + model + '\'' +
                 ", platform='" + platform + '\'' +
-                ", sdk_version='" + sdk_version + '\'' +
-                ", app_version='" + app_version + '\'' +
+                ", sdk_version='" + sdkVersion + '\'' +
+                ", app_version='" + appVersion + '\'' +
                 '}'
     }
 }

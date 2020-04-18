@@ -5,9 +5,10 @@ import am.petstore.petstore.user.dao.DeviceDao
 import am.petstore.petstore.user.dao.UserDao
 import am.petstore.petstore.user.entity.Device
 import am.petstore.petstore.user.entity.Role
-import am.petstore.petstore.user.entity.UserModel
+import am.petstore.petstore.user.entity.UserEntity
 import am.petstore.petstore.user.exceptions.FileStorageException
 import am.petstore.petstore.user.jwt.JwtTokenProvider
+import am.petstore.petstore.user.model.UserResponse
 import com.fasterxml.jackson.databind.JsonNode
 import com.fasterxml.jackson.databind.ObjectMapper
 import kotlinx.coroutines.Dispatchers
@@ -66,7 +67,7 @@ class UserService @Autowired constructor(private val userDao: UserDao, private v
                     roles.add(Role.ADMIN)
                     roles.add(Role.EDITOR)
                 }
-                var newUser = UserModel()
+                var newUser = UserEntity()
                 newUser.phone = phone
                 newUser.roles = roles
                 withContext(Dispatchers.Default) { userDao.saveAndFlush(newUser) }
@@ -127,12 +128,13 @@ class UserService @Autowired constructor(private val userDao: UserDao, private v
                     entityManager = entityManagerFactory.createEntityManager()
                     entityManager.transaction.begin()
                     entityManager.merge(newUser)
+                    entityManager.transaction.commit()
                 }
                 responseData.clear()
                 model.clear()
                 responseData["code"] = 200
                 responseData["message"] = "You are successfully registered"
-                model["user"] = newUser
+                model["user"] =  UserResponse(newUser)
                 responseData["data"] = model
                 ResponseEntity.ok<Map<Any, Any>>(responseData)
             }
@@ -157,7 +159,7 @@ class UserService @Autowired constructor(private val userDao: UserDao, private v
         model.clear()
         responseData["code"] = 200
         responseData["message"] = "Success"
-        model["user"] = user
+        model["user"] =  UserResponse(user!!)
         responseData["data"] = model
         return ResponseEntity.ok<Map<Any, Any>>(responseData)
     }
@@ -194,12 +196,13 @@ class UserService @Autowired constructor(private val userDao: UserDao, private v
             entityManager = entityManagerFactory.createEntityManager()
             entityManager.transaction.begin()
             entityManager.merge(user)
+            entityManager.transaction.commit()
         }
         responseData.clear()
         model.clear()
         responseData["code"] = 200
         responseData["message"] = "Success"
-        model["user"] = user
+        model["user"] = UserResponse(user)
         model["token"] = token
         responseData["data"] = model
         return ResponseEntity.ok<Map<Any, Any>>(responseData)
@@ -225,6 +228,7 @@ class UserService @Autowired constructor(private val userDao: UserDao, private v
                 entityManager = entityManagerFactory.createEntityManager()
                 entityManager.transaction.begin()
                 entityManager.merge(user)
+                entityManager.transaction.commit()
             }
             responseData.clear()
             responseData["code"] = 200

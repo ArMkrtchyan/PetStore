@@ -1,6 +1,6 @@
 package am.petstore.petstore.order.entity
 
-import am.petstore.petstore.user.entity.UserModel
+import am.petstore.petstore.user.entity.UserEntity
 import com.fasterxml.jackson.annotation.JsonIgnore
 import org.springframework.data.annotation.CreatedDate
 import org.springframework.data.annotation.LastModifiedDate
@@ -26,7 +26,7 @@ class OrderEntity {
     @ManyToOne
     @JoinColumn(name = "user_id")
     @JsonIgnore
-    var user: UserModel? = null
+    var user: UserEntity? = null
 
     constructor() {}
     constructor(createdAt: Date?, updatedAt: Date?, name: String?) {
