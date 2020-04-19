@@ -11,7 +11,7 @@ import org.springframework.transaction.annotation.EnableTransactionManagement
 @SpringBootApplication
 @EnableJpaAuditing
 @EnableTransactionManagement
-@EnableConfigurationProperties(  
+@EnableConfigurationProperties(
         FileStorageProperties::class
 )
 class PetStoreApplication

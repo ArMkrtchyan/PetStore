@@ -9,7 +9,7 @@ class Category {
     var title: String? = null
     var photo: String? = null
 
-    constructor() {}
+    constructor()
     constructor(categoryEntity: CategoryEntity) {
         this.id = categoryEntity.id
         this.title = categoryEntity.title
@@ -18,7 +18,7 @@ class Category {
         this.petId = categoryEntity.petId
     }
 
-    constructor(id: Long?, name: String?, photo: String?,categoryId:Long,petId:Long) {
+    constructor(id: Long?, name: String?, photo: String?, categoryId: Long, petId: Long) {
         this.id = id
         this.title = name
         this.photo = photo
@@ -31,7 +31,7 @@ class Category {
                 "id=" + id +
                 ", title='" + title + '\'' +
                 ", photo='" + photo + '\'' +
-                ", categoryId='" + categoryId + '\'' +", petId='" + petId + '\'' +
+                ", categoryId='" + categoryId + '\'' + ", petId='" + petId + '\'' +
                 '}'
     }
 }

@@ -28,29 +28,11 @@ class ProductEntity {
     @Column(name = "deleted_at")
     var deletedAt: Date? = null
 
-    @Column
-    var title: String? = null
-
-    @Column(name = "photo")
-    var photo: String? = null
-
     @Column(name = "producer_name")
     var producerName: String? = null
 
     @Column(name = "producer_photo")
     var producerPhoto: String? = null
-
-    @Column(name = "color")
-    var color: String? = null
-
-    @Column(name = "description", length = 5000)
-    var description: String? = null
-
-    @Column(name = "weight")
-    var weight: Double? = null
-
-    @Column(name = "length")
-    var length: Double? = null
 
     @Column(name = "category_id")
     var categoryId: Int? = null
@@ -58,43 +40,61 @@ class ProductEntity {
     @Column(name = "pet_id")
     var petId: Int? = null
 
-    @Column(name = "price")
-    var price: Int? = null
+    @ManyToMany(cascade = [CascadeType.ALL], fetch = FetchType.EAGER)
+    var colors: MutableSet<ColorEntity>? = null
 
-    @Column(name = "discount")
-    var discount: Int? = null
+    @ManyToMany(cascade = [CascadeType.ALL], fetch = FetchType.EAGER)
+    var titles: MutableSet<TitleEntity>? = null
 
-    @Column(name = "old_price")
-    var oldPrice: Int? = null
+    @ManyToMany(cascade = [CascadeType.ALL], fetch = FetchType.EAGER)
+    var descriptions: MutableSet<DescriptionEntity>? = null
+
+    @ManyToMany(cascade = [CascadeType.ALL], fetch = FetchType.EAGER)
+    var sizes: MutableSet<SizeEntity>? = null
+
+    @ManyToMany(cascade = [CascadeType.ALL], fetch = FetchType.EAGER)
+    var tasties: MutableSet<TastyEntity>? = null
+
+    @ManyToMany(cascade = [CascadeType.ALL], fetch = FetchType.EAGER)
+    var volumes: MutableSet<VolumeEntity>? = null
+
+    @ManyToMany(cascade = [CascadeType.ALL], fetch = FetchType.EAGER)
+    var weights: MutableSet<WeightEntity>? = null
+
+    @ManyToMany(cascade = [CascadeType.ALL], fetch = FetchType.EAGER)
+    var photos: MutableSet<PhotoEntity>? = null
+
+    @ManyToMany(cascade = [CascadeType.ALL], fetch = FetchType.EAGER)
+    var prices: MutableSet<PriceEntity>? = null
 
     @ManyToMany(cascade = [CascadeType.ALL], fetch = FetchType.EAGER)
     @JsonIgnore
     var users: MutableSet<UserEntity>? = null
 
-    constructor() {}
-    constructor(createdAt: Date?, updatedAt: Date?, deletedAt: Date?, title: String?, photo: String?, producerName: String?, producerPhoto: String?, color: String?, description: String?, weight: Double?, length: Double?, categoryId: Int?, petId: Int?, price: Int?, discount: Int?, oldPrice: Int?, users: MutableSet<UserEntity>?) {
+    constructor()
+    constructor(id: Long?, createdAt: Date?, updatedAt: Date?, deletedAt: Date?, producerName: String?, producerPhoto: String?, categoryId: Int?, petId: Int?, colors: MutableSet<ColorEntity>?, titles: MutableSet<TitleEntity>?, descriptions: MutableSet<DescriptionEntity>?, sizes: MutableSet<SizeEntity>?, tasties: MutableSet<TastyEntity>?, volumes: MutableSet<VolumeEntity>?, weights: MutableSet<WeightEntity>?, photos: MutableSet<PhotoEntity>?, prices: MutableSet<PriceEntity>?, users: MutableSet<UserEntity>?) {
+        this.id = id
         this.createdAt = createdAt
         this.updatedAt = updatedAt
         this.deletedAt = deletedAt
-        this.title = title
-        this.photo = photo
         this.producerName = producerName
         this.producerPhoto = producerPhoto
-        this.color = color
-        this.description = description
-        this.weight = weight
-        this.length = length
         this.categoryId = categoryId
         this.petId = petId
-        this.price = price
-        this.discount = discount
-        this.oldPrice = oldPrice
+        this.colors = colors
+        this.titles = titles
+        this.descriptions = descriptions
+        this.sizes = sizes
+        this.tasties = tasties
+        this.volumes = volumes
+        this.weights = weights
+        this.photos = photos
+        this.prices = prices
         this.users = users
     }
 
     override fun toString(): String {
-        return "ProductEntity(id=$id, createdAt=$createdAt, updatedAt=$updatedAt, deletedAt=$deletedAt, title=$title, photo=$photo, producerName=$producerName, producerPhoto=$producerPhoto, color=$color, description=$description, weight=$weight, length=$length, categoryId=$categoryId, petId=$petId, price=$price, discount=$discount, oldPrice=$oldPrice, users=$users)"
+        return "ProductEntity(id=$id, createdAt=$createdAt, updatedAt=$updatedAt, deletedAt=$deletedAt, producerName=$producerName, producerPhoto=$producerPhoto, categoryId=$categoryId, petId=$petId, colors=$colors, titles=$titles, descriptions=$descriptions, sizes=$sizes, tasties=$tasties, volumes=$volumes, weights=$weights, photos=$photos, prices=$prices, users=$users)"
     }
-
 
 }

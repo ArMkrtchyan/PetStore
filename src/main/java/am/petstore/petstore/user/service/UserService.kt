@@ -134,7 +134,7 @@ class UserService @Autowired constructor(private val userDao: UserDao, private v
                 model.clear()
                 responseData["code"] = 200
                 responseData["message"] = "You are successfully registered"
-                model["user"] =  UserResponse(newUser)
+                model["user"] = UserResponse(newUser)
                 responseData["data"] = model
                 ResponseEntity.ok<Map<Any, Any>>(responseData)
             }
@@ -159,7 +159,7 @@ class UserService @Autowired constructor(private val userDao: UserDao, private v
         model.clear()
         responseData["code"] = 200
         responseData["message"] = "Success"
-        model["user"] =  UserResponse(user!!)
+        model["user"] = UserResponse(user!!)
         responseData["data"] = model
         return ResponseEntity.ok<Map<Any, Any>>(responseData)
     }
@@ -256,7 +256,7 @@ class UserService @Autowired constructor(private val userDao: UserDao, private v
         val resource = fileStorageService.loadFileAsResource(fileName)
         ResponseEntity.ok()
                 .contentType(MediaType.parseMediaType("application/octet-stream"))
-                .header(HttpHeaders.CONTENT_DISPOSITION, "attachment; filename=\"" + resource!!.filename + "\"")
+                .header(HttpHeaders.CONTENT_DISPOSITION, "attachment; filename=\"" + resource.filename + "\"")
                 .body(resource)
     }
 

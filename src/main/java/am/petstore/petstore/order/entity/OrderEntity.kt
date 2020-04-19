@@ -13,22 +13,26 @@ class OrderEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     var id: Long? = null
+
     @Temporal(TemporalType.TIMESTAMP)
     @Column(name = "created_at", nullable = false, updatable = false)
     @CreatedDate
     var createdAt: Date? = null
+
     @Temporal(TemporalType.TIMESTAMP)
     @Column(name = "updated_at", nullable = false)
     @LastModifiedDate
     var updatedAt: Date? = null
+
     @Column
     var name: String? = null
+
     @ManyToOne
     @JoinColumn(name = "user_id")
     @JsonIgnore
     var user: UserEntity? = null
 
-    constructor() {}
+    constructor()
     constructor(createdAt: Date?, updatedAt: Date?, name: String?) {
         this.createdAt = createdAt
         this.updatedAt = updatedAt

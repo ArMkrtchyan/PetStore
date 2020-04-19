@@ -4,7 +4,7 @@ class Store {
     var id: Long? = null
     var name: String? = null
 
-    constructor() {}
+    constructor()
     constructor(id: Long?, name: String?) {
         this.id = id
         this.name = name

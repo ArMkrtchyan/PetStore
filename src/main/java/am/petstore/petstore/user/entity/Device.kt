@@ -62,7 +62,7 @@ class Device : Serializable {
     @Column
     var appVersion: String? = null
 
-    constructor() {}
+    constructor()
     constructor(createdAt: Date?, updatedAt: Date?, user: UserEntity?, install_dates: MutableSet<String?>?, first_install_date: String?, firebase_token: String?, device_id: @NotNull String?, language: String?, model: String?, platform: String?, sdk_version: String?, app_version: String?) {
         this.createdAt = createdAt
         this.updatedAt = updatedAt

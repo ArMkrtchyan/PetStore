@@ -11,23 +11,28 @@ class PetEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     var id: Long? = null
+
     @Temporal(TemporalType.TIMESTAMP)
     @Column(name = "created_at", nullable = false, updatable = false)
     @CreatedDate
     var createdAt: Date? = null
+
     @Temporal(TemporalType.TIMESTAMP)
     @Column(name = "updated_at", nullable = false)
     @LastModifiedDate
     var updatedAt: Date? = null
+
     @Column
     var title: String? = null
+
     @Column(name = "photo")
     var photo: String? = null
+
     @Temporal(TemporalType.TIMESTAMP)
     @Column(name = "deleted_at")
     var deletedAt: Date? = null
 
-    constructor() {}
+    constructor()
     constructor(createdAt: Date?, updatedAt: Date?, title: String?, photo: String?) {
         this.createdAt = createdAt
         this.updatedAt = updatedAt

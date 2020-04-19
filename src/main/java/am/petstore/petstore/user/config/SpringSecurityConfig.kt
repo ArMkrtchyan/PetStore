@@ -21,6 +21,7 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder
 class SpringSecurityConfig : WebSecurityConfigurerAdapter() {
     @Autowired
     private val authProvider: AuthProvider? = null
+
     @Autowired
     private val jwtTokenProvider: JwtTokenProvider? = null
 
@@ -56,7 +57,7 @@ class SpringSecurityConfig : WebSecurityConfigurerAdapter() {
                         "/category/create",
                         "/category/update",
                         "/category/delete"
-                ).hasAnyAuthority("EDITOR","ADMIN")
+                ).hasAnyAuthority("EDITOR", "ADMIN")
                 .anyRequest().authenticated()
                 .and()
                 .apply(JwtConfigurer(jwtTokenProvider!!))

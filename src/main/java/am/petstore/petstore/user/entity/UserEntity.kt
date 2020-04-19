@@ -85,7 +85,7 @@ class UserEntity : Serializable, UserDetails {
     @OrderBy("id asc")
     var favorites: MutableSet<ProductEntity>? = null
 
-    constructor() {}
+    constructor()
     constructor(password: @Size(min = 6) String?, email: String?, fullname: String?, birthday: String?, gender: String?, active: Boolean?, firebase_id: String?, phone: @Pattern(regexp = "[+0-9]*") @NotNull String?, createdAt: Date?, updatedAt: Date?, roles: Set<Role>?, devices: MutableSet<Device?>?, orders: MutableSet<OrderEntity>?, favorites: MutableSet<ProductEntity>?) {
         this.password = password
         this.email = email

@@ -18,6 +18,7 @@ interface CategoryDao : JpaRepository<CategoryEntity?, Long?> {
     fun findByPetIdAndAndCategoryId(petId: Long, categoryId: Long, by: Sort): MutableList<CategoryEntity?>
     fun findByPetId(petId: Long, by: Sort): MutableList<CategoryEntity?>
     fun existsByTitle(title: String?): Boolean
+
     @Modifying(clearAutomatically = true)
     @Query("update CategoryEntity category set category.deletedAt = ?2 where category.id = ?1")
     fun delete(id: Long?, deletedAt: Date?)

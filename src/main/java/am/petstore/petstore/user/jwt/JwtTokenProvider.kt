@@ -20,12 +20,16 @@ import javax.servlet.http.HttpServletRequest
 class JwtTokenProvider {
     private var secretKey = "aslkjedomjlwsdk"
     private val validityInMilliseconds: Long = 360000000 // 1h
+
     @Autowired
     private val userDetailsService: UserService? = null
+
     @Autowired
     var userDao: UserDao? = null
+
     @Autowired
     private val bCryptPasswordEncoder: BCryptPasswordEncoder? = null
+
     @Autowired
     private val deviceDao: DeviceDao? = null
 

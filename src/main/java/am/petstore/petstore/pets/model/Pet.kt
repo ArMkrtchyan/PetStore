@@ -7,7 +7,7 @@ class Pet {
     var title: String? = null
     var photo: String? = null
 
-    constructor() {}
+    constructor()
     constructor(id: Long?, name: String?, photo: String?) {
         this.id = id
         title = name
