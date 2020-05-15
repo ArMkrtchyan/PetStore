@@ -21,7 +21,6 @@ interface ProductDao : JpaRepository<ProductEntity?, Long?> {
     fun findAllByPetId(petId: Int?, by: Sort): List<ProductEntity>
     fun findByCategoryId(categoryId: Int?, pageRequest: Pageable): Slice<ProductEntity>
 
-    @Query(value = "select '*' from ProductEntity product left join product.sizes ps left join ps.prices sp where product.petId = 10 and (sp.discount is not null or sp.discount > 0)")
     fun findByPetId(petId: Int?, pageRequest: Pageable): Slice<ProductEntity>
 
 }

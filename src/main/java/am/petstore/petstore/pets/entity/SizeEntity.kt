@@ -35,27 +35,14 @@ class SizeEntity {
     @Column(name = "height")
     var height: Double? = null
 
-    @ManyToMany(cascade = [CascadeType.ALL], fetch = FetchType.EAGER)
-    var photos: MutableSet<PhotoEntity>? = null
+    @OneToMany(cascade = [CascadeType.ALL], fetch = FetchType.EAGER)
+    var capacities: MutableSet<CapacityEntity>? = null
 
-    @ManyToMany(cascade = [CascadeType.ALL], fetch = FetchType.EAGER)
-    @JoinTable(name = "sizes_prices",
-            joinColumns = [JoinColumn(name = "size_entity_id",referencedColumnName = "id")],
-            inverseJoinColumns = [JoinColumn(name = "prices_id",referencedColumnName = "id")]
-    )
-    var prices: MutableSet<PriceEntity>? = null
-
-    @ManyToMany(cascade = [CascadeType.ALL], fetch = FetchType.EAGER)
-    var descriptions: MutableSet<DescriptionEntity>? = null
-
-    @ManyToMany(cascade = [CascadeType.ALL], fetch = FetchType.EAGER)
-    var titles: MutableSet<TitleEntity>? = null
-
-    @ManyToMany(cascade = [CascadeType.ALL], fetch = FetchType.EAGER)
+    @OneToMany(cascade = [CascadeType.ALL], fetch = FetchType.EAGER)
     var colors: MutableSet<ColorEntity>? = null
 
     constructor()
-    constructor(id: Long?, createdAt: Date?, updatedAt: Date?, deletedAt: Date?, length: Double?, width: Double?, height: Double?, photos: MutableSet<PhotoEntity>?, prices: MutableSet<PriceEntity>?, descriptions: MutableSet<DescriptionEntity>?, titles: MutableSet<TitleEntity>?, colors: MutableSet<ColorEntity>?) {
+    constructor(id: Long?, createdAt: Date?, updatedAt: Date?, deletedAt: Date?, length: Double?, width: Double?, height: Double?, capacities: MutableSet<CapacityEntity>?, colors: MutableSet<ColorEntity>?) {
         this.id = id
         this.createdAt = createdAt
         this.updatedAt = updatedAt
@@ -63,15 +50,13 @@ class SizeEntity {
         this.length = length
         this.width = width
         this.height = height
-        this.photos = photos
-        this.prices = prices
-        this.descriptions = descriptions
-        this.titles = titles
+        this.capacities = capacities
         this.colors = colors
     }
 
     override fun toString(): String {
-        return "SizeEntity(id=$id, createdAt=$createdAt, updatedAt=$updatedAt, deletedAt=$deletedAt, length=$length, width=$width, height=$height, photos=$photos, prices=$prices, descriptions=$descriptions, titles=$titles, colors=$colors)"
+        return "SizeEntity(id=$id, createdAt=$createdAt, updatedAt=$updatedAt, deletedAt=$deletedAt, length=$length, width=$width, height=$height, capacities=$capacities, colors=$colors)"
     }
+
 
 }

@@ -32,30 +32,23 @@ class ColorEntity {
     @Column(name = "hex")
     var hex: String? = null
 
-    @ManyToMany(cascade = [CascadeType.ALL], fetch = FetchType.EAGER)
-    var photos: MutableSet<PhotoEntity>? = null
-
-    @ManyToMany(cascade = [CascadeType.ALL], fetch = FetchType.EAGER)
-    var descriptions: MutableSet<DescriptionEntity>? = null
-
-    @ManyToMany(cascade = [CascadeType.ALL], fetch = FetchType.EAGER)
-    var titles: MutableSet<TitleEntity>? = null
+    @OneToMany(cascade = [CascadeType.ALL], fetch = FetchType.EAGER)
+    var options: MutableSet<OptionsEntity>? = null
 
     constructor()
-    constructor(id: Long?, createdAt: Date?, updatedAt: Date?, deletedAt: Date?, color: String?, photos: MutableSet<PhotoEntity>?, descriptions: MutableSet<DescriptionEntity>?, titles: MutableSet<TitleEntity>?,hex: String?) {
+    constructor(id: Long?, createdAt: Date?, updatedAt: Date?, deletedAt: Date?, color: String?, hex: String?, options: MutableSet<OptionsEntity>?) {
         this.id = id
         this.createdAt = createdAt
         this.updatedAt = updatedAt
         this.deletedAt = deletedAt
         this.color = color
-        this.photos = photos
-        this.descriptions = descriptions
-        this.titles = titles
         this.hex = hex
+        this.options = options
     }
 
     override fun toString(): String {
-        return "ColorEntity(id=$id, createdAt=$createdAt, updatedAt=$updatedAt, deletedAt=$deletedAt, color=$color, photos=$photos, descriptions=$descriptions, titles=$titles, hex:$hex)"
+        return "ColorEntity(id=$id, createdAt=$createdAt, updatedAt=$updatedAt, deletedAt=$deletedAt, color=$color, hex=$hex, options=$options)"
     }
+
 
 }
