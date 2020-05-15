@@ -10,6 +10,7 @@ import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.Job
 import kotlinx.coroutines.coroutineScope
 import kotlinx.coroutines.withContext
+import org.slf4j.LoggerFactory
 import org.springframework.data.domain.Sort
 import org.springframework.http.ResponseEntity
 import org.springframework.stereotype.Service
@@ -66,6 +67,7 @@ class CategoryService(private val categoryDao: CategoryDao, private val mapper: 
 
 
     suspend fun findAll(petId: Long?, categoryId: Long?): ResponseEntity<MutableMap<Any, Any>> = coroutineScope {
+        LoggerFactory.getLogger("product").info("petId: "+petId.toString() + " categoryId: "+categoryId.toString())
         withContext(Dispatchers.Default + Job()) {
             val categories: MutableList<Category?> = ArrayList()
             val categoryEntities = when {

@@ -26,6 +26,7 @@ class DeviceService @Autowired constructor(private val deviceDao: DeviceDao, pri
 
     suspend fun addOrUpdateDevice(jsonNode: JsonNode): ResponseEntity<Map<Any, Any>> {
         return try {
+            log.info(jsonNode.toString())
             var device = mapper.readValue(jsonNode["data"].toString(), Device::class.java)
             val uid = device.uid
             val installDate = device.firstInstallDate

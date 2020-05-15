@@ -71,6 +71,41 @@ class ProductService @Autowired constructor(private val productDao: ProductDao,
 
     }
 
+    suspend fun findAllWithPetId(petId: Int?, page: Int?, limit: Int?, sort: String?): ResponseEntity<MutableMap<Any, Any>> {
+        data.clear()
+        model.clear()
+        val paging = PageRequest.of(page ?: 0, limit ?: 0, Sort.by(sort ?: "id"))
+        val pagedResult = withContext(Dispatchers.Default + Job()) { productDao.findByPetId(petId, paging) }
+        if (pagedResult.hasContent()) {
+            model["products"] = pagedResult.content
+        } else {
+            model["products"] = ArrayList<ProductEntity>()
+        }
+        data["code"] = 200
+        data["message"] = "Success"
+        model["count"] = withContext(Dispatchers.Default + Job()) { productDao.findAllByPetId(petId).size }
+        data["data"] = model
+        return ResponseEntity.ok(data)
+
+    }
+    suspend fun findAllWithPetId(petId: Int): ResponseEntity<MutableMap<Any, Any>> {
+        data.clear()
+        model.clear()
+        val products = ArrayList<ProductEntity>()
+        withContext(Dispatchers.Default + Job()) {
+            productDao.findAllByPetId(petId, Sort.by("id")).map { it ->
+                products.add(it)
+            }
+        }
+        model["products"] = products
+        data["code"] = 200
+        data["message"] = "Success"
+        model["count"] = withContext(Dispatchers.Default + Job()) { products.size }
+        data["data"] = model
+        return ResponseEntity.ok(data)
+
+    }
+
     suspend fun findAll(page: Int?, limit: Int?, sort: String?): ResponseEntity<MutableMap<Any, Any>> {
         data.clear()
         model.clear()
@@ -130,13 +165,13 @@ class ProductService @Autowired constructor(private val productDao: ProductDao,
     }
 
     suspend fun update(@RequestBody jsonNode: JsonNode?, request: HttpServletRequest): ResponseEntity<MutableMap<Any, Any>> {
-            data.clear()
-            model.clear()
-            data["code"] = 200
-            data["message"] = "Success"
-            model["store"] = Store()
-            data["data"] = model
-           return ResponseEntity.ok(data)
+        data.clear()
+        model.clear()
+        data["code"] = 200
+        data["message"] = "Success"
+        model["store"] = Store()
+        data["data"] = model
+        return ResponseEntity.ok(data)
     }
 
     suspend fun addToFavorites(productId: Int, request: HttpServletRequest): ResponseEntity<MutableMap<Any, Any>> {
@@ -215,7 +250,7 @@ class ProductService @Autowired constructor(private val productDao: ProductDao,
     suspend fun getFavorites(request: HttpServletRequest): ResponseEntity<MutableMap<Any, Any>> {
         val userId = Utils.getUserId(request)
         LoggerFactory.getLogger("UserId").info(userId.toString())
-        userId ?: badRequestResponse("User Not found")
+        userId ?: return badRequestResponse("User Not found")
         data.clear()
         model.clear()
         data["code"] = 200

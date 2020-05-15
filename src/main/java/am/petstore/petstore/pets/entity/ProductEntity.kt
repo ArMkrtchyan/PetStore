@@ -50,6 +50,10 @@ class ProductEntity {
     var descriptions: MutableSet<DescriptionEntity>? = null
 
     @ManyToMany(cascade = [CascadeType.ALL], fetch = FetchType.EAGER)
+    @JoinTable(name = "products_sizes",
+            joinColumns = [JoinColumn(name = "product_entity_id",referencedColumnName = "id")],
+            inverseJoinColumns = [JoinColumn(name = "sizes_id",referencedColumnName = "id")]
+    )
     var sizes: MutableSet<SizeEntity>? = null
 
     @ManyToMany(cascade = [CascadeType.ALL], fetch = FetchType.EAGER)

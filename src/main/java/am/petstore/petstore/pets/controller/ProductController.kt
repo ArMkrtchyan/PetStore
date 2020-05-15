@@ -23,23 +23,36 @@ class ProductController {
     @GetMapping("/findAll")
     fun findAll(
             @RequestParam(value = "categoryId", required = false) categoryId: String?,
+            @RequestParam(value = "petId", required = false) petId: String?,
             @RequestParam(value = "page", required = false) page: String?,
             @RequestParam(value = "limit", required = false) limit: String?,
             @RequestParam(value = "sort", required = false) sort: String?
     ): ResponseEntity<*>? = runBlocking {
         when {
             page != null && limit != null -> {
-                if (categoryId != null) {
-                    service?.findAll(categoryId.toInt(), page.toInt() - 1, limit.toInt(), sort)
-                } else {
-                    service?.findAll(page.toInt() - 1, limit.toInt(), sort)
+                when {
+                    petId != null -> {
+                        service?.findAllWithPetId(petId.toInt(), page.toInt() - 1, limit.toInt(), sort)
+                    }
+                    categoryId != null -> {
+                        service?.findAll(categoryId.toInt(), page.toInt() - 1, limit.toInt(), sort)
+                    }
+                    else -> {
+                        service?.findAll(page.toInt() - 1, limit.toInt(), sort)
+                    }
                 }
             }
             page == null || limit == null -> {
-                if (categoryId != null) {
-                    service?.findAll(categoryId.toInt())
-                } else {
-                    service?.findAll()
+                when {
+                    petId != null -> {
+                        service?.findAllWithPetId(petId.toInt())
+                    }
+                    categoryId != null -> {
+                        service?.findAll(categoryId.toInt())
+                    }
+                    else -> {
+                        service?.findAll()
+                    }
                 }
             }
             else -> {

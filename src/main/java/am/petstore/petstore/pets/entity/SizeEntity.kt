@@ -39,6 +39,10 @@ class SizeEntity {
     var photos: MutableSet<PhotoEntity>? = null
 
     @ManyToMany(cascade = [CascadeType.ALL], fetch = FetchType.EAGER)
+    @JoinTable(name = "sizes_prices",
+            joinColumns = [JoinColumn(name = "size_entity_id",referencedColumnName = "id")],
+            inverseJoinColumns = [JoinColumn(name = "prices_id",referencedColumnName = "id")]
+    )
     var prices: MutableSet<PriceEntity>? = null
 
     @ManyToMany(cascade = [CascadeType.ALL], fetch = FetchType.EAGER)

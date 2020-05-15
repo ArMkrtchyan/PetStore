@@ -7,10 +7,7 @@ import am.petstore.petstore.pets.model.Pet
 import am.petstore.petstore.user.service.FileStorageService
 import com.fasterxml.jackson.databind.ObjectMapper
 import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.FlowPreview
 import kotlinx.coroutines.Job
-import kotlinx.coroutines.flow.asFlow
-import kotlinx.coroutines.flow.collect
 import kotlinx.coroutines.withContext
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.data.domain.Sort
@@ -19,7 +16,6 @@ import org.springframework.stereotype.Service
 import org.springframework.transaction.annotation.Transactional
 import org.springframework.web.multipart.MultipartFile
 import java.util.*
-import java.util.logging.Logger
 import javax.servlet.http.HttpServletRequest
 
 @Service
@@ -69,20 +65,13 @@ class PetService @Autowired constructor(private val petDao: PetDao, private val 
     }
 
 
-    @FlowPreview
     suspend fun findAll(): ResponseEntity<MutableMap<Any, Any>> {
-        val pets: MutableList<Pet?> = ArrayList()
-        val petEntities = withContext(Dispatchers.Default + Job()) { petDao.findAll(Sort.by("id")) }.asFlow()
-        petEntities.collect { petEntity ->
-            Logger.getLogger("Pets").info("collect $petEntity")
-            petEntity?.deletedAt ?: pets.add(Pet(petEntity!!))
-        }
-        Logger.getLogger("Pets").info("finish")
+        val petEntities = withContext(Dispatchers.Default + Job()) { petDao.findAll(Sort.by("id")) }
         data.clear()
         model.clear()
         data["code"] = 200
         data["message"] = "Success"
-        model["pets"] = pets
+        model["pets"] = withContext(Dispatchers.Default + Job()) { petDao.findAll(Sort.by("id")).map { it?.deletedAt != null } }
         data["data"] = model
         return ResponseEntity.ok(data)
     }
