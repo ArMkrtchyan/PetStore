@@ -38,14 +38,8 @@ class UserEntity : Serializable, UserDetails {
     @JsonIgnore
     private val username: String? = null
 
-    @Column(name = "birthday")
-    var birthday: String? = null
-
     @Column(name = "photo")
     val photo: String? = null
-
-    @Column(name = "gender")
-    var gender: String? = null
 
     @Column(name = "active")
     @JsonIgnore
@@ -86,12 +80,10 @@ class UserEntity : Serializable, UserDetails {
     var favorites: MutableSet<ProductEntity>? = null
 
     constructor()
-    constructor(password: @Size(min = 6) String?, email: String?, fullname: String?, birthday: String?, gender: String?, active: Boolean?, firebase_id: String?, phone: @Pattern(regexp = "[+0-9]*") @NotNull String?, createdAt: Date?, updatedAt: Date?, roles: Set<Role>?, devices: MutableSet<Device?>?, orders: MutableSet<OrderEntity>?, favorites: MutableSet<ProductEntity>?) {
+    constructor(password: @Size(min = 6) String?, email: String?, fullname: String?, active: Boolean?, firebase_id: String?, phone: @Pattern(regexp = "[+0-9]*") @NotNull String?, createdAt: Date?, updatedAt: Date?, roles: Set<Role>?, devices: MutableSet<Device?>?, orders: MutableSet<OrderEntity>?, favorites: MutableSet<ProductEntity>?) {
         this.password = password
         this.email = email
         this.fullname = fullname
-        this.birthday = birthday
-        this.gender = gender
         this.active = active
         this.firebase_id = firebase_id
         this.phone = phone
@@ -147,8 +139,6 @@ class UserEntity : Serializable, UserDetails {
                 ", password='" + password + '\'' +
                 ", email='" + email + '\'' +
                 ", fullname='" + fullname + '\'' +
-                ", birthday='" + birthday + '\'' +
-                ", gender='" + gender + '\'' +
                 ", firebase_id='" + firebase_id + '\'' +
                 ", phone='" + phone + '\'' +
                 ", createdAt=" + createdAt +

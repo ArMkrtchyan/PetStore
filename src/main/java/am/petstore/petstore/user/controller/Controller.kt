@@ -39,11 +39,9 @@ class Controller @Autowired constructor(private val userService: UserService, pr
                    @RequestParam(value = "firebase_id", required = false) firebase_id: String?,
                    @RequestParam(value = "fullname", required = false) fullname: String?,
                    @RequestParam(value = "email", required = false) email: String?,
-                   @RequestParam(value = "gender", required = false) gender: String?,
-                   @RequestParam(value = "birthday", required = false) birthday: String?,
                    @RequestParam(value = "device_id", required = false) device_id: String?,
                    @RequestParam(value = "password", required = false) password: String?, request: HttpServletRequest): ResponseEntity<*>? = runBlocking {
-        userService.signUpUser(photo, id, phone, firebase_id, fullname, email, gender, birthday, device_id, password, request)
+        userService.signUpUser(photo, id, phone, firebase_id, fullname, email, device_id, password, request)
     }
 
     @PostMapping("/signin")

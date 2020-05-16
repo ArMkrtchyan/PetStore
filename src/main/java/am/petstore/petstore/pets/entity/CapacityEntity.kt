@@ -1,12 +1,13 @@
 package am.petstore.petstore.pets.entity
 
+import com.fasterxml.jackson.annotation.JsonIgnore
 import org.springframework.data.annotation.CreatedDate
 import org.springframework.data.annotation.LastModifiedDate
 import java.util.*
 import javax.persistence.*
 
 @Entity
-@Table(name = "titles")
+@Table(name = "capacities")
 class CapacityEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -30,13 +31,25 @@ class CapacityEntity {
     var capacity: String? = null
 
     @OneToMany(cascade = [CascadeType.ALL], fetch = FetchType.EAGER)
+    @JoinColumn(name = "capacity_id")
     var options: MutableSet<OptionsEntity>? = null
 
     @OneToMany(cascade = [CascadeType.ALL], fetch = FetchType.EAGER)
+    @JoinColumn(name = "capacity_id")
     var colors: MutableSet<ColorEntity>? = null
 
+    @ManyToOne
+    @JoinColumn(name = "product_id")
+    @JsonIgnore
+    var product: ProductEntity? = null
+
+    @ManyToOne
+    @JoinColumn(name = "size_id")
+    @JsonIgnore
+    var size: SizeEntity? = null
+
     constructor()
-    constructor(id: Long?, createdAt: Date?, updatedAt: Date?, deletedAt: Date?, capacity: String?, options: MutableSet<OptionsEntity>?, colors: MutableSet<ColorEntity>?) {
+    constructor(id: Long?, createdAt: Date?, updatedAt: Date?, deletedAt: Date?, capacity: String?, options: MutableSet<OptionsEntity>?, colors: MutableSet<ColorEntity>?, product: ProductEntity?, size: SizeEntity?) {
         this.id = id
         this.createdAt = createdAt
         this.updatedAt = updatedAt
@@ -44,10 +57,12 @@ class CapacityEntity {
         this.capacity = capacity
         this.options = options
         this.colors = colors
+        this.product = product
+        this.size = size
     }
 
     override fun toString(): String {
-        return "CapacityEntity(id=$id, createdAt=$createdAt, updatedAt=$updatedAt, deletedAt=$deletedAt, capacity=$capacity, options=$options, colors=$colors)"
+        return "CapacityEntity(id=$id, createdAt=$createdAt, updatedAt=$updatedAt, deletedAt=$deletedAt, capacity=$capacity, options=$options, colors=$colors, product=$product, size=$size)"
     }
 
 

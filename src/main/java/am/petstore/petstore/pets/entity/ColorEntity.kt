@@ -1,5 +1,6 @@
 package am.petstore.petstore.pets.entity
 
+import com.fasterxml.jackson.annotation.JsonIgnore
 import org.springframework.data.annotation.CreatedDate
 import org.springframework.data.annotation.LastModifiedDate
 import java.util.*
@@ -33,10 +34,21 @@ class ColorEntity {
     var hex: String? = null
 
     @OneToMany(cascade = [CascadeType.ALL], fetch = FetchType.EAGER)
+    @JoinColumn(name = "color_id")
     var options: MutableSet<OptionsEntity>? = null
 
+    @ManyToOne
+    @JoinColumn(name = "capacity_id")
+    @JsonIgnore
+    var capacity: CapacityEntity? = null
+
+    @ManyToOne
+    @JoinColumn(name = "size_id")
+    @JsonIgnore
+    var size: SizeEntity? = null
+
     constructor()
-    constructor(id: Long?, createdAt: Date?, updatedAt: Date?, deletedAt: Date?, color: String?, hex: String?, options: MutableSet<OptionsEntity>?) {
+    constructor(id: Long?, createdAt: Date?, updatedAt: Date?, deletedAt: Date?, color: String?, hex: String?, options: MutableSet<OptionsEntity>?, capacity: CapacityEntity?, size: SizeEntity?) {
         this.id = id
         this.createdAt = createdAt
         this.updatedAt = updatedAt
@@ -44,10 +56,12 @@ class ColorEntity {
         this.color = color
         this.hex = hex
         this.options = options
+        this.capacity = capacity
+        this.size = size
     }
 
     override fun toString(): String {
-        return "ColorEntity(id=$id, createdAt=$createdAt, updatedAt=$updatedAt, deletedAt=$deletedAt, color=$color, hex=$hex, options=$options)"
+        return "ColorEntity(id=$id, createdAt=$createdAt, updatedAt=$updatedAt, deletedAt=$deletedAt, color=$color, hex=$hex, options=$options, capacity=$capacity, size=$size)"
     }
 
 

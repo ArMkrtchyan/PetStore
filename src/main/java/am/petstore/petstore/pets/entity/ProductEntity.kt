@@ -41,23 +41,27 @@ class ProductEntity {
     var petId: Int? = null
 
     @OneToMany(cascade = [CascadeType.ALL], fetch = FetchType.EAGER)
+    @JoinColumn(name = "product_id")
     var sizes: MutableSet<SizeEntity>? = null
 
     @OneToMany(cascade = [CascadeType.ALL], fetch = FetchType.EAGER)
+    @JoinColumn(name = "product_id")
     var tasties: MutableSet<TastyEntity>? = null
 
     @OneToMany(cascade = [CascadeType.ALL], fetch = FetchType.EAGER)
+    @JoinColumn(name = "product_id")
     var volumes: MutableSet<VolumeEntity>? = null
 
     @OneToMany(cascade = [CascadeType.ALL], fetch = FetchType.EAGER)
-    var capacities: MutableSet<VolumeEntity>? = null
+    @JoinColumn(name = "product_id")
+    var capacities: MutableSet<CapacityEntity>? = null
 
     @ManyToMany(cascade = [CascadeType.ALL], fetch = FetchType.EAGER)
     @JsonIgnore
     var users: MutableSet<UserEntity>? = null
 
     constructor()
-    constructor(id: Long?, createdAt: Date?, updatedAt: Date?, deletedAt: Date?, producerName: String?, producerPhoto: String?, categoryId: Int?, petId: Int?, sizes: MutableSet<SizeEntity>?, tasties: MutableSet<TastyEntity>?, volumes: MutableSet<VolumeEntity>?, capacities: MutableSet<VolumeEntity>?, users: MutableSet<UserEntity>?) {
+    constructor(id: Long?, createdAt: Date?, updatedAt: Date?, deletedAt: Date?, producerName: String?, producerPhoto: String?, categoryId: Int?, petId: Int?, sizes: MutableSet<SizeEntity>?, tasties: MutableSet<TastyEntity>?, volumes: MutableSet<VolumeEntity>?, capacities: MutableSet<CapacityEntity>?, users: MutableSet<UserEntity>?) {
         this.id = id
         this.createdAt = createdAt
         this.updatedAt = updatedAt
@@ -76,5 +80,6 @@ class ProductEntity {
     override fun toString(): String {
         return "ProductEntity(id=$id, createdAt=$createdAt, updatedAt=$updatedAt, deletedAt=$deletedAt, producerName=$producerName, producerPhoto=$producerPhoto, categoryId=$categoryId, petId=$petId, sizes=$sizes, tasties=$tasties, volumes=$volumes, capacities=$capacities, users=$users)"
     }
+
 
 }

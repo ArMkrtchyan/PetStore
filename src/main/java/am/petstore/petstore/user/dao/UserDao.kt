@@ -18,13 +18,11 @@ interface UserDao : JpaRepository<UserEntity?, Long?> {
     fun findByEmail(email: String?): UserEntity?
 
     @Modifying
-    @Query("update UserEntity user set user.fullname = ?2, user.password = ?3, user.email = ?4, user.birthday = ?5,user.gender = ?6, user.firebase_id = ?7,user.updatedAt = ?8,user.photo = ?9 where user.id = ?1")
+    @Query("update UserEntity user set user.fullname = ?2, user.password = ?3, user.email = ?4, user.firebase_id = ?5,user.updatedAt = ?6,user.photo = ?7 where user.id = ?1")
     fun updateUserInfo(id: Long?,
                        fullname: String?,
                        password: String?,
                        email: String?,
-                       birthday: String?,
-                       gender: String?,
                        firebase_id: String?,
                        updated_at: Date?,
                        photo: String?

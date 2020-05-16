@@ -1,5 +1,6 @@
 package am.petstore.petstore.pets.entity
 
+import com.fasterxml.jackson.annotation.JsonIgnore
 import org.springframework.data.annotation.CreatedDate
 import org.springframework.data.annotation.LastModifiedDate
 import java.util.*
@@ -30,20 +31,27 @@ class VolumeEntity {
     var volume: Double? = null
 
     @OneToMany(cascade = [CascadeType.ALL], fetch = FetchType.EAGER)
+    @JoinColumn(name = "volume_id")
     var options: MutableSet<OptionsEntity>? = null
 
+    @ManyToOne
+    @JoinColumn(name = "product_id")
+    @JsonIgnore
+    var product: ProductEntity? = null
+
     constructor()
-    constructor(id: Long?, createdAt: Date?, updatedAt: Date?, deletedAt: Date?, volume: Double?, options: MutableSet<OptionsEntity>?) {
+    constructor(id: Long?, createdAt: Date?, updatedAt: Date?, deletedAt: Date?, volume: Double?, options: MutableSet<OptionsEntity>?, product: ProductEntity?) {
         this.id = id
         this.createdAt = createdAt
         this.updatedAt = updatedAt
         this.deletedAt = deletedAt
         this.volume = volume
         this.options = options
+        this.product = product
     }
 
     override fun toString(): String {
-        return "VolumeEntity(id=$id, createdAt=$createdAt, updatedAt=$updatedAt, deletedAt=$deletedAt, volume=$volume, options=$options)"
+        return "VolumeEntity(id=$id, createdAt=$createdAt, updatedAt=$updatedAt, deletedAt=$deletedAt, volume=$volume, options=$options, product=$product)"
     }
 
 

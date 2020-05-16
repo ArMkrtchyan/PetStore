@@ -1,12 +1,13 @@
 package am.petstore.petstore.pets.entity
 
+import com.fasterxml.jackson.annotation.JsonIgnore
 import org.springframework.data.annotation.CreatedDate
 import org.springframework.data.annotation.LastModifiedDate
 import java.util.*
 import javax.persistence.*
 
 @Entity
-@Table(name = "other_options")
+@Table(name = "options")
 class OptionsEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -43,10 +44,31 @@ class OptionsEntity {
 
     @ElementCollection(targetClass = String::class, fetch = FetchType.EAGER)
     @CollectionTable(name = "photos", joinColumns = [JoinColumn(name = "options_id")])
-    var installDates: MutableSet<String?>? = null
+    var photos: MutableSet<String?>? = null
+
+    @ManyToOne(cascade = [CascadeType.ALL], fetch = FetchType.EAGER)
+    @JoinColumn(name = "color_id")
+    @JsonIgnore
+    var color: ColorEntity? = null
+
+    @ManyToOne(cascade = [CascadeType.ALL], fetch = FetchType.EAGER)
+    @JoinColumn(name = "capacity_id")
+    @JsonIgnore
+    var capacities: CapacityEntity? = null
+
+    @ManyToOne(cascade = [CascadeType.ALL], fetch = FetchType.EAGER)
+    @JoinColumn(name = "volume_id")
+    @JsonIgnore
+    var volome: VolumeEntity? = null
+
+    @ManyToOne(cascade = [CascadeType.ALL], fetch = FetchType.EAGER)
+    @JoinColumn(name = "weight_id")
+    @JsonIgnore
+    var weight: WeightEntity? = null
+
 
     constructor() {}
-    constructor(id: Long?, createdAt: Date?, updatedAt: Date?, deletedAt: Date?, title: String?, description: String?, price: Int?, discount: Int?, oldPrice: Int?, installDates: MutableSet<String?>?) {
+    constructor(id: Long?, createdAt: Date?, updatedAt: Date?, deletedAt: Date?, title: String?, description: String?, price: Int?, discount: Int?, oldPrice: Int?, photos: MutableSet<String?>?, color: ColorEntity?, capacities: CapacityEntity?, volome: VolumeEntity?, weight: WeightEntity?) {
         this.id = id
         this.createdAt = createdAt
         this.updatedAt = updatedAt
@@ -56,11 +78,15 @@ class OptionsEntity {
         this.price = price
         this.discount = discount
         this.oldPrice = oldPrice
-        this.installDates = installDates
+        this.photos = photos
+        this.color = color
+        this.capacities = capacities
+        this.volome = volome
+        this.weight = weight
     }
 
     override fun toString(): String {
-        return "OptionsEntity(id=$id, createdAt=$createdAt, updatedAt=$updatedAt, deletedAt=$deletedAt, title=$title, description=$description, price=$price, discount=$discount, oldPrice=$oldPrice, installDates=$installDates)"
+        return "OptionsEntity(id=$id, createdAt=$createdAt, updatedAt=$updatedAt, deletedAt=$deletedAt, title=$title, description=$description, price=$price, discount=$discount, oldPrice=$oldPrice, photos=$photos, color=$color, capacities=$capacities, volome=$volome, weight=$weight)"
     }
 
 

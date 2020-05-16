@@ -95,8 +95,6 @@ class UserService @Autowired constructor(private val userDao: UserDao, private v
                            firebase_id: String?,
                            fullname: String?,
                            email: String?,
-                           gender: String?,
-                           birthday: String?,
                            device_id: String?,
                            password: String?, request: HttpServletRequest): ResponseEntity<*> {
         return try {
@@ -120,7 +118,7 @@ class UserService @Autowired constructor(private val userDao: UserDao, private v
                 devices.add(device)
                 withContext(Dispatchers.Default) {
                     userDao.updateUserInfo(id.toLong(), fullname, bCryptPasswordEncoder.encode(password),
-                            email, birthday, gender, firebase_id, Date(), fileDownloadUri)
+                            email, firebase_id, Date(), fileDownloadUri)
                 }
                 val newUser = userDao.getOne(id.toLong())
                 newUser.devices = devices

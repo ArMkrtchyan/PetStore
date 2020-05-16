@@ -1,0 +1,1004 @@
+<changelist name="Uncommitted_changes_before_Checkout_at_16_05_2020_10_14_[Default_Changelist]" date="1589609687259" recycled="true" deleted="true">
+  <option name="PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_16_05_2020_10_14_[Default_Changelist]/shelved.patch" />
+  <option name="DESCRIPTION" value="Uncommitted changes before Checkout at 16.05.2020 10:14 [Default Changelist]" />
+  <binary>
+    <option name="BEFORE_PATH" value="target/classes/am/petstore/PetStore/user/entity/Device.class" />
+    <option name="AFTER_PATH" value="target/classes/am/petstore/PetStore/user/entity/Device.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_16_05_2020_10_14_[Default_Changelist]/Device.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="target/classes/am/petstore/PetStore/pets/service/ProductService$findAll$pagedResult$1.class" />
+    <option name="AFTER_PATH" value="target/classes/am/petstore/PetStore/pets/service/ProductService$findAll$pagedResult$1.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_16_05_2020_10_14_[Default_Changelist]/ProductService$findAll$pagedResult$1.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="target/classes/am/petstore/PetStore/pets/service/PetService$delete$2.class" />
+    <option name="AFTER_PATH" value="target/classes/am/petstore/PetStore/pets/service/PetService$delete$2.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_16_05_2020_10_14_[Default_Changelist]/PetService$delete$2.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="target/classes/am/petstore/PetStore/pets/service/ProductService$getFavorites$3.class" />
+    <option name="AFTER_PATH" value="target/classes/am/petstore/PetStore/pets/service/ProductService$getFavorites$3.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_16_05_2020_10_14_[Default_Changelist]/ProductService$getFavorites$3.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="target/classes/am/petstore/PetStore/pets/service/PetService$findAll$1.class" />
+    <option name="AFTER_PATH" value="target/classes/am/petstore/PetStore/pets/service/PetService$findAll$1.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_16_05_2020_10_14_[Default_Changelist]/PetService$findAll$1.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="target/classes/am/petstore/PetStore/pets/service/ProductService$findAll$6.class" />
+    <option name="AFTER_PATH" value="target/classes/am/petstore/PetStore/pets/service/ProductService$findAll$6.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_16_05_2020_10_14_[Default_Changelist]/ProductService$findAll$6.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="target/classes/am/petstore/PetStore/user/service/UserService$signOut$device$1.class" />
+    <option name="AFTER_PATH" value="target/classes/am/petstore/PetStore/user/service/UserService$signOut$device$1.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_16_05_2020_10_14_[Default_Changelist]/UserService$signOut$device$1.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="target/classes/am/petstore/PetStore/user/service/UserService$signOut$2.class" />
+    <option name="AFTER_PATH" value="target/classes/am/petstore/PetStore/user/service/UserService$signOut$2.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_16_05_2020_10_14_[Default_Changelist]/UserService$signOut$2.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="target/classes/am/petstore/petstore/pets/service/PetService$create$petEntity$1.class" />
+    <option name="AFTER_PATH" value="target/classes/am/petstore/petstore/pets/service/PetService$create$petEntity$1.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_16_05_2020_10_14_[Default_Changelist]/PetService$create$petEntity$1.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="target/classes/am/petstore/PetStore/pets/service/CategoryService$update$1.class" />
+    <option name="AFTER_PATH" value="target/classes/am/petstore/PetStore/pets/service/CategoryService$update$1.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_16_05_2020_10_14_[Default_Changelist]/CategoryService$update$1.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="target/classes/am/petstore/PetStore/user/service/UserService$signOut$user$1.class" />
+    <option name="AFTER_PATH" value="target/classes/am/petstore/PetStore/user/service/UserService$signOut$user$1.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_16_05_2020_10_14_[Default_Changelist]/UserService$signOut$user$1.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="target/classes/am/petstore/PetStore/user/service/UserService$uploadImage$1.class" />
+    <option name="AFTER_PATH" value="target/classes/am/petstore/PetStore/user/service/UserService$uploadImage$1.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_16_05_2020_10_14_[Default_Changelist]/UserService$uploadImage$1.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="target/classes/am/petstore/PetStore/pets/service/CategoryService$update$2$1.class" />
+    <option name="AFTER_PATH" value="target/classes/am/petstore/PetStore/pets/service/CategoryService$update$2$1.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_16_05_2020_10_14_[Default_Changelist]/CategoryService$update$2$1.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="target/classes/am/petstore/PetStore/user/service/UserService$signUpUser$device$1.class" />
+    <option name="AFTER_PATH" value="target/classes/am/petstore/PetStore/user/service/UserService$signUpUser$device$1.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_16_05_2020_10_14_[Default_Changelist]/UserService$signUpUser$device$1.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="target/classes/am/petstore/PetStore/pets/dao/PriceDao.class" />
+    <option name="AFTER_PATH" value="target/classes/am/petstore/PetStore/pets/dao/PriceDao.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_16_05_2020_10_14_[Default_Changelist]/PriceDao.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="target/classes/am/petstore/PetStore/user/exceptions/MyFileNotFoundException.class" />
+    <option name="AFTER_PATH" value="target/classes/am/petstore/PetStore/user/exceptions/MyFileNotFoundException.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_16_05_2020_10_14_[Default_Changelist]/MyFileNotFoundException.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="target/classes/am/petstore/PetStore/pets/dao/ColorDao.class" />
+    <option name="AFTER_PATH" value="target/classes/am/petstore/PetStore/pets/dao/ColorDao.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_16_05_2020_10_14_[Default_Changelist]/ColorDao.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="target/classes/am/petstore/PetStore/pets/service/ProductService$getFavorites$2.class" />
+    <option name="AFTER_PATH" value="target/classes/am/petstore/PetStore/pets/service/ProductService$getFavorites$2.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_16_05_2020_10_14_[Default_Changelist]/ProductService$getFavorites$2.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="target/classes/am/petstore/PetStore/pets/entity/PhotoEntity.class" />
+    <option name="AFTER_PATH" value="target/classes/am/petstore/PetStore/pets/entity/PhotoEntity.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_16_05_2020_10_14_[Default_Changelist]/PhotoEntity.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="target/classes/am/petstore/PetStore/pets/service/PetService$delete$1.class" />
+    <option name="AFTER_PATH" value="target/classes/am/petstore/PetStore/pets/service/PetService$delete$1.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_16_05_2020_10_14_[Default_Changelist]/PetService$delete$1.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="target/classes/am/petstore/PetStore/user/exceptions/FileStorageException.class" />
+    <option name="AFTER_PATH" value="target/classes/am/petstore/PetStore/user/exceptions/FileStorageException.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_16_05_2020_10_14_[Default_Changelist]/FileStorageException.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="target/classes/am/petstore/PetStore/pets/model/Pet.class" />
+    <option name="AFTER_PATH" value="target/classes/am/petstore/PetStore/pets/model/Pet.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_16_05_2020_10_14_[Default_Changelist]/Pet.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="target/classes/am/petstore/PetStore/pets/service/ProductService$findAll$5.class" />
+    <option name="AFTER_PATH" value="target/classes/am/petstore/PetStore/pets/service/ProductService$findAll$5.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_16_05_2020_10_14_[Default_Changelist]/ProductService$findAll$5.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="target/classes/am/petstore/PetStore/pets/service/ProductService$findAll$7.class" />
+    <option name="AFTER_PATH" value="target/classes/am/petstore/PetStore/pets/service/ProductService$findAll$7.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_16_05_2020_10_14_[Default_Changelist]/ProductService$findAll$7.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="target/classes/am/petstore/petstore/pets/service/PetService$findAll$$inlined$collect$1.class" />
+    <option name="AFTER_PATH" value="target/classes/am/petstore/petstore/pets/service/PetService$findAll$$inlined$collect$1.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_16_05_2020_10_14_[Default_Changelist]/PetService$findAll$$inlined$collect$1.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="target/classes/am/petstore/PetStore/pets/controller/CategoryController$update$1.class" />
+    <option name="AFTER_PATH" value="target/classes/am/petstore/PetStore/pets/controller/CategoryController$update$1.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_16_05_2020_10_14_[Default_Changelist]/CategoryController$update$1.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="target/classes/am/petstore/PetStore/user/controller/Controller$Companion.class" />
+    <option name="AFTER_PATH" value="target/classes/am/petstore/PetStore/user/controller/Controller$Companion.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_16_05_2020_10_14_[Default_Changelist]/Controller$Companion.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="target/classes/am/petstore/PetStore/pets/controller/CategoryController$findAll$1.class" />
+    <option name="AFTER_PATH" value="target/classes/am/petstore/PetStore/pets/controller/CategoryController$findAll$1.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_16_05_2020_10_14_[Default_Changelist]/CategoryController$findAll$1.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="target/classes/am/petstore/PetStore/user/controller/Controller$setDeviceFree$1.class" />
+    <option name="AFTER_PATH" value="target/classes/am/petstore/PetStore/user/controller/Controller$setDeviceFree$1.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_16_05_2020_10_14_[Default_Changelist]/Controller$setDeviceFree$1.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="target/classes/am/petstore/PetStore/user/service/UserService$signOut$1.class" />
+    <option name="AFTER_PATH" value="target/classes/am/petstore/PetStore/user/service/UserService$signOut$1.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_16_05_2020_10_14_[Default_Changelist]/UserService$signOut$1.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="target/classes/am/petstore/PetStore/pets/controller/PetController$delete$1.class" />
+    <option name="AFTER_PATH" value="target/classes/am/petstore/PetStore/pets/controller/PetController$delete$1.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_16_05_2020_10_14_[Default_Changelist]/PetController$delete$1.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="target/classes/am/petstore/PetStore/user/service/UserService$signIn$user$1.class" />
+    <option name="AFTER_PATH" value="target/classes/am/petstore/PetStore/user/service/UserService$signIn$user$1.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_16_05_2020_10_14_[Default_Changelist]/UserService$signIn$user$1.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="target/classes/am/petstore/PetStore/pets/service/CategoryService$create$2$1.class" />
+    <option name="AFTER_PATH" value="target/classes/am/petstore/PetStore/pets/service/CategoryService$create$2$1.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_16_05_2020_10_14_[Default_Changelist]/CategoryService$create$2$1.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="target/classes/am/petstore/PetStore/order/service/OrderService.class" />
+    <option name="AFTER_PATH" value="target/classes/am/petstore/PetStore/order/service/OrderService.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_16_05_2020_10_14_[Default_Changelist]/OrderService.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="target/classes/am/petstore/PetStore/pets/controller/ProductController$update$1.class" />
+    <option name="AFTER_PATH" value="target/classes/am/petstore/PetStore/pets/controller/ProductController$update$1.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_16_05_2020_10_14_[Default_Changelist]/ProductController$update$1.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="target/classes/am/petstore/PetStore/pets/service/ProductService$addToFavorites$product$1.class" />
+    <option name="AFTER_PATH" value="target/classes/am/petstore/PetStore/pets/service/ProductService$addToFavorites$product$1.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_16_05_2020_10_14_[Default_Changelist]/ProductService$addToFavorites$product$1.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="target/classes/am/petstore/PetStore/pets/service/ProductService$create$2.class" />
+    <option name="AFTER_PATH" value="target/classes/am/petstore/PetStore/pets/service/ProductService$create$2.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_16_05_2020_10_14_[Default_Changelist]/ProductService$create$2.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="target/classes/am/petstore/PetStore/pets/service/ProductService$create$1.class" />
+    <option name="AFTER_PATH" value="target/classes/am/petstore/PetStore/pets/service/ProductService$create$1.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_16_05_2020_10_14_[Default_Changelist]/ProductService$create$1.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="target/classes/am/petstore/PetStore/user/service/UserService$signIn$token$2.class" />
+    <option name="AFTER_PATH" value="target/classes/am/petstore/PetStore/user/service/UserService$signIn$token$2.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_16_05_2020_10_14_[Default_Changelist]/UserService$signIn$token$2.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="target/classes/am/petstore/PetStore/Utils$saveFile$2.class" />
+    <option name="AFTER_PATH" value="target/classes/am/petstore/PetStore/Utils$saveFile$2.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_16_05_2020_10_14_[Default_Changelist]/Utils$saveFile$2.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="target/classes/am/petstore/PetStore/user/service/UserService$signIn$token$1.class" />
+    <option name="AFTER_PATH" value="target/classes/am/petstore/PetStore/user/service/UserService$signIn$token$1.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_16_05_2020_10_14_[Default_Changelist]/UserService$signIn$token$1.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="target/classes/am/petstore/PetStore/pets/model/Store.class" />
+    <option name="AFTER_PATH" value="target/classes/am/petstore/PetStore/pets/model/Store.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_16_05_2020_10_14_[Default_Changelist]/Store.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="target/classes/am/petstore/PetStore/user/jwt/InvalidJwtAuthenticationException$Companion.class" />
+    <option name="AFTER_PATH" value="target/classes/am/petstore/PetStore/user/jwt/InvalidJwtAuthenticationException$Companion.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_16_05_2020_10_14_[Default_Changelist]/InvalidJwtAuthenticationException$Companion.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="target/classes/am/petstore/PetStore/pets/service/ProductService$removeFromFavorites$product$1.class" />
+    <option name="AFTER_PATH" value="target/classes/am/petstore/PetStore/pets/service/ProductService$removeFromFavorites$product$1.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_16_05_2020_10_14_[Default_Changelist]/ProductService$removeFromFavorites$product$1.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="target/classes/am/petstore/PetStore/user/service/AuthProvider.class" />
+    <option name="AFTER_PATH" value="target/classes/am/petstore/PetStore/user/service/AuthProvider.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_16_05_2020_10_14_[Default_Changelist]/AuthProvider.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="target/classes/am/petstore/PetStore/user/service/UserService$signUpUser$2.class" />
+    <option name="AFTER_PATH" value="target/classes/am/petstore/PetStore/user/service/UserService$signUpUser$2.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_16_05_2020_10_14_[Default_Changelist]/UserService$signUpUser$2.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="target/classes/am/petstore/PetStore/user/service/DeviceService.class" />
+    <option name="AFTER_PATH" value="target/classes/am/petstore/PetStore/user/service/DeviceService.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_16_05_2020_10_14_[Default_Changelist]/DeviceService.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="target/classes/am/petstore/petstore/pets/service/PetService$update$6.class" />
+    <option name="AFTER_PATH" value="target/classes/am/petstore/petstore/pets/service/PetService$update$6.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_16_05_2020_10_14_[Default_Changelist]/PetService$update$6.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="target/classes/am/petstore/PetStore/user/service/UserService$signUpUser$3.class" />
+    <option name="AFTER_PATH" value="target/classes/am/petstore/PetStore/user/service/UserService$signUpUser$3.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_16_05_2020_10_14_[Default_Changelist]/UserService$signUpUser$3.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="target/classes/am/petstore/PetStore/pets/entity/CategoryEntity.class" />
+    <option name="AFTER_PATH" value="target/classes/am/petstore/PetStore/pets/entity/CategoryEntity.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_16_05_2020_10_14_[Default_Changelist]/CategoryEntity.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="target/classes/am/petstore/PetStore/user/service/UserService$signUpUser$1.class" />
+    <option name="AFTER_PATH" value="target/classes/am/petstore/PetStore/user/service/UserService$signUpUser$1.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_16_05_2020_10_14_[Default_Changelist]/UserService$signUpUser$1.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="target/classes/am/petstore/PetStore/user/service/DeviceService$addOrUpdateDeviceOkResponse$2.class" />
+    <option name="AFTER_PATH" value="target/classes/am/petstore/PetStore/user/service/DeviceService$addOrUpdateDeviceOkResponse$2.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_16_05_2020_10_14_[Default_Changelist]/DeviceService$addOrUpdateDeviceOkResponse$2.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="target/classes/am/petstore/PetStore/user/entity/UserEntity.class" />
+    <option name="AFTER_PATH" value="target/classes/am/petstore/PetStore/user/entity/UserEntity.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_16_05_2020_10_14_[Default_Changelist]/UserEntity.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="target/classes/am/petstore/PetStore/user/controller/Controller$uploadFile$1.class" />
+    <option name="AFTER_PATH" value="target/classes/am/petstore/PetStore/user/controller/Controller$uploadFile$1.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_16_05_2020_10_14_[Default_Changelist]/Controller$uploadFile$1.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="target/classes/am/petstore/PetStore/pets/service/PetService$update$1.class" />
+    <option name="AFTER_PATH" value="target/classes/am/petstore/PetStore/pets/service/PetService$update$1.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_16_05_2020_10_14_[Default_Changelist]/PetService$update$1.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="target/classes/am/petstore/PetStore/order/dao/OrderDao.class" />
+    <option name="AFTER_PATH" value="target/classes/am/petstore/PetStore/order/dao/OrderDao.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_16_05_2020_10_14_[Default_Changelist]/OrderDao.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="target/classes/am/petstore/PetStore/user/service/DeviceService$addOrUpdateDevice$4.class" />
+    <option name="AFTER_PATH" value="target/classes/am/petstore/PetStore/user/service/DeviceService$addOrUpdateDevice$4.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_16_05_2020_10_14_[Default_Changelist]/DeviceService$addOrUpdateDevice$4.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="target/classes/am/petstore/PetStore/pets/dao/StoreDao.class" />
+    <option name="AFTER_PATH" value="target/classes/am/petstore/PetStore/pets/dao/StoreDao.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_16_05_2020_10_14_[Default_Changelist]/StoreDao.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="target/test-classes/am/petstore/PetStore/PetStoreApplicationTests.class" />
+    <option name="AFTER_PATH" value="target/test-classes/am/petstore/PetStore/PetStoreApplicationTests.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_16_05_2020_10_14_[Default_Changelist]/PetStoreApplicationTests.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="target/classes/am/petstore/PetStore/pets/dao/CategoryDao.class" />
+    <option name="AFTER_PATH" value="target/classes/am/petstore/PetStore/pets/dao/CategoryDao.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_16_05_2020_10_14_[Default_Changelist]/CategoryDao.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="target/classes/am/petstore/PetStore/pets/dao/PhotoDao.class" />
+    <option name="AFTER_PATH" value="target/classes/am/petstore/PetStore/pets/dao/PhotoDao.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_16_05_2020_10_14_[Default_Changelist]/PhotoDao.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="target/classes/am/petstore/PetStore/pets/service/CategoryService$delete$1.class" />
+    <option name="AFTER_PATH" value="target/classes/am/petstore/PetStore/pets/service/CategoryService$delete$1.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_16_05_2020_10_14_[Default_Changelist]/CategoryService$delete$1.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="target/classes/am/petstore/petstore/pets/service/PetService$create$5.class" />
+    <option name="AFTER_PATH" value="target/classes/am/petstore/petstore/pets/service/PetService$create$5.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_16_05_2020_10_14_[Default_Changelist]/PetService$create$5.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="target/classes/am/petstore/PetStore/user/service/DeviceService$setDeviceFree$device$1.class" />
+    <option name="AFTER_PATH" value="target/classes/am/petstore/PetStore/user/service/DeviceService$setDeviceFree$device$1.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_16_05_2020_10_14_[Default_Changelist]/DeviceService$setDeviceFree$device$1.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="target/classes/am/petstore/PetStore/pets/controller/ProductController.class" />
+    <option name="AFTER_PATH" value="target/classes/am/petstore/PetStore/pets/controller/ProductController.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_16_05_2020_10_14_[Default_Changelist]/ProductController.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="target/classes/am/petstore/PetStore/pets/dao/DescriptionDao.class" />
+    <option name="AFTER_PATH" value="target/classes/am/petstore/PetStore/pets/dao/DescriptionDao.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_16_05_2020_10_14_[Default_Changelist]/DescriptionDao.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="target/classes/am/petstore/petstore/pets/service/PetService$create$1.class" />
+    <option name="AFTER_PATH" value="target/classes/am/petstore/petstore/pets/service/PetService$create$1.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_16_05_2020_10_14_[Default_Changelist]/PetService$create$1.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="target/classes/am/petstore/PetStore/pets/service/ProductService$findAll$9.class" />
+    <option name="AFTER_PATH" value="target/classes/am/petstore/PetStore/pets/service/ProductService$findAll$9.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_16_05_2020_10_14_[Default_Changelist]/ProductService$findAll$9.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="target/classes/am/petstore/PetStore/user/service/UserService$registerPhoneNumber$3.class" />
+    <option name="AFTER_PATH" value="target/classes/am/petstore/PetStore/user/service/UserService$registerPhoneNumber$3.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_16_05_2020_10_14_[Default_Changelist]/UserService$registerPhoneNumber$3.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="target/classes/am/petstore/PetStore/pets/entity/ProductEntity.class" />
+    <option name="AFTER_PATH" value="target/classes/am/petstore/PetStore/pets/entity/ProductEntity.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_16_05_2020_10_14_[Default_Changelist]/ProductEntity.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="target/classes/am/petstore/PetStore/pets/service/ProductService$getFavorites$1.class" />
+    <option name="AFTER_PATH" value="target/classes/am/petstore/PetStore/pets/service/ProductService$getFavorites$1.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_16_05_2020_10_14_[Default_Changelist]/ProductService$getFavorites$1.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="target/classes/am/petstore/PetStore/user/controller/Controller$signOut$1.class" />
+    <option name="AFTER_PATH" value="target/classes/am/petstore/PetStore/user/controller/Controller$signOut$1.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_16_05_2020_10_14_[Default_Changelist]/Controller$signOut$1.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="target/classes/am/petstore/PetStore/order/controller/OrderController.class" />
+    <option name="AFTER_PATH" value="target/classes/am/petstore/PetStore/order/controller/OrderController.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_16_05_2020_10_14_[Default_Changelist]/OrderController.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="target/classes/am/petstore/PetStore/pets/service/ProductService$findAll$pagedResult$2.class" />
+    <option name="AFTER_PATH" value="target/classes/am/petstore/PetStore/pets/service/ProductService$findAll$pagedResult$2.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_16_05_2020_10_14_[Default_Changelist]/ProductService$findAll$pagedResult$2.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="target/classes/am/petstore/PetStore/pets/entity/PriceEntity.class" />
+    <option name="AFTER_PATH" value="target/classes/am/petstore/PetStore/pets/entity/PriceEntity.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_16_05_2020_10_14_[Default_Changelist]/PriceEntity.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="target/classes/am/petstore/PetStore/pets/service/CategoryService$findAll$2.class" />
+    <option name="AFTER_PATH" value="target/classes/am/petstore/PetStore/pets/service/CategoryService$findAll$2.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_16_05_2020_10_14_[Default_Changelist]/CategoryService$findAll$2.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="target/classes/am/petstore/PetStore/pets/controller/PetController$findAll$1.class" />
+    <option name="AFTER_PATH" value="target/classes/am/petstore/PetStore/pets/controller/PetController$findAll$1.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_16_05_2020_10_14_[Default_Changelist]/PetController$findAll$1.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="target/classes/am/petstore/PetStore/pets/dao/OtherOptionsDao.class" />
+    <option name="AFTER_PATH" value="target/classes/am/petstore/PetStore/pets/dao/OtherOptionsDao.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_16_05_2020_10_14_[Default_Changelist]/OtherOptionsDao.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="target/classes/am/petstore/PetStore/user/service/UserService$signUpUser$user$1.class" />
+    <option name="AFTER_PATH" value="target/classes/am/petstore/PetStore/user/service/UserService$signUpUser$user$1.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_16_05_2020_10_14_[Default_Changelist]/UserService$signUpUser$user$1.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="target/classes/am/petstore/PetStore/user/jwt/InvalidJwtAuthenticationException.class" />
+    <option name="AFTER_PATH" value="target/classes/am/petstore/PetStore/user/jwt/InvalidJwtAuthenticationException.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_16_05_2020_10_14_[Default_Changelist]/InvalidJwtAuthenticationException.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="target/classes/am/petstore/PetStore/pets/service/ProductService$addToFavorites$4.class" />
+    <option name="AFTER_PATH" value="target/classes/am/petstore/PetStore/pets/service/ProductService$addToFavorites$4.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_16_05_2020_10_14_[Default_Changelist]/ProductService$addToFavorites$4.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="target/classes/am/petstore/PetStore/pets/dao/TitleDao.class" />
+    <option name="AFTER_PATH" value="target/classes/am/petstore/PetStore/pets/dao/TitleDao.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_16_05_2020_10_14_[Default_Changelist]/TitleDao.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="target/classes/am/petstore/PetStore/pets/entity/StoreEntity.class" />
+    <option name="AFTER_PATH" value="target/classes/am/petstore/PetStore/pets/entity/StoreEntity.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_16_05_2020_10_14_[Default_Changelist]/StoreEntity.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="target/classes/am/petstore/PetStore/pets/service/ProductService$removeFromFavorites$3.class" />
+    <option name="AFTER_PATH" value="target/classes/am/petstore/PetStore/pets/service/ProductService$removeFromFavorites$3.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_16_05_2020_10_14_[Default_Changelist]/ProductService$removeFromFavorites$3.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="target/classes/am/petstore/PetStore/pets/controller/PetController.class" />
+    <option name="AFTER_PATH" value="target/classes/am/petstore/PetStore/pets/controller/PetController.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_16_05_2020_10_14_[Default_Changelist]/PetController.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="target/classes/am/petstore/PetStore/user/service/UserService$registerPhoneNumber$user$1.class" />
+    <option name="AFTER_PATH" value="target/classes/am/petstore/PetStore/user/service/UserService$registerPhoneNumber$user$1.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_16_05_2020_10_14_[Default_Changelist]/UserService$registerPhoneNumber$user$1.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="target/classes/am/petstore/PetStore/pets/entity/SizeEntity.class" />
+    <option name="AFTER_PATH" value="target/classes/am/petstore/PetStore/pets/entity/SizeEntity.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_16_05_2020_10_14_[Default_Changelist]/SizeEntity.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="target/classes/am/petstore/PetStore/user/model/RegisterModel.class" />
+    <option name="AFTER_PATH" value="target/classes/am/petstore/PetStore/user/model/RegisterModel.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_16_05_2020_10_14_[Default_Changelist]/RegisterModel.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="target/classes/am/petstore/PetStore/user/service/UserService$downloadImage$2.class" />
+    <option name="AFTER_PATH" value="target/classes/am/petstore/PetStore/user/service/UserService$downloadImage$2.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_16_05_2020_10_14_[Default_Changelist]/UserService$downloadImage$2.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="target/classes/am/petstore/PetStore/pets/service/ProductService$removeFromFavorites$user$1.class" />
+    <option name="AFTER_PATH" value="target/classes/am/petstore/PetStore/pets/service/ProductService$removeFromFavorites$user$1.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_16_05_2020_10_14_[Default_Changelist]/ProductService$removeFromFavorites$user$1.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="target/classes/am/petstore/PetStore/pets/entity/ColorEntity.class" />
+    <option name="AFTER_PATH" value="target/classes/am/petstore/PetStore/pets/entity/ColorEntity.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_16_05_2020_10_14_[Default_Changelist]/ColorEntity.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="target/classes/am/petstore/PetStore/pets/service/ProductService$removeFromFavorites$1.class" />
+    <option name="AFTER_PATH" value="target/classes/am/petstore/PetStore/pets/service/ProductService$removeFromFavorites$1.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_16_05_2020_10_14_[Default_Changelist]/ProductService$removeFromFavorites$1.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="target/classes/am/petstore/PetStore/user/controller/Controller$signUpUser$1.class" />
+    <option name="AFTER_PATH" value="target/classes/am/petstore/PetStore/user/controller/Controller$signUpUser$1.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_16_05_2020_10_14_[Default_Changelist]/Controller$signUpUser$1.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="target/classes/am/petstore/PetStore/user/jwt/JwtTokenProvider.class" />
+    <option name="AFTER_PATH" value="target/classes/am/petstore/PetStore/user/jwt/JwtTokenProvider.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_16_05_2020_10_14_[Default_Changelist]/JwtTokenProvider.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="target/classes/am/petstore/PetStore/pets/service/CategoryService$findAll$1.class" />
+    <option name="AFTER_PATH" value="target/classes/am/petstore/PetStore/pets/service/CategoryService$findAll$1.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_16_05_2020_10_14_[Default_Changelist]/CategoryService$findAll$1.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="target/classes/am/petstore/PetStore/user/service/UserService$signUpUser$fileDownloadUri$1.class" />
+    <option name="AFTER_PATH" value="target/classes/am/petstore/PetStore/user/service/UserService$signUpUser$fileDownloadUri$1.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_16_05_2020_10_14_[Default_Changelist]/UserService$signUpUser$fileDownloadUri$1.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="target/classes/am/petstore/PetStore/user/service/UserService$registerPhoneNumber$newUser$1.class" />
+    <option name="AFTER_PATH" value="target/classes/am/petstore/PetStore/user/service/UserService$registerPhoneNumber$newUser$1.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_16_05_2020_10_14_[Default_Changelist]/UserService$registerPhoneNumber$newUser$1.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="target/classes/am/petstore/PetStore/user/service/UserService$signIn$2.class" />
+    <option name="AFTER_PATH" value="target/classes/am/petstore/PetStore/user/service/UserService$signIn$2.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_16_05_2020_10_14_[Default_Changelist]/UserService$signIn$2.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="target/classes/am/petstore/PetStore/pets/service/PetService.class" />
+    <option name="AFTER_PATH" value="target/classes/am/petstore/PetStore/pets/service/PetService.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_16_05_2020_10_14_[Default_Changelist]/PetService.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="target/classes/am/petstore/PetStore/user/jwt/JwtConfigurer.class" />
+    <option name="AFTER_PATH" value="target/classes/am/petstore/PetStore/user/jwt/JwtConfigurer.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_16_05_2020_10_14_[Default_Changelist]/JwtConfigurer.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="target/classes/am/petstore/PetStore/pets/service/ProductService$findAll$2.class" />
+    <option name="AFTER_PATH" value="target/classes/am/petstore/PetStore/pets/service/ProductService$findAll$2.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_16_05_2020_10_14_[Default_Changelist]/ProductService$findAll$2.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="target/classes/am/petstore/PetStore/user/service/DeviceService$addOrUpdateDevice$2.class" />
+    <option name="AFTER_PATH" value="target/classes/am/petstore/PetStore/user/service/DeviceService$addOrUpdateDevice$2.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_16_05_2020_10_14_[Default_Changelist]/DeviceService$addOrUpdateDevice$2.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="target/classes/am/petstore/PetStore/user/service/UserService$updateUser$2.class" />
+    <option name="AFTER_PATH" value="target/classes/am/petstore/PetStore/user/service/UserService$updateUser$2.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_16_05_2020_10_14_[Default_Changelist]/UserService$updateUser$2.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="target/classes/am/petstore/PetStore/user/service/UserService$signIn$device$1.class" />
+    <option name="AFTER_PATH" value="target/classes/am/petstore/PetStore/user/service/UserService$signIn$device$1.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_16_05_2020_10_14_[Default_Changelist]/UserService$signIn$device$1.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="target/classes/am/petstore/PetStore/PetStoreApplication.class" />
+    <option name="AFTER_PATH" value="target/classes/am/petstore/PetStore/PetStoreApplication.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_16_05_2020_10_14_[Default_Changelist]/PetStoreApplication.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="target/classes/am/petstore/petstore/pets/service/PetService$create$4.class" />
+    <option name="AFTER_PATH" value="target/classes/am/petstore/petstore/pets/service/PetService$create$4.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_16_05_2020_10_14_[Default_Changelist]/PetService$create$4.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="target/classes/am/petstore/PetStore/user/service/UserService$updateUser$3.class" />
+    <option name="AFTER_PATH" value="target/classes/am/petstore/PetStore/user/service/UserService$updateUser$3.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_16_05_2020_10_14_[Default_Changelist]/UserService$updateUser$3.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="target/classes/am/petstore/PetStore/PetStoreApplicationKt.class" />
+    <option name="AFTER_PATH" value="target/classes/am/petstore/PetStore/PetStoreApplicationKt.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_16_05_2020_10_14_[Default_Changelist]/PetStoreApplicationKt.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="target/classes/am/petstore/PetStore/pets/controller/StoreController.class" />
+    <option name="AFTER_PATH" value="target/classes/am/petstore/PetStore/pets/controller/StoreController.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_16_05_2020_10_14_[Default_Changelist]/StoreController.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="target/classes/am/petstore/PetStore/pets/controller/ProductController$delete$1.class" />
+    <option name="AFTER_PATH" value="target/classes/am/petstore/PetStore/pets/controller/ProductController$delete$1.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_16_05_2020_10_14_[Default_Changelist]/ProductController$delete$1.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="target/classes/am/petstore/PetStore/user/model/UploadFileResponse.class" />
+    <option name="AFTER_PATH" value="target/classes/am/petstore/PetStore/user/model/UploadFileResponse.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_16_05_2020_10_14_[Default_Changelist]/UploadFileResponse.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="target/classes/am/petstore/PetStore/Utils.class" />
+    <option name="AFTER_PATH" value="target/classes/am/petstore/PetStore/Utils.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_16_05_2020_10_14_[Default_Changelist]/Utils.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="target/classes/am/petstore/PetStore/user/service/UserService$registerPhoneNumber$2.class" />
+    <option name="AFTER_PATH" value="target/classes/am/petstore/PetStore/user/service/UserService$registerPhoneNumber$2.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_16_05_2020_10_14_[Default_Changelist]/UserService$registerPhoneNumber$2.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="target/classes/am/petstore/PetStore/pets/service/CategoryService.class" />
+    <option name="AFTER_PATH" value="target/classes/am/petstore/PetStore/pets/service/CategoryService.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_16_05_2020_10_14_[Default_Changelist]/CategoryService.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="target/classes/am/petstore/petstore/pets/service/PetService$create$3.class" />
+    <option name="AFTER_PATH" value="target/classes/am/petstore/petstore/pets/service/PetService$create$3.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_16_05_2020_10_14_[Default_Changelist]/PetService$create$3.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="target/classes/am/petstore/PetStore/pets/entity/VolumeEntity.class" />
+    <option name="AFTER_PATH" value="target/classes/am/petstore/PetStore/pets/entity/VolumeEntity.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_16_05_2020_10_14_[Default_Changelist]/VolumeEntity.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="target/classes/am/petstore/PetStore/pets/controller/CategoryController$delete$1.class" />
+    <option name="AFTER_PATH" value="target/classes/am/petstore/PetStore/pets/controller/CategoryController$delete$1.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_16_05_2020_10_14_[Default_Changelist]/CategoryController$delete$1.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="target/classes/am/petstore/PetStore/user/service/UserService$registerPhoneNumber$1.class" />
+    <option name="AFTER_PATH" value="target/classes/am/petstore/PetStore/user/service/UserService$registerPhoneNumber$1.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_16_05_2020_10_14_[Default_Changelist]/UserService$registerPhoneNumber$1.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="target/classes/am/petstore/PetStore/pets/service/StoreService.class" />
+    <option name="AFTER_PATH" value="target/classes/am/petstore/PetStore/pets/service/StoreService.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_16_05_2020_10_14_[Default_Changelist]/StoreService.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="target/classes/am/petstore/PetStore/user/service/UserService$signIn$1.class" />
+    <option name="AFTER_PATH" value="target/classes/am/petstore/PetStore/user/service/UserService$signIn$1.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_16_05_2020_10_14_[Default_Changelist]/UserService$signIn$1.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="target/classes/META-INF/Social.kotlin_module" />
+    <option name="AFTER_PATH" value="target/classes/META-INF/Social.kotlin_module" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_16_05_2020_10_14_[Default_Changelist]/Social.kotlin_module" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="target/classes/am/petstore/PetStore/user/annotations/CheckEmail.class" />
+    <option name="AFTER_PATH" value="target/classes/am/petstore/PetStore/user/annotations/CheckEmail.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_16_05_2020_10_14_[Default_Changelist]/CheckEmail.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="target/classes/am/petstore/PetStore/pets/dao/ProductDao.class" />
+    <option name="AFTER_PATH" value="target/classes/am/petstore/PetStore/pets/dao/ProductDao.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_16_05_2020_10_14_[Default_Changelist]/ProductDao.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="target/classes/am/petstore/PetStore/user/service/UserService$updateUser$user$1.class" />
+    <option name="AFTER_PATH" value="target/classes/am/petstore/PetStore/user/service/UserService$updateUser$user$1.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_16_05_2020_10_14_[Default_Changelist]/UserService$updateUser$user$1.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="target/classes/am/petstore/PetStore/pets/service/PetService$update$2.class" />
+    <option name="AFTER_PATH" value="target/classes/am/petstore/PetStore/pets/service/PetService$update$2.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_16_05_2020_10_14_[Default_Changelist]/PetService$update$2.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="target/classes/am/petstore/PetStore/user/service/UserService$signUpUser$5.class" />
+    <option name="AFTER_PATH" value="target/classes/am/petstore/PetStore/user/service/UserService$signUpUser$5.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_16_05_2020_10_14_[Default_Changelist]/UserService$signUpUser$5.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="target/classes/am/petstore/PetStore/pets/dao/VolumeDao.class" />
+    <option name="AFTER_PATH" value="target/classes/am/petstore/PetStore/pets/dao/VolumeDao.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_16_05_2020_10_14_[Default_Changelist]/VolumeDao.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="target/classes/am/petstore/PetStore/pets/service/ProductService$findAll$1.class" />
+    <option name="AFTER_PATH" value="target/classes/am/petstore/PetStore/pets/service/ProductService$findAll$1.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_16_05_2020_10_14_[Default_Changelist]/ProductService$findAll$1.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="target/classes/am/petstore/PetStore/user/entity/Role.class" />
+    <option name="AFTER_PATH" value="target/classes/am/petstore/PetStore/user/entity/Role.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_16_05_2020_10_14_[Default_Changelist]/Role.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="target/classes/am/petstore/PetStore/user/controller/Controller$registerDevice$1.class" />
+    <option name="AFTER_PATH" value="target/classes/am/petstore/PetStore/user/controller/Controller$registerDevice$1.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_16_05_2020_10_14_[Default_Changelist]/Controller$registerDevice$1.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="target/classes/am/petstore/PetStore/pets/service/ProductService$findAll$3.class" />
+    <option name="AFTER_PATH" value="target/classes/am/petstore/PetStore/pets/service/ProductService$findAll$3.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_16_05_2020_10_14_[Default_Changelist]/ProductService$findAll$3.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="target/classes/am/petstore/PetStore/user/service/DeviceService$setDeviceFree$1.class" />
+    <option name="AFTER_PATH" value="target/classes/am/petstore/PetStore/user/service/DeviceService$setDeviceFree$1.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_16_05_2020_10_14_[Default_Changelist]/DeviceService$setDeviceFree$1.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="target/classes/am/petstore/PetStore/user/service/UserService$updateUser$1.class" />
+    <option name="AFTER_PATH" value="target/classes/am/petstore/PetStore/user/service/UserService$updateUser$1.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_16_05_2020_10_14_[Default_Changelist]/UserService$updateUser$1.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="target/classes/am/petstore/PetStore/pets/dao/TastyDao.class" />
+    <option name="AFTER_PATH" value="target/classes/am/petstore/PetStore/pets/dao/TastyDao.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_16_05_2020_10_14_[Default_Changelist]/TastyDao.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="target/classes/am/petstore/petstore/pets/service/PetService$update$petEntity$1.class" />
+    <option name="AFTER_PATH" value="target/classes/am/petstore/petstore/pets/service/PetService$update$petEntity$1.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_16_05_2020_10_14_[Default_Changelist]/PetService$update$petEntity$1.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="target/classes/am/petstore/PetStore/user/jwt/JwtAuthenticationEntryPoint.class" />
+    <option name="AFTER_PATH" value="target/classes/am/petstore/PetStore/user/jwt/JwtAuthenticationEntryPoint.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_16_05_2020_10_14_[Default_Changelist]/JwtAuthenticationEntryPoint.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="target/classes/am/petstore/PetStore/user/controller/Controller$registerPhone$1.class" />
+    <option name="AFTER_PATH" value="target/classes/am/petstore/PetStore/user/controller/Controller$registerPhone$1.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_16_05_2020_10_14_[Default_Changelist]/Controller$registerPhone$1.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="target/classes/am/petstore/petstore/pets/service/PetService$update$5.class" />
+    <option name="AFTER_PATH" value="target/classes/am/petstore/petstore/pets/service/PetService$update$5.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_16_05_2020_10_14_[Default_Changelist]/PetService$update$5.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="target/classes/am/petstore/PetStore/pets/controller/ProductController$findAll$1.class" />
+    <option name="AFTER_PATH" value="target/classes/am/petstore/PetStore/pets/controller/ProductController$findAll$1.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_16_05_2020_10_14_[Default_Changelist]/ProductController$findAll$1.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="target/classes/am/petstore/PetStore/user/dao/UserDao.class" />
+    <option name="AFTER_PATH" value="target/classes/am/petstore/PetStore/user/dao/UserDao.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_16_05_2020_10_14_[Default_Changelist]/UserDao.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="target/classes/am/petstore/PetStore/user/service/DeviceService$addOrUpdateDeviceOkResponse$1.class" />
+    <option name="AFTER_PATH" value="target/classes/am/petstore/PetStore/user/service/DeviceService$addOrUpdateDeviceOkResponse$1.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_16_05_2020_10_14_[Default_Changelist]/DeviceService$addOrUpdateDeviceOkResponse$1.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="target/classes/am/petstore/petstore/pets/service/PetService$update$4.class" />
+    <option name="AFTER_PATH" value="target/classes/am/petstore/petstore/pets/service/PetService$update$4.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_16_05_2020_10_14_[Default_Changelist]/PetService$update$4.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="target/classes/am/petstore/petstore/pets/service/PetService$update$3.class" />
+    <option name="AFTER_PATH" value="target/classes/am/petstore/petstore/pets/service/PetService$update$3.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_16_05_2020_10_14_[Default_Changelist]/PetService$update$3.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="target/classes/am/petstore/PetStore/user/service/UserService$updateUser$checkUser$1.class" />
+    <option name="AFTER_PATH" value="target/classes/am/petstore/PetStore/user/service/UserService$updateUser$checkUser$1.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_16_05_2020_10_14_[Default_Changelist]/UserService$updateUser$checkUser$1.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="target/classes/am/petstore/PetStore/user/controller/Controller$deleteUser$1.class" />
+    <option name="AFTER_PATH" value="target/classes/am/petstore/PetStore/user/controller/Controller$deleteUser$1.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_16_05_2020_10_14_[Default_Changelist]/Controller$deleteUser$1.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="target/classes/am/petstore/PetStore/pets/service/CategoryService$delete$2$1.class" />
+    <option name="AFTER_PATH" value="target/classes/am/petstore/PetStore/pets/service/CategoryService$delete$2$1.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_16_05_2020_10_14_[Default_Changelist]/CategoryService$delete$2$1.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="target/classes/am/petstore/PetStore/pets/service/ProductService$findAll$4.class" />
+    <option name="AFTER_PATH" value="target/classes/am/petstore/PetStore/pets/service/ProductService$findAll$4.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_16_05_2020_10_14_[Default_Changelist]/ProductService$findAll$4.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="target/classes/am/petstore/PetStore/pets/entity/TitleEntity.class" />
+    <option name="AFTER_PATH" value="target/classes/am/petstore/PetStore/pets/entity/TitleEntity.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_16_05_2020_10_14_[Default_Changelist]/TitleEntity.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="target/classes/am/petstore/PetStore/user/service/UserService$downloadImage$1.class" />
+    <option name="AFTER_PATH" value="target/classes/am/petstore/PetStore/user/service/UserService$downloadImage$1.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_16_05_2020_10_14_[Default_Changelist]/UserService$downloadImage$1.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="target/classes/am/petstore/PetStore/user/service/UserService$signUpUser$4.class" />
+    <option name="AFTER_PATH" value="target/classes/am/petstore/PetStore/user/service/UserService$signUpUser$4.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_16_05_2020_10_14_[Default_Changelist]/UserService$signUpUser$4.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="target/classes/am/petstore/PetStore/pets/controller/PetController$create$1.class" />
+    <option name="AFTER_PATH" value="target/classes/am/petstore/PetStore/pets/controller/PetController$create$1.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_16_05_2020_10_14_[Default_Changelist]/PetController$create$1.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="target/classes/am/petstore/PetStore/pets/dao/WeightDao.class" />
+    <option name="AFTER_PATH" value="target/classes/am/petstore/PetStore/pets/dao/WeightDao.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_16_05_2020_10_14_[Default_Changelist]/WeightDao.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="target/classes/am/petstore/PetStore/FileStorageProperties.class" />
+    <option name="AFTER_PATH" value="target/classes/am/petstore/PetStore/FileStorageProperties.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_16_05_2020_10_14_[Default_Changelist]/FileStorageProperties.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="target/classes/am/petstore/PetStore/user/service/DeviceService$setDeviceFree$2.class" />
+    <option name="AFTER_PATH" value="target/classes/am/petstore/PetStore/user/service/DeviceService$setDeviceFree$2.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_16_05_2020_10_14_[Default_Changelist]/DeviceService$setDeviceFree$2.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="target/classes/am/petstore/petstore/pets/service/PetService$findAll$petEntities$1.class" />
+    <option name="AFTER_PATH" value="target/classes/am/petstore/petstore/pets/service/PetService$findAll$petEntities$1.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_16_05_2020_10_14_[Default_Changelist]/PetService$findAll$petEntities$1.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="target/classes/am/petstore/PetStore/pets/model/Category.class" />
+    <option name="AFTER_PATH" value="target/classes/am/petstore/PetStore/pets/model/Category.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_16_05_2020_10_14_[Default_Changelist]/Category.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="target/classes/am/petstore/PetStore/user/controller/Controller$downloadFileFromLocal$1.class" />
+    <option name="AFTER_PATH" value="target/classes/am/petstore/PetStore/user/controller/Controller$downloadFileFromLocal$1.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_16_05_2020_10_14_[Default_Changelist]/Controller$downloadFileFromLocal$1.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="target/classes/am/petstore/PetStore/user/model/UserResponse.class" />
+    <option name="AFTER_PATH" value="target/classes/am/petstore/PetStore/user/model/UserResponse.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_16_05_2020_10_14_[Default_Changelist]/UserResponse.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="target/classes/am/petstore/PetStore/user/jwt/JwtTokenFilter.class" />
+    <option name="AFTER_PATH" value="target/classes/am/petstore/PetStore/user/jwt/JwtTokenFilter.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_16_05_2020_10_14_[Default_Changelist]/JwtTokenFilter.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="target/classes/am/petstore/petstore/pets/service/PetService$create$6.class" />
+    <option name="AFTER_PATH" value="target/classes/am/petstore/petstore/pets/service/PetService$create$6.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_16_05_2020_10_14_[Default_Changelist]/PetService$create$6.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="target/classes/am/petstore/PetStore/pets/controller/ProductController$create$1.class" />
+    <option name="AFTER_PATH" value="target/classes/am/petstore/PetStore/pets/controller/ProductController$create$1.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_16_05_2020_10_14_[Default_Changelist]/ProductController$create$1.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="target/classes/am/petstore/PetStore/user/service/FileStorageService.class" />
+    <option name="AFTER_PATH" value="target/classes/am/petstore/PetStore/user/service/FileStorageService.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_16_05_2020_10_14_[Default_Changelist]/FileStorageService.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="target/classes/am/petstore/PetStore/pets/service/CategoryService$delete$2.class" />
+    <option name="AFTER_PATH" value="target/classes/am/petstore/PetStore/pets/service/CategoryService$delete$2.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_16_05_2020_10_14_[Default_Changelist]/CategoryService$delete$2.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="target/classes/am/petstore/PetStore/pets/entity/DescriptionEntity.class" />
+    <option name="AFTER_PATH" value="target/classes/am/petstore/PetStore/pets/entity/DescriptionEntity.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_16_05_2020_10_14_[Default_Changelist]/DescriptionEntity.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="target/classes/am/petstore/PetStore/pets/entity/TastyEntity.class" />
+    <option name="AFTER_PATH" value="target/classes/am/petstore/PetStore/pets/entity/TastyEntity.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_16_05_2020_10_14_[Default_Changelist]/TastyEntity.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="target/classes/am/petstore/PetStore/pets/entity/OtherOptionsEntity.class" />
+    <option name="AFTER_PATH" value="target/classes/am/petstore/PetStore/pets/entity/OtherOptionsEntity.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_16_05_2020_10_14_[Default_Changelist]/OtherOptionsEntity.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="target/classes/am/petstore/PetStore/pets/service/CategoryService$findAll$2$1.class" />
+    <option name="AFTER_PATH" value="target/classes/am/petstore/PetStore/pets/service/CategoryService$findAll$2$1.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_16_05_2020_10_14_[Default_Changelist]/CategoryService$findAll$2$1.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="target/classes/am/petstore/PetStore/pets/controller/ProductController$getFavorites$1.class" />
+    <option name="AFTER_PATH" value="target/classes/am/petstore/PetStore/pets/controller/ProductController$getFavorites$1.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_16_05_2020_10_14_[Default_Changelist]/ProductController$getFavorites$1.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="target/classes/am/petstore/PetStore/pets/dao/SizeDao.class" />
+    <option name="AFTER_PATH" value="target/classes/am/petstore/PetStore/pets/dao/SizeDao.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_16_05_2020_10_14_[Default_Changelist]/SizeDao.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="target/classes/am/petstore/PetStore/pets/service/CategoryService$update$2.class" />
+    <option name="AFTER_PATH" value="target/classes/am/petstore/PetStore/pets/service/CategoryService$update$2.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_16_05_2020_10_14_[Default_Changelist]/CategoryService$update$2.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="target/classes/am/petstore/PetStore/user/model/ApiResponse.class" />
+    <option name="AFTER_PATH" value="target/classes/am/petstore/PetStore/user/model/ApiResponse.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_16_05_2020_10_14_[Default_Changelist]/ApiResponse.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="target/classes/am/petstore/PetStore/user/service/DeviceService$addOrUpdateDevice$5.class" />
+    <option name="AFTER_PATH" value="target/classes/am/petstore/PetStore/user/service/DeviceService$addOrUpdateDevice$5.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_16_05_2020_10_14_[Default_Changelist]/DeviceService$addOrUpdateDevice$5.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="target/classes/am/petstore/PetStore/pets/controller/PetController$update$1.class" />
+    <option name="AFTER_PATH" value="target/classes/am/petstore/PetStore/pets/controller/PetController$update$1.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_16_05_2020_10_14_[Default_Changelist]/PetController$update$1.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="target/classes/am/petstore/PetStore/pets/service/ProductService$findAll$8.class" />
+    <option name="AFTER_PATH" value="target/classes/am/petstore/PetStore/pets/service/ProductService$findAll$8.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_16_05_2020_10_14_[Default_Changelist]/ProductService$findAll$8.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="target/classes/am/petstore/PetStore/user/config/SpringSecurityConfig.class" />
+    <option name="AFTER_PATH" value="target/classes/am/petstore/PetStore/user/config/SpringSecurityConfig.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_16_05_2020_10_14_[Default_Changelist]/SpringSecurityConfig.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="target/classes/am/petstore/PetStore/order/entity/OrderEntity.class" />
+    <option name="AFTER_PATH" value="target/classes/am/petstore/PetStore/order/entity/OrderEntity.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_16_05_2020_10_14_[Default_Changelist]/OrderEntity.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="target/classes/am/petstore/PetStore/pets/controller/CategoryController$create$1.class" />
+    <option name="AFTER_PATH" value="target/classes/am/petstore/PetStore/pets/controller/CategoryController$create$1.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_16_05_2020_10_14_[Default_Changelist]/CategoryController$create$1.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="target/classes/am/petstore/PetStore/pets/controller/ProductController$addToFavorites$1.class" />
+    <option name="AFTER_PATH" value="target/classes/am/petstore/PetStore/pets/controller/ProductController$addToFavorites$1.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_16_05_2020_10_14_[Default_Changelist]/ProductController$addToFavorites$1.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="target/classes/am/petstore/PetStore/pets/service/PetService$create$2.class" />
+    <option name="AFTER_PATH" value="target/classes/am/petstore/PetStore/pets/service/PetService$create$2.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_16_05_2020_10_14_[Default_Changelist]/PetService$create$2.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="target/classes/am/petstore/PetStore/pets/entity/WeightEntity.class" />
+    <option name="AFTER_PATH" value="target/classes/am/petstore/PetStore/pets/entity/WeightEntity.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_16_05_2020_10_14_[Default_Changelist]/WeightEntity.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="target/classes/am/petstore/PetStore/pets/service/ProductService.class" />
+    <option name="AFTER_PATH" value="target/classes/am/petstore/PetStore/pets/service/ProductService.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_16_05_2020_10_14_[Default_Changelist]/ProductService.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="target/classes/am/petstore/PetStore/user/controller/Controller.class" />
+    <option name="AFTER_PATH" value="target/classes/am/petstore/PetStore/user/controller/Controller.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_16_05_2020_10_14_[Default_Changelist]/Controller.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="target/classes/am/petstore/PetStore/pets/service/ProductService$addToFavorites$user$1.class" />
+    <option name="AFTER_PATH" value="target/classes/am/petstore/PetStore/pets/service/ProductService$addToFavorites$user$1.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_16_05_2020_10_14_[Default_Changelist]/ProductService$addToFavorites$user$1.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="target/classes/am/petstore/PetStore/pets/service/CategoryService$create$2.class" />
+    <option name="AFTER_PATH" value="target/classes/am/petstore/PetStore/pets/service/CategoryService$create$2.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_16_05_2020_10_14_[Default_Changelist]/CategoryService$create$2.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="target/classes/am/petstore/PetStore/user/service/UserService$uploadImage$fileDownloadUri$1.class" />
+    <option name="AFTER_PATH" value="target/classes/am/petstore/PetStore/user/service/UserService$uploadImage$fileDownloadUri$1.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_16_05_2020_10_14_[Default_Changelist]/UserService$uploadImage$fileDownloadUri$1.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="target/classes/am/petstore/PetStore/user/service/DeviceService$addOrUpdateDevice$3.class" />
+    <option name="AFTER_PATH" value="target/classes/am/petstore/PetStore/user/service/DeviceService$addOrUpdateDevice$3.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_16_05_2020_10_14_[Default_Changelist]/DeviceService$addOrUpdateDevice$3.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="target/classes/am/petstore/PetStore/pets/controller/ProductController$removeFromFavorites$1.class" />
+    <option name="AFTER_PATH" value="target/classes/am/petstore/PetStore/pets/controller/ProductController$removeFromFavorites$1.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_16_05_2020_10_14_[Default_Changelist]/ProductController$removeFromFavorites$1.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="target/classes/am/petstore/PetStore/user/controller/Controller$signIn$1.class" />
+    <option name="AFTER_PATH" value="target/classes/am/petstore/PetStore/user/controller/Controller$signIn$1.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_16_05_2020_10_14_[Default_Changelist]/Controller$signIn$1.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="target/classes/am/petstore/PetStore/user/service/DeviceService$addOrUpdateDevice$1.class" />
+    <option name="AFTER_PATH" value="target/classes/am/petstore/PetStore/user/service/DeviceService$addOrUpdateDevice$1.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_16_05_2020_10_14_[Default_Changelist]/DeviceService$addOrUpdateDevice$1.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="target/classes/am/petstore/PetStore/order/model/Order.class" />
+    <option name="AFTER_PATH" value="target/classes/am/petstore/PetStore/order/model/Order.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_16_05_2020_10_14_[Default_Changelist]/Order.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="target/classes/am/petstore/PetStore/user/controller/Controller$updateUser$1.class" />
+    <option name="AFTER_PATH" value="target/classes/am/petstore/PetStore/user/controller/Controller$updateUser$1.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_16_05_2020_10_14_[Default_Changelist]/Controller$updateUser$1.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="target/classes/am/petstore/PetStore/user/dao/DeviceDao.class" />
+    <option name="AFTER_PATH" value="target/classes/am/petstore/PetStore/user/dao/DeviceDao.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_16_05_2020_10_14_[Default_Changelist]/DeviceDao.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="target/classes/am/petstore/PetStore/pets/service/ProductService$addToFavorites$3.class" />
+    <option name="AFTER_PATH" value="target/classes/am/petstore/PetStore/pets/service/ProductService$addToFavorites$3.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_16_05_2020_10_14_[Default_Changelist]/ProductService$addToFavorites$3.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="target/classes/am/petstore/PetStore/pets/service/ProductService$addToFavorites$1.class" />
+    <option name="AFTER_PATH" value="target/classes/am/petstore/PetStore/pets/service/ProductService$addToFavorites$1.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_16_05_2020_10_14_[Default_Changelist]/ProductService$addToFavorites$1.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="target/classes/am/petstore/PetStore/pets/dao/PetDao.class" />
+    <option name="AFTER_PATH" value="target/classes/am/petstore/PetStore/pets/dao/PetDao.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_16_05_2020_10_14_[Default_Changelist]/PetDao.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="target/classes/am/petstore/PetStore/pets/controller/CategoryController.class" />
+    <option name="AFTER_PATH" value="target/classes/am/petstore/PetStore/pets/controller/CategoryController.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_16_05_2020_10_14_[Default_Changelist]/CategoryController.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="target/classes/am/petstore/PetStore/user/service/UserService.class" />
+    <option name="AFTER_PATH" value="target/classes/am/petstore/PetStore/user/service/UserService.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_16_05_2020_10_14_[Default_Changelist]/UserService.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="target/classes/am/petstore/PetStore/pets/entity/PetEntity.class" />
+    <option name="AFTER_PATH" value="target/classes/am/petstore/PetStore/pets/entity/PetEntity.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_16_05_2020_10_14_[Default_Changelist]/PetEntity.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="target/classes/am/petstore/PetStore/pets/model/Product.class" />
+    <option name="AFTER_PATH" value="target/classes/am/petstore/PetStore/pets/model/Product.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_16_05_2020_10_14_[Default_Changelist]/Product.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="target/classes/am/petstore/PetStore/pets/service/ProductService$removeFromFavorites$2.class" />
+    <option name="AFTER_PATH" value="target/classes/am/petstore/PetStore/pets/service/ProductService$removeFromFavorites$2.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_16_05_2020_10_14_[Default_Changelist]/ProductService$removeFromFavorites$2.class" />
+  </binary>
+</changelist>

@@ -1,5 +1,6 @@
 package am.petstore.petstore.pets.entity
 
+import com.fasterxml.jackson.annotation.JsonIgnore
 import org.springframework.data.annotation.CreatedDate
 import org.springframework.data.annotation.LastModifiedDate
 import java.util.*
@@ -36,13 +37,20 @@ class SizeEntity {
     var height: Double? = null
 
     @OneToMany(cascade = [CascadeType.ALL], fetch = FetchType.EAGER)
+    @JoinColumn(name = "size_id")
     var capacities: MutableSet<CapacityEntity>? = null
 
     @OneToMany(cascade = [CascadeType.ALL], fetch = FetchType.EAGER)
+    @JoinColumn(name = "size_id")
     var colors: MutableSet<ColorEntity>? = null
 
+    @ManyToOne
+    @JoinColumn(name = "product_id")
+    @JsonIgnore
+    var product: ProductEntity? = null
+
     constructor()
-    constructor(id: Long?, createdAt: Date?, updatedAt: Date?, deletedAt: Date?, length: Double?, width: Double?, height: Double?, capacities: MutableSet<CapacityEntity>?, colors: MutableSet<ColorEntity>?) {
+    constructor(id: Long?, createdAt: Date?, updatedAt: Date?, deletedAt: Date?, length: Double?, width: Double?, height: Double?, capacities: MutableSet<CapacityEntity>?, colors: MutableSet<ColorEntity>?, product: ProductEntity?) {
         this.id = id
         this.createdAt = createdAt
         this.updatedAt = updatedAt
@@ -52,10 +60,11 @@ class SizeEntity {
         this.height = height
         this.capacities = capacities
         this.colors = colors
+        this.product = product
     }
 
     override fun toString(): String {
-        return "SizeEntity(id=$id, createdAt=$createdAt, updatedAt=$updatedAt, deletedAt=$deletedAt, length=$length, width=$width, height=$height, capacities=$capacities, colors=$colors)"
+        return "SizeEntity(id=$id, createdAt=$createdAt, updatedAt=$updatedAt, deletedAt=$deletedAt, length=$length, width=$width, height=$height, capacities=$capacities, colors=$colors, product=$product)"
     }
 
 

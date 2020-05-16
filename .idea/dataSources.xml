@@ -7,11 +7,5 @@
       <jdbc-driver>org.postgresql.Driver</jdbc-driver>
       <jdbc-url>jdbc:postgresql://localhost:5432/PetStore</jdbc-url>
     </data-source>
-    <data-source source="LOCAL" name="PetStore2@localhost" uuid="d43fc15f-c2b0-4ba4-8611-e867a561567c">
-      <driver-ref>postgresql</driver-ref>
-      <synchronize>true</synchronize>
-      <jdbc-driver>org.postgresql.Driver</jdbc-driver>
-      <jdbc-url>jdbc:postgresql://localhost:5432/PetStore2</jdbc-url>
-    </data-source>
   </component>
 </project>
