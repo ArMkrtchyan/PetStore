@@ -9,6 +9,7 @@ import com.fasterxml.jackson.databind.ObjectMapper
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.Job
 import kotlinx.coroutines.withContext
+import org.slf4j.LoggerFactory
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.data.domain.Sort
 import org.springframework.http.ResponseEntity
@@ -66,13 +67,13 @@ class PetService @Autowired constructor(private val petDao: PetDao, private val 
 
 
     suspend fun findAll(): ResponseEntity<MutableMap<Any, Any>> {
-        val petEntities = withContext(Dispatchers.Default + Job()) { petDao.findAll(Sort.by("id")) }
         data.clear()
         model.clear()
         data["code"] = 200
         data["message"] = "Success"
-        model["pets"] = withContext(Dispatchers.Default + Job()) { petDao.findAll(Sort.by("id")).map { it?.deletedAt != null } }
+        model["pets"] = withContext(Dispatchers.Default + Job()) { petDao.findAll(Sort.by("id")).filter { it?.deletedAt == null } }
         data["data"] = model
+        LoggerFactory.getLogger("Pets").info(model.toString())
         return ResponseEntity.ok(data)
     }
 

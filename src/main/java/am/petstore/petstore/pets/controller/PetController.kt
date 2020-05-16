@@ -14,7 +14,6 @@ import javax.servlet.http.HttpServletRequest
 @RequestMapping("/pets")
 class PetController @Autowired constructor(private val petService: PetService) {
 
-    @FlowPreview
     @GetMapping("/findAll")
     fun findAll(): ResponseEntity<MutableMap<Any, Any>> = runBlocking {
         petService.findAll()
