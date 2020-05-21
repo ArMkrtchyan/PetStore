@@ -30,9 +30,10 @@ class VolumeEntity {
     @Column(name = "volume")
     var volume: Double? = null
 
-    @OneToMany(cascade = [CascadeType.ALL], fetch = FetchType.EAGER)
-    @JoinColumn(name = "volume_id")
-    var options: MutableSet<OptionsEntity>? = null
+    @OneToOne(cascade = [CascadeType.ALL])
+    @JoinColumn(name = "options_id", referencedColumnName = "id")
+    @OrderBy("id ASC")
+    var options: OptionsEntity? = null
 
     @ManyToOne
     @JoinColumn(name = "product_id")
@@ -40,7 +41,7 @@ class VolumeEntity {
     var product: ProductEntity? = null
 
     constructor()
-    constructor(id: Long?, createdAt: Date?, updatedAt: Date?, deletedAt: Date?, volume: Double?, options: MutableSet<OptionsEntity>?, product: ProductEntity?) {
+    constructor(id: Long?, createdAt: Date?, updatedAt: Date?, deletedAt: Date?, volume: Double?, options: OptionsEntity?, product: ProductEntity?) {
         this.id = id
         this.createdAt = createdAt
         this.updatedAt = updatedAt

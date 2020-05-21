@@ -17,10 +17,13 @@ interface ProductDao : JpaRepository<ProductEntity?, Long?> {
 
     fun findAllByCategoryId(categoryId: Int?, by: Sort): List<ProductEntity>
     fun findAllByCategoryId(categoryId: Int?): List<ProductEntity>
-    fun findAllByPetId(petId: Int?): List<ProductEntity>
+
+    @Query("select distinct pe from ProductEntity pe left join OptionsEntity op on op.product.id = pe.id where pe.petId = ?1 and (op.discount is not null or op.discount > 0) ")
+    fun findAllPetId(petId: Int?, by: Sort): List<ProductEntity>
     fun findAllByPetId(petId: Int?, by: Sort): List<ProductEntity>
     fun findByCategoryId(categoryId: Int?, pageRequest: Pageable): Slice<ProductEntity>
 
-    fun findByPetId(petId: Int?, pageRequest: Pageable): Slice<ProductEntity>
+    @Query("select distinct pe from ProductEntity pe  left join OptionsEntity op on op.product.id = pe.id where pe.petId = ?1 and (op.discount is not null or op.discount > 0) ")
+    fun findAllWithDiscount(petId: Int?, pageRequest: Pageable): Slice<ProductEntity>
 
 }

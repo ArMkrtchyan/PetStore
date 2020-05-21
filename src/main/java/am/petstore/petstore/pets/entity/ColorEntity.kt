@@ -33,9 +33,10 @@ class ColorEntity {
     @Column(name = "hex")
     var hex: String? = null
 
-    @OneToMany(cascade = [CascadeType.ALL], fetch = FetchType.EAGER)
-    @JoinColumn(name = "color_id")
-    var options: MutableSet<OptionsEntity>? = null
+    @OneToOne(cascade = [CascadeType.ALL])
+    @JoinColumn(name = "options_id", referencedColumnName = "id")
+    @OrderBy("id ASC")
+    var options: OptionsEntity? = null
 
     @ManyToOne
     @JoinColumn(name = "capacity_id")
@@ -48,7 +49,7 @@ class ColorEntity {
     var size: SizeEntity? = null
 
     constructor()
-    constructor(id: Long?, createdAt: Date?, updatedAt: Date?, deletedAt: Date?, color: String?, hex: String?, options: MutableSet<OptionsEntity>?, capacity: CapacityEntity?, size: SizeEntity?) {
+    constructor(id: Long?, createdAt: Date?, updatedAt: Date?, deletedAt: Date?, color: String?, hex: String?, options: OptionsEntity?, capacity: CapacityEntity?, size: SizeEntity?) {
         this.id = id
         this.createdAt = createdAt
         this.updatedAt = updatedAt

@@ -32,24 +32,24 @@ class OptionsController {
         return service!!.deleteColor(jsonNode)
     }
 
-    @GetMapping("/description/findAll")
-    fun findAllDescriptions(@RequestBody jsonNode: JsonNode?): ResponseEntity<*>? {
-        return service!!.findAllDescription()
+    @GetMapping("/capacity/findAll")
+    fun findAllCapacities(@RequestBody jsonNode: JsonNode?): ResponseEntity<*>? {
+        return service!!.findAllCapacities()
     }
 
-    @PostMapping("/description/create")
-    fun createDescriptions(@RequestBody jsonNode: JsonNode?): ResponseEntity<*>? {
-        return service!!.createDescription(jsonNode)
+    @PostMapping("/capacity/create")
+    fun createCapacity(@RequestBody jsonNode: JsonNode?): ResponseEntity<*>? {
+        return service!!.createCapacity(jsonNode)
     }
 
-    @PutMapping("/description/update")
-    fun updateDescriptions(@RequestBody jsonNode: JsonNode?): ResponseEntity<*>? {
-        return service!!.updateDescription(jsonNode)
+    @PutMapping("/capacity/update")
+    fun updateCapacity(@RequestBody jsonNode: JsonNode?): ResponseEntity<*>? {
+        return service!!.updateCapacity(jsonNode)
     }
 
-    @PostMapping("/description/delete")
-    fun deleteDescriptions(@RequestBody jsonNode: JsonNode?): ResponseEntity<*>? {
-        return service!!.deleteDescription(jsonNode)
+    @PostMapping("/capacity/delete")
+    fun deleteCapacity(@RequestBody jsonNode: JsonNode?): ResponseEntity<*>? {
+        return service!!.deleteCapacity(jsonNode)
     }
 
     @GetMapping("/other/findAll")
@@ -73,44 +73,24 @@ class OptionsController {
     }
 
 
-    @GetMapping("/photo/findAll")
-    fun findAllPhoto(@RequestBody jsonNode: JsonNode?): ResponseEntity<*>? {
-        return service!!.findAllPhoto()
+    @GetMapping("/findAll")
+    fun findAllOption(@RequestBody jsonNode: JsonNode?): ResponseEntity<*>? {
+        return service!!.findAllOption()
     }
 
-    @PostMapping("/photo/create")
-    fun createPhoto(@RequestBody jsonNode: JsonNode?): ResponseEntity<*>? {
-        return service!!.createPhoto(jsonNode)
+    @PostMapping("/create")
+    fun createOption(@RequestBody jsonNode: JsonNode?): ResponseEntity<*>? {
+        return service!!.createOption(jsonNode)
     }
 
-    @PutMapping("/photo/update")
-    fun updatePhoto(@RequestBody jsonNode: JsonNode?): ResponseEntity<*>? {
-        return service!!.updatePhoto(jsonNode)
+    @PutMapping("/update")
+    fun updateOption(@RequestBody jsonNode: JsonNode?): ResponseEntity<*>? {
+        return service!!.updateOption(jsonNode)
     }
 
-    @PostMapping("/photo/delete")
-    fun deletePhoto(@RequestBody jsonNode: JsonNode?): ResponseEntity<*>? {
-        return service!!.deletePhoto(jsonNode)
-    }
-
-    @GetMapping("/price/findAll")
-    fun findAllPrice(@RequestBody jsonNode: JsonNode?): ResponseEntity<*>? {
-        return service!!.findAllPrice()
-    }
-
-    @PostMapping("/price/create")
-    fun createPrice(@RequestBody jsonNode: JsonNode?): ResponseEntity<*>? {
-        return service!!.createPrice(jsonNode)
-    }
-
-    @PutMapping("/price/update")
-    fun updatePrice(@RequestBody jsonNode: JsonNode?): ResponseEntity<*>? {
-        return service!!.updatePrice(jsonNode)
-    }
-
-    @PostMapping("/price/delete")
-    fun deletePrice(@RequestBody jsonNode: JsonNode?): ResponseEntity<*>? {
-        return service!!.deletePrice(jsonNode)
+    @PostMapping("/delete")
+    fun deleteOption(@RequestBody jsonNode: JsonNode?): ResponseEntity<*>? {
+        return service!!.deleteOption(jsonNode)
     }
 
     @GetMapping("/size/findAll")
@@ -151,26 +131,6 @@ class OptionsController {
     @PostMapping("/tasty/delete")
     fun deleteTasty(@RequestBody jsonNode: JsonNode?): ResponseEntity<*>? {
         return service!!.deleteTasty(jsonNode)
-    }
-
-    @GetMapping("/title/findAll")
-    fun findAllTitle(@RequestBody jsonNode: JsonNode?): ResponseEntity<*>? {
-        return service!!.findAllTitle()
-    }
-
-    @PostMapping("/title/create")
-    fun createTitle(@RequestBody jsonNode: JsonNode?): ResponseEntity<*>? {
-        return service!!.createTitle(jsonNode)
-    }
-
-    @PutMapping("/title/update")
-    fun updateTitle(@RequestBody jsonNode: JsonNode?): ResponseEntity<*>? {
-        return service!!.updateTitle(jsonNode)
-    }
-
-    @PostMapping("/title/delete")
-    fun deleteTitle(@RequestBody jsonNode: JsonNode?): ResponseEntity<*>? {
-        return service!!.deleteTitle(jsonNode)
     }
 
     @GetMapping("/volume/findAll")

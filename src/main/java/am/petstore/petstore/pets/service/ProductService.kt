@@ -26,8 +26,9 @@ import javax.servlet.http.HttpServletRequest
 @Transactional
 class ProductService @Autowired constructor(private val productDao: ProductDao,
                                             private val userDao: UserDao,
+                                            private val capacity: CapacityDao,
                                             private val colorDao: ColorDao,
-                                            private val otherOptionsDao: OptionsDao,
+                                            private val optionsDao: OptionsDao,
                                             private val sizeDao: SizeDao,
                                             private val tastyDao: TastyDao,
                                             private val volumeDao: VolumeDao,
@@ -71,7 +72,7 @@ class ProductService @Autowired constructor(private val productDao: ProductDao,
         data.clear()
         model.clear()
         val paging = PageRequest.of(page ?: 0, limit ?: 0, Sort.by(sort ?: "id"))
-        val pagedResult = withContext(Dispatchers.Default + Job()) { productDao.findByPetId(petId, paging) }
+        val pagedResult = withContext(Dispatchers.Default + Job()) { productDao.findAllWithDiscount(petId, paging) }
         if (pagedResult.hasContent()) {
             model["products"] = pagedResult.content
         } else {
@@ -79,17 +80,18 @@ class ProductService @Autowired constructor(private val productDao: ProductDao,
         }
         data["code"] = 200
         data["message"] = "Success"
-        model["count"] = withContext(Dispatchers.Default + Job()) { productDao.findAllByPetId(petId).size }
+        model["count"] = withContext(Dispatchers.Default + Job()) { productDao.findAllPetId(petId, Sort.by("id")).size }
         data["data"] = model
         return ResponseEntity.ok(data)
 
     }
+
     suspend fun findAllWithPetId(petId: Int): ResponseEntity<MutableMap<Any, Any>> {
         data.clear()
         model.clear()
         val products = ArrayList<ProductEntity>()
         withContext(Dispatchers.Default + Job()) {
-            productDao.findAllByPetId(petId, Sort.by("id")).map { it ->
+            productDao.findAllPetId(petId, Sort.by("id")).map { it ->
                 products.add(it)
             }
         }
@@ -99,7 +101,6 @@ class ProductService @Autowired constructor(private val productDao: ProductDao,
         model["count"] = withContext(Dispatchers.Default + Job()) { products.size }
         data["data"] = model
         return ResponseEntity.ok(data)
-
     }
 
     suspend fun findAll(page: Int?, limit: Int?, sort: String?): ResponseEntity<MutableMap<Any, Any>> {

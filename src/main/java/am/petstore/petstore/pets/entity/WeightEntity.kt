@@ -30,9 +30,10 @@ class WeightEntity {
     @Column(name = "weight")
     var weight: Double? = null
 
-    @OneToMany(cascade = [CascadeType.ALL], fetch = FetchType.EAGER)
-    @JoinColumn(name = "weight_id")
-    var options: MutableSet<OptionsEntity>? = null
+    @OneToOne(cascade = [CascadeType.ALL])
+    @JoinColumn(name = "options_id", referencedColumnName = "id")
+    @OrderBy("id ASC")
+    var options: OptionsEntity? = null
 
     @ManyToOne
     @JoinColumn(name = "tasty_id")
@@ -40,7 +41,7 @@ class WeightEntity {
     var tasty: TastyEntity? = null
 
     constructor()
-    constructor(id: Long?, createdAt: Date?, updatedAt: Date?, deletedAt: Date?, weight: Double?, options: MutableSet<OptionsEntity>?, tasty: TastyEntity?) {
+    constructor(id: Long?, createdAt: Date?, updatedAt: Date?, deletedAt: Date?, weight: Double?, options: OptionsEntity?, tasty: TastyEntity?) {
         this.id = id
         this.createdAt = createdAt
         this.updatedAt = updatedAt

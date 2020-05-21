@@ -70,7 +70,7 @@ class OptionsService @Autowired constructor(private val productDao: ProductDao,
         return ResponseEntity.ok(data)
     }
 
-    fun findAllDescription(): ResponseEntity<*>? {
+    fun findAllCapacities(): ResponseEntity<*>? {
         data.clear()
         model.clear()
         data["code"] = 200
@@ -80,7 +80,7 @@ class OptionsService @Autowired constructor(private val productDao: ProductDao,
         return ResponseEntity.ok(data)
     }
 
-    fun createDescription(jsonNode: JsonNode?): ResponseEntity<*>? {
+    fun createCapacity(jsonNode: JsonNode?): ResponseEntity<*>? {
         data.clear()
         model.clear()
         data["code"] = 200
@@ -90,7 +90,7 @@ class OptionsService @Autowired constructor(private val productDao: ProductDao,
         return ResponseEntity.ok(data)
     }
 
-    fun updateDescription(jsonNode: JsonNode?): ResponseEntity<*>? {
+    fun updateCapacity(jsonNode: JsonNode?): ResponseEntity<*>? {
         data.clear()
         model.clear()
         data["code"] = 200
@@ -100,7 +100,7 @@ class OptionsService @Autowired constructor(private val productDao: ProductDao,
         return ResponseEntity.ok(data)
     }
 
-    fun deleteDescription(jsonNode: JsonNode?): ResponseEntity<*>? {
+    fun deleteCapacity(jsonNode: JsonNode?): ResponseEntity<*>? {
         data.clear()
         model.clear()
         data["code"] = 200
@@ -150,7 +150,7 @@ class OptionsService @Autowired constructor(private val productDao: ProductDao,
         return ResponseEntity.ok(data)
     }
 
-    fun findAllPhoto(): ResponseEntity<*>? {
+    fun findAllOption(): ResponseEntity<*>? {
         data.clear()
         model.clear()
         data["code"] = 200
@@ -160,7 +160,7 @@ class OptionsService @Autowired constructor(private val productDao: ProductDao,
         return ResponseEntity.ok(data)
     }
 
-    fun createPhoto(jsonNode: JsonNode?): ResponseEntity<*>? {
+    fun createOption(jsonNode: JsonNode?): ResponseEntity<*>? {
         data.clear()
         model.clear()
         data["code"] = 200
@@ -170,7 +170,7 @@ class OptionsService @Autowired constructor(private val productDao: ProductDao,
         return ResponseEntity.ok(data)
     }
 
-    fun updatePhoto(jsonNode: JsonNode?): ResponseEntity<*>? {
+    fun updateOption(jsonNode: JsonNode?): ResponseEntity<*>? {
         data.clear()
         model.clear()
         data["code"] = 200
@@ -180,7 +180,7 @@ class OptionsService @Autowired constructor(private val productDao: ProductDao,
         return ResponseEntity.ok(data)
     }
 
-    fun deletePhoto(jsonNode: JsonNode?): ResponseEntity<*>? {
+    fun deleteOption(jsonNode: JsonNode?): ResponseEntity<*>? {
         data.clear()
         model.clear()
         data["code"] = 200

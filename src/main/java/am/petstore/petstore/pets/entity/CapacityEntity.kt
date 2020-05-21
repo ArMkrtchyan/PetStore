@@ -30,12 +30,14 @@ class CapacityEntity {
     @Column(name = "capacity")
     var capacity: String? = null
 
-    @OneToMany(cascade = [CascadeType.ALL], fetch = FetchType.EAGER)
-    @JoinColumn(name = "capacity_id")
-    var options: MutableSet<OptionsEntity>? = null
+    @OneToOne(cascade = [CascadeType.ALL])
+    @JoinColumn(name = "options_id", referencedColumnName = "id")
+    @OrderBy("id ASC")
+    var options: OptionsEntity? = null
 
     @OneToMany(cascade = [CascadeType.ALL], fetch = FetchType.EAGER)
     @JoinColumn(name = "capacity_id")
+    @OrderBy("id ASC")
     var colors: MutableSet<ColorEntity>? = null
 
     @ManyToOne
@@ -49,7 +51,7 @@ class CapacityEntity {
     var size: SizeEntity? = null
 
     constructor()
-    constructor(id: Long?, createdAt: Date?, updatedAt: Date?, deletedAt: Date?, capacity: String?, options: MutableSet<OptionsEntity>?, colors: MutableSet<ColorEntity>?, product: ProductEntity?, size: SizeEntity?) {
+    constructor(id: Long?, createdAt: Date?, updatedAt: Date?, deletedAt: Date?, capacity: String?, options: OptionsEntity?, colors: MutableSet<ColorEntity>?, product: ProductEntity?, size: SizeEntity?) {
         this.id = id
         this.createdAt = createdAt
         this.updatedAt = updatedAt

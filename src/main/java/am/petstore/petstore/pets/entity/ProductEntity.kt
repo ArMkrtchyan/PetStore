@@ -42,26 +42,35 @@ class ProductEntity {
 
     @OneToMany(cascade = [CascadeType.ALL], fetch = FetchType.EAGER)
     @JoinColumn(name = "product_id")
+    @OrderBy("id ASC")
     var sizes: MutableSet<SizeEntity>? = null
 
     @OneToMany(cascade = [CascadeType.ALL], fetch = FetchType.EAGER)
     @JoinColumn(name = "product_id")
+    @OrderBy("id ASC")
     var tasties: MutableSet<TastyEntity>? = null
 
     @OneToMany(cascade = [CascadeType.ALL], fetch = FetchType.EAGER)
     @JoinColumn(name = "product_id")
+    @OrderBy("id ASC")
     var volumes: MutableSet<VolumeEntity>? = null
 
     @OneToMany(cascade = [CascadeType.ALL], fetch = FetchType.EAGER)
     @JoinColumn(name = "product_id")
+    @OrderBy("id ASC")
     var capacities: MutableSet<CapacityEntity>? = null
+
+    @OneToMany(cascade = [CascadeType.ALL], fetch = FetchType.EAGER)
+    @JoinColumn(name = "product_id")
+    @JsonIgnore
+    var options: MutableSet<OptionsEntity>? = null
 
     @ManyToMany(cascade = [CascadeType.ALL], fetch = FetchType.EAGER)
     @JsonIgnore
     var users: MutableSet<UserEntity>? = null
 
     constructor()
-    constructor(id: Long?, createdAt: Date?, updatedAt: Date?, deletedAt: Date?, producerName: String?, producerPhoto: String?, categoryId: Int?, petId: Int?, sizes: MutableSet<SizeEntity>?, tasties: MutableSet<TastyEntity>?, volumes: MutableSet<VolumeEntity>?, capacities: MutableSet<CapacityEntity>?, users: MutableSet<UserEntity>?) {
+    constructor(id: Long?, createdAt: Date?, updatedAt: Date?, deletedAt: Date?, producerName: String?, producerPhoto: String?, categoryId: Int?, petId: Int?, sizes: MutableSet<SizeEntity>?, tasties: MutableSet<TastyEntity>?, volumes: MutableSet<VolumeEntity>?, capacities: MutableSet<CapacityEntity>?, options: MutableSet<OptionsEntity>?, users: MutableSet<UserEntity>?) {
         this.id = id
         this.createdAt = createdAt
         this.updatedAt = updatedAt
@@ -74,11 +83,12 @@ class ProductEntity {
         this.tasties = tasties
         this.volumes = volumes
         this.capacities = capacities
+        this.options = options
         this.users = users
     }
 
     override fun toString(): String {
-        return "ProductEntity(id=$id, createdAt=$createdAt, updatedAt=$updatedAt, deletedAt=$deletedAt, producerName=$producerName, producerPhoto=$producerPhoto, categoryId=$categoryId, petId=$petId, sizes=$sizes, tasties=$tasties, volumes=$volumes, capacities=$capacities, users=$users)"
+        return "ProductEntity(id=$id, createdAt=$createdAt, updatedAt=$updatedAt, deletedAt=$deletedAt, producerName=$producerName, producerPhoto=$producerPhoto, categoryId=$categoryId, petId=$petId, sizes=$sizes, tasties=$tasties, volumes=$volumes, capacities=$capacities, options=$options, users=$users)"
     }
 
 

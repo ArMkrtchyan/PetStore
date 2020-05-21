@@ -38,10 +38,12 @@ class SizeEntity {
 
     @OneToMany(cascade = [CascadeType.ALL], fetch = FetchType.EAGER)
     @JoinColumn(name = "size_id")
+    @OrderBy("id ASC")
     var capacities: MutableSet<CapacityEntity>? = null
 
     @OneToMany(cascade = [CascadeType.ALL], fetch = FetchType.EAGER)
     @JoinColumn(name = "size_id")
+    @OrderBy("id ASC")
     var colors: MutableSet<ColorEntity>? = null
 
     @ManyToOne
