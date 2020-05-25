@@ -36,6 +36,24 @@ object Utils {
                 "user/downloadFile/$fileName"
             }
 
+    suspend fun saveCategoryPhoto(fileStorageService: FileStorageService, photo: MultipartFile?, request: HttpServletRequest): String =
+            withContext(Dispatchers.Default + Job()) {
+                val fileName = fileStorageService.storeCategoryPhoto(photo!!)
+                "category/downloadFile/$fileName"
+            }
+
+    suspend fun savePetPhoto(fileStorageService: FileStorageService, photo: MultipartFile?, request: HttpServletRequest): String =
+            withContext(Dispatchers.Default + Job()) {
+                val fileName = fileStorageService.storePetPhoto(photo!!)
+                "pets/downloadFile/$fileName"
+            }
+
+    suspend fun saveProductPhoto(fileStorageService: FileStorageService, photo: MultipartFile?, request: HttpServletRequest): String =
+            withContext(Dispatchers.Default + Job()) {
+                val fileName = fileStorageService.storeProductPhoto(photo!!)
+                "product/downloadFile/$fileName"
+            }
+
     fun getUserId(req: HttpServletRequest): Long? {
         val bearerToken = req.getHeader("Authorization")
         val token = if (bearerToken != null && bearerToken.startsWith("Bearer ")) {

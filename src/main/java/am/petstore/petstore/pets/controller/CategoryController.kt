@@ -43,5 +43,8 @@ class CategoryController @Autowired constructor(private val service: CategorySer
         return runBlocking { service.delete(id!!) }
     }
 
-
+    @GetMapping("/downloadFile/{fileName:.+}")
+    fun downloadCategoryPhoto(@PathVariable fileName: String): ResponseEntity<*>? = runBlocking {
+        service.downloadCategoryPhoto(fileName)
+    }
 }

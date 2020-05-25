@@ -36,7 +36,10 @@ class SpringSecurityConfig : WebSecurityConfigurerAdapter() {
                 .antMatchers("/user/signin").permitAll()
                 .antMatchers("/user/signup/phone").permitAll()
                 .antMatchers("/user/signup").permitAll()
-                .antMatchers("/user/downloadFile/*").permitAll()
+                .antMatchers("/user/downloadFile/**/*").permitAll()
+                .antMatchers("/category/downloadFile/**/*").permitAll()
+                .antMatchers("/product/downloadFile/**/*").permitAll()
+                .antMatchers("/pets/downloadFile/**/*").permitAll()
                 .antMatchers("/user/device").permitAll()
                 .antMatchers("/user/device/free").permitAll()
                 .antMatchers(HttpMethod.GET, "/pets/findAll",

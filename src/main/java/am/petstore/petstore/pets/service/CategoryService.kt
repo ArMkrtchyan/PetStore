@@ -12,6 +12,8 @@ import kotlinx.coroutines.coroutineScope
 import kotlinx.coroutines.withContext
 import org.slf4j.LoggerFactory
 import org.springframework.data.domain.Sort
+import org.springframework.http.HttpHeaders
+import org.springframework.http.MediaType
 import org.springframework.http.ResponseEntity
 import org.springframework.stereotype.Service
 import org.springframework.transaction.annotation.Transactional
@@ -52,7 +54,7 @@ class CategoryService(private val categoryDao: CategoryDao, private val mapper: 
                     update(categoryDao.findByTitle(title)?.id!!, photo, title, categoryId, petId, request)
                 }
             } else {
-                val categoryEntity = CategoryEntity(Date(), Date(), title, Utils.saveFile(fileStorageService, photo, request), categoryId, petId)
+                val categoryEntity = CategoryEntity(Date(), Date(), title, Utils.saveCategoryPhoto(fileStorageService, photo, request), categoryId, petId)
                 categoryDao.saveAndFlush(categoryEntity)
                 data.clear()
                 model.clear()
@@ -132,11 +134,11 @@ class CategoryService(private val categoryDao: CategoryDao, private val mapper: 
                 ResponseEntity.badRequest().body(data)
             }
             if (photo != null && title != null) {
-                categoryDao.update(id, Date(), Utils.saveFile(fileStorageService, photo, request), title, null, petId!!, categoryId)
+                categoryDao.update(id, Date(), Utils.saveCategoryPhoto(fileStorageService, photo, request), title, null, petId!!, categoryId)
             } else if (title != null) {
                 categoryDao.update(id, Date(), categoryEntity.photo, title, null, petId!!, categoryId)
             } else {
-                categoryDao.update(id, Date(), Utils.saveFile(fileStorageService, photo, request), categoryEntity.title, null, petId!!, categoryId)
+                categoryDao.update(id, Date(), Utils.saveCategoryPhoto(fileStorageService, photo, request), categoryEntity.title, null, petId!!, categoryId)
             }
             data.clear()
             model.clear()
@@ -148,5 +150,11 @@ class CategoryService(private val categoryDao: CategoryDao, private val mapper: 
         }
     }
 
-
+    suspend fun downloadCategoryPhoto(fileName: String): ResponseEntity<*> = withContext(Dispatchers.Default) {
+        val resource = fileStorageService.loadCategoryPhoto(fileName)
+        ResponseEntity.ok()
+                .contentType(MediaType.parseMediaType("application/octet-stream"))
+                .header(HttpHeaders.CONTENT_DISPOSITION, "attachment; filename=\"" + resource.filename + "\"")
+                .body(resource)
+    }
 }

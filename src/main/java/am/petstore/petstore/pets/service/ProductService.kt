@@ -5,6 +5,7 @@ import am.petstore.petstore.pets.dao.*
 import am.petstore.petstore.pets.entity.ProductEntity
 import am.petstore.petstore.pets.model.Store
 import am.petstore.petstore.user.dao.UserDao
+import am.petstore.petstore.user.service.FileStorageService
 import com.fasterxml.jackson.databind.JsonNode
 import com.fasterxml.jackson.databind.ObjectMapper
 import kotlinx.coroutines.Dispatchers
@@ -14,6 +15,8 @@ import org.slf4j.LoggerFactory
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.data.domain.PageRequest
 import org.springframework.data.domain.Sort
+import org.springframework.http.HttpHeaders
+import org.springframework.http.MediaType
 import org.springframework.http.ResponseEntity
 import org.springframework.stereotype.Service
 import org.springframework.transaction.annotation.Transactional
@@ -34,6 +37,7 @@ class ProductService @Autowired constructor(private val productDao: ProductDao,
                                             private val volumeDao: VolumeDao,
                                             private val weightDao: WeightDao,
                                             private val mapper: ObjectMapper,
+                                            private val fileStorageService: FileStorageService,
                                             private val entityManagerFactory: EntityManagerFactory) {
     private val data: MutableMap<Any, Any> = HashMap()
     private val model: MutableMap<Any, Any> = HashMap()
@@ -265,4 +269,12 @@ class ProductService @Autowired constructor(private val productDao: ProductDao,
         return ResponseEntity.badRequest().body(data)
     }
 
+
+    suspend fun downloadProductPhoto(fileName: String): ResponseEntity<*> = withContext(Dispatchers.Default) {
+        val resource = fileStorageService.loadProductPhoto(fileName)
+        ResponseEntity.ok()
+                .contentType(MediaType.parseMediaType("application/octet-stream"))
+                .header(HttpHeaders.CONTENT_DISPOSITION, "attachment; filename=\"" + resource.filename + "\"")
+                .body(resource)
+    }
 }

@@ -87,4 +87,8 @@ class ProductController {
         service?.getFavorites(request)
     }
 
+    @GetMapping("/downloadFile/{fileName:.+}")
+    fun downloadCategoryPhoto(@PathVariable fileName: String): ResponseEntity<*>? = runBlocking {
+        service?.downloadProductPhoto(fileName)
+    }
 }

@@ -6,5 +6,7 @@ import org.springframework.boot.context.properties.ConfigurationProperties
 class FileStorageProperties {
     var uploadDir: String? = null
     var uploadDirPet: String? = null
+    var uploadDirCategory: String? = null
+    var uploadDirProducts: String? = null
 
 }

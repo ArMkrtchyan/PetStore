@@ -40,4 +40,8 @@ class PetController @Autowired constructor(private val petService: PetService) {
 
     }
 
+    @GetMapping("/downloadFile/{fileName:.+}")
+    fun downloadCategoryPhoto(@PathVariable fileName: String): ResponseEntity<*>? = runBlocking {
+        petService.downloadPetPhoto(fileName)
+    }
 }

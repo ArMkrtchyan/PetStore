@@ -12,6 +12,8 @@ import kotlinx.coroutines.withContext
 import org.slf4j.LoggerFactory
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.data.domain.Sort
+import org.springframework.http.HttpHeaders
+import org.springframework.http.MediaType
 import org.springframework.http.ResponseEntity
 import org.springframework.stereotype.Service
 import org.springframework.transaction.annotation.Transactional
@@ -53,7 +55,7 @@ class PetService @Autowired constructor(private val petDao: PetDao, private val 
                 return update(withContext(Dispatchers.Default + Job()) { petDao.findByTitle(title) }?.id!!, photo, title, request)
             }
         } else {
-            val petEntity = PetEntity(Date(), Date(), title, withContext(Dispatchers.Default + Job()) { Utils.saveFile(fileStorageService, photo, request) })
+            val petEntity = PetEntity(Date(), Date(), title, withContext(Dispatchers.Default + Job()) { Utils.savePetPhoto(fileStorageService, photo, request) })
             withContext(Dispatchers.Default + Job()) { petDao.saveAndFlush(petEntity) }
             data.clear()
             model.clear()
@@ -107,12 +109,12 @@ class PetService @Autowired constructor(private val petDao: PetDao, private val 
             ResponseEntity.badRequest().body(data)
         }
         if (photo != null && title != null) {
-            withContext(Dispatchers.Default + Job()) { petDao.update(id, Date(), Utils.saveFile(fileStorageService, photo, request), title, null) }
+            withContext(Dispatchers.Default + Job()) { petDao.update(id, Date(), Utils.savePetPhoto(fileStorageService, photo, request), title, null) }
         } else if (title != null) {
             withContext(Dispatchers.Default + Job()) { petDao.update(id, Date(), petEntity.photo, title, null) }
         } else {
             withContext(Dispatchers.Default + kotlinx.coroutines.Job()) {
-                petDao.update(id, Date(), Utils.saveFile(fileStorageService, photo, request), petEntity.title, null)
+                petDao.update(id, Date(), Utils.savePetPhoto(fileStorageService, photo, request), petEntity.title, null)
             }
         }
         data.clear()
@@ -122,5 +124,13 @@ class PetService @Autowired constructor(private val petDao: PetDao, private val 
         model["pet"] = Pet(withContext(Dispatchers.Default + Job()) { petDao.getOne(petEntity.id!!) })
         data["data"] = model
         return ResponseEntity.ok(data)
+    }
+
+    suspend fun downloadPetPhoto(fileName: String): ResponseEntity<*> = withContext(Dispatchers.Default) {
+        val resource = fileStorageService.loadPetPhoto(fileName)
+        ResponseEntity.ok()
+                .contentType(MediaType.parseMediaType("application/octet-stream"))
+                .header(HttpHeaders.CONTENT_DISPOSITION, "attachment; filename=\"" + resource.filename + "\"")
+                .body(resource)
     }
 }
