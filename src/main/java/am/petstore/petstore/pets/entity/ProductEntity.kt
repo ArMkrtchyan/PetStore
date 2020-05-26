@@ -66,7 +66,6 @@ class ProductEntity {
     var options: MutableSet<OptionsEntity>? = null
 
     @ManyToMany(cascade = [CascadeType.ALL], fetch = FetchType.EAGER)
-    @JsonIgnore
     var users: MutableSet<UserEntity>? = null
 
     constructor()

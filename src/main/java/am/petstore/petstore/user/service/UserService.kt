@@ -245,9 +245,8 @@ class UserService @Autowired constructor(private val userDao: UserDao, private v
     }
 
     @Throws(UsernameNotFoundException::class)
-    override fun loadUserByUsername(phone: String): UserDetails {
-        val user: UserDetails? = userDao.findByPhone(phone)
-        return user!!
+    override fun loadUserByUsername(phone: String): UserDetails? {
+        return userDao.findByPhone(phone)?: UserEntity()
     }
 
     suspend fun downloadImage(fileName: String): ResponseEntity<*> = withContext(Dispatchers.Default) {

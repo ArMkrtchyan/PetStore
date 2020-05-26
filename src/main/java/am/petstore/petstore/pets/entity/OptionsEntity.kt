@@ -45,6 +45,9 @@ class OptionsEntity {
     @Column(name = "in_stock")
     var inStock: Boolean? = null
 
+    @Column(name = "is_new")
+    var isNew: Boolean? = null
+
     @ElementCollection(targetClass = String::class, fetch = FetchType.EAGER)
     @CollectionTable(name = "photos", joinColumns = [JoinColumn(name = "options_id")])
     var photos: MutableSet<String?>? = null
@@ -72,7 +75,7 @@ class OptionsEntity {
 
 
     constructor() {}
-    constructor(id: Long?, createdAt: Date?, updatedAt: Date?, deletedAt: Date?, title: String?, description: String?, price: Int?, discount: Int?, oldPrice: Int?, inStock: Boolean?, photos: MutableSet<String?>?, color: ColorEntity?, capacities: CapacityEntity?, volome: VolumeEntity?, weight: WeightEntity?) {
+    constructor(id: Long?, createdAt: Date?, updatedAt: Date?, deletedAt: Date?, title: String?, description: String?, price: Int?, discount: Int?, oldPrice: Int?, inStock: Boolean?, isNew: Boolean?, photos: MutableSet<String?>?, color: ColorEntity?, capacities: CapacityEntity?, volome: VolumeEntity?, weight: WeightEntity?) {
         this.id = id
         this.createdAt = createdAt
         this.updatedAt = updatedAt
@@ -88,10 +91,11 @@ class OptionsEntity {
         this.volome = volome
         this.weight = weight
         this.inStock = inStock
+        this.isNew = isNew
     }
 
     override fun toString(): String {
-        return "OptionsEntity(id=$id, createdAt=$createdAt, updatedAt=$updatedAt, deletedAt=$deletedAt, title=$title, description=$description, price=$price, discount=$discount, oldPrice=$oldPrice,inStock=$inStock, photos=$photos, color=$color, capacities=$capacities, volome=$volome, weight=$weight)"
+        return "OptionsEntity(id=$id, createdAt=$createdAt, updatedAt=$updatedAt, deletedAt=$deletedAt, title=$title, description=$description, price=$price, discount=$discount, oldPrice=$oldPrice,inStock=$inStock, isNew=$isNew, photos=$photos, color=$color, capacities=$capacities, volome=$volome, weight=$weight)"
     }
 
 
