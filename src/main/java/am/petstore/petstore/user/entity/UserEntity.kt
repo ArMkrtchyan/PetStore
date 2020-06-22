@@ -75,9 +75,21 @@ class UserEntity : Serializable, UserDetails {
     @JoinColumn(name = "user_id")
     var orders: MutableSet<OrderEntity>? = null
 
-    @ManyToMany(cascade = [CascadeType.ALL], fetch = FetchType.EAGER)
+    @ManyToMany(cascade = [CascadeType.DETACH], fetch = FetchType.EAGER)
+    @JoinTable(
+            name = "users_favorites",
+            joinColumns = [JoinColumn(name = "user_id")],
+            inverseJoinColumns = [JoinColumn(name = "product_id")])
     @OrderBy("id asc")
     var favorites: MutableSet<ProductEntity>? = null
+
+//    @ManyToMany(cascade = [CascadeType.DETACH], fetch = FetchType.EAGER)
+//    @JoinTable(
+//            name = "users_favorites",
+//            joinColumns = [JoinColumn(name = "user_id")],
+//            inverseJoinColumns = [JoinColumn(name = "product_id")])
+//    @OrderBy("id asc")
+//    var productsInCart: MutableSet<ProductEntity>? = null
 
     constructor()
     constructor(password: @Size(min = 6) String?, email: String?, fullname: String?, active: Boolean?, firebase_id: String?, phone: @Pattern(regexp = "[+0-9]*") @NotNull String?, createdAt: Date?, updatedAt: Date?, roles: Set<Role>?, devices: MutableSet<Device?>?, orders: MutableSet<OrderEntity>?, favorites: MutableSet<ProductEntity>?) {

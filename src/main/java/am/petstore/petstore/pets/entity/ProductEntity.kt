@@ -2,6 +2,7 @@ package am.petstore.petstore.pets.entity
 
 import am.petstore.petstore.user.entity.UserEntity
 import com.fasterxml.jackson.annotation.JsonIgnore
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties
 import org.springframework.data.annotation.CreatedDate
 import org.springframework.data.annotation.LastModifiedDate
 import java.util.*
@@ -65,7 +66,8 @@ class ProductEntity {
     @JsonIgnore
     var options: MutableSet<OptionsEntity>? = null
 
-    @ManyToMany(cascade = [CascadeType.ALL], fetch = FetchType.EAGER)
+    @ManyToMany(mappedBy = "favorites", fetch = FetchType.EAGER)
+    @JsonIgnoreProperties(value = ["favorites", "devices", "password", "email", "fullname", "photo", "firebase_id", "phone", "createdAt", "updatedAt", "orders"])
     var users: MutableSet<UserEntity>? = null
 
     constructor()

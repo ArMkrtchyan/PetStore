@@ -224,8 +224,14 @@ class ProductService @Autowired constructor(private val productDao: ProductDao,
         }
         val user = withContext(Dispatchers.Default) { userDao.getOne(userId) }
         val product = withContext(Dispatchers.Default) { productDao.getOne(productId.toLong()) }
-        LoggerFactory.getLogger("UserFavorites").info(user.favorites?.contains(product).toString())
-        if (!user.favorites?.contains(product)!!) {
+        LoggerFactory.getLogger("UserFavorites").info(product.id.toString())
+        var contains = false
+        user.favorites?.map {
+            if (it.id == product.id) {
+                contains = true
+            }
+        }
+        if (!contains) {
             return badRequestResponse("You didn't have product with $productId in your favorites")
         }
         val fav = user.favorites?.filter {
@@ -256,8 +262,8 @@ class ProductService @Autowired constructor(private val productDao: ProductDao,
         model.clear()
         data["code"] = 200
         data["message"] = "Success"
-        model["count"] = withContext(Dispatchers.Default) { userDao.getOne(userId!!).favorites!!.size }
-        model["favorites"] = withContext(Dispatchers.Default) { userDao.getOne(userId!!).favorites!! }
+        model["count"] = withContext(Dispatchers.Default) { userDao.getOne(userId).favorites!!.size }
+        model["favorites"] = withContext(Dispatchers.Default) { userDao.getOne(userId).favorites!! }
         data["data"] = model
         return ResponseEntity.ok(data)
     }
